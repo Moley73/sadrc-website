@@ -1,17 +1,18 @@
 'use client';
 
-import { useState, useCallback } from 'react';
-import Link from 'next/link';
+import { Fragment, useState, useCallback } from 'react';
+import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import { useRouter, usePathname } from 'next/navigation';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
   { name: 'Events', href: '/#events' },
   { name: 'Locations', href: '/#locations' },
-  { name: 'Contact', href: '/#footer', onClick: scrollToFooter },
+  { name: 'Contact', href: '/#footer' },
 ];
 
 export default function Navbar() {
@@ -19,31 +20,13 @@ export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
 
-  const toggleMenu = useCallback(() => {
-    setIsOpen(!isOpen);
-  }, [isOpen]);
-
   const scrollToSection = useCallback((sectionId: string) => {
-    if (pathname !== '/') {
-      // If we're not on the home page, navigate home first
-      const navigate = async () => {
-        await router.push('/');
-        setTimeout(() => {
-          const section = document.getElementById(sectionId);
-          if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-          }
-        }, 100);
-      };
-      navigate();
-    } else {
-      // If we're already on the home page, just scroll
-      const section = document.getElementById(sectionId);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-      }
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      setIsOpen(false);
     }
-  }, [pathname, router]);
+  }, []);
 
   const scrollToFooter = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
@@ -51,13 +34,13 @@ export default function Navbar() {
     if (footer) {
       footer.scrollIntoView({ behavior: 'smooth' });
     }
-    setIsOpen(false); // Close mobile menu if open
+    setIsOpen(false);
   }, []);
 
   const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     if (href.startsWith('/#')) {
-      const sectionId = href.split('#')[1];
+      const sectionId = href.substring(2);
       if (sectionId === 'footer') {
         scrollToFooter(e);
       } else {
@@ -67,11 +50,11 @@ export default function Navbar() {
       router.push(href);
     }
     setIsOpen(false);
-  }, [scrollToSection, scrollToFooter]);
+  }, [router, scrollToSection, scrollToFooter]);
 
   const isActive = useCallback((path: string) => {
     if (path === '/') {
-      return pathname === path;
+      return pathname === '/';
     }
     return pathname.startsWith(path);
   }, [pathname]);
@@ -102,7 +85,7 @@ export default function Navbar() {
               className="text-gray-300 hover:text-white p-2"
               onClick={() => setIsOpen(!isOpen)}
             >
-              {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+              {isOpen ? <XMarkIcon size={24} /> : <Bars3Icon size={24} />}
             </button>
           </div>
 
