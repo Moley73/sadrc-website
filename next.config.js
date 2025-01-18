@@ -8,10 +8,12 @@ const nextConfig = {
     unoptimized: true,
     loader: 'custom',
     loaderFile: './image-loader.js',
-    path: basePath,
+    path: '/',
+    remotePatterns: [],
   },
   basePath: basePath,
   assetPrefix: basePath,
+  trailingSlash: true,
 }
 
 module.exports = nextConfig
