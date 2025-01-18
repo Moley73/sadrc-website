@@ -13,10 +13,6 @@ export default function Footer() {
                 <FaEnvelope className="mr-2" />
                 infosadrc@mail.com
               </a>
-              <a href="mailto:membership.sadrc@gmail.com" className="flex items-center text-gray-400 hover:text-sadrc-orange transition-colors">
-                <FaEnvelope className="mr-2" />
-                membership.sadrc@gmail.com
-              </a>
             </div>
           </div>
 
