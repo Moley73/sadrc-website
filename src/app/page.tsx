@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { FaMapMarkerAlt, FaRunning, FaCalendarAlt, FaClock, FaDirections, FaFileDownload, FaEnvelope, FaFacebook, FaInstagram } from 'react-icons/fa';
 import Navbar from './components/Navbar';
 import FacebookFeed from './components/FacebookFeed';
-import Footer from './components/Footer';
 
 export default function Home() {
   const locations = [
@@ -332,9 +331,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <Footer />
     </main>
   );
 }
