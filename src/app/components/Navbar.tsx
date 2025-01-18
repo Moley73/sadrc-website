@@ -11,7 +11,7 @@ const navigation = [
   { name: 'About', href: '/about' },
   { name: 'Events', href: '/#events' },
   { name: 'Locations', href: '/#locations' },
-  { name: 'Contact', href: '/#footer' },
+  { name: 'Contact', href: '/#footer', onClick: scrollToFooter },
 ];
 
 export default function Navbar() {
@@ -45,16 +45,29 @@ export default function Navbar() {
     }
   }, [pathname, router]);
 
+  const scrollToFooter = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    const footer = document.getElementById('footer');
+    if (footer) {
+      footer.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsOpen(false); // Close mobile menu if open
+  }, []);
+
   const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     if (href.startsWith('/#')) {
       const sectionId = href.split('#')[1];
-      scrollToSection(sectionId);
+      if (sectionId === 'footer') {
+        scrollToFooter(e);
+      } else {
+        scrollToSection(sectionId);
+      }
     } else {
       router.push(href);
     }
     setIsOpen(false);
-  }, [scrollToSection]);
+  }, [scrollToSection, scrollToFooter]);
 
   const isActive = useCallback((path: string) => {
     if (path === '/') {
@@ -99,6 +112,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className={`${
                   isActive(link.href)
                     ? 'text-sadrc-orange'
@@ -106,7 +120,6 @@ export default function Navbar() {
                 } transition-colors duration-200`}
                 role="menuitem"
                 aria-current={isActive(link.href) ? 'page' : undefined}
-                onClick={(e) => handleNavClick(e, link.href)}
               >
                 {link.name}
               </a>
@@ -148,6 +161,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className={`${
                 isActive(link.href)
                   ? 'text-sadrc-orange'
@@ -155,7 +169,6 @@ export default function Navbar() {
               } block px-3 py-2 text-base transition-colors duration-200`}
               role="menuitem"
               aria-current={isActive(link.href) ? 'page' : undefined}
-              onClick={(e) => handleNavClick(e, link.href)}
             >
               {link.name}
             </a>
