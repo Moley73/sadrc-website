@@ -60,9 +60,9 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Training Times</h3>
             <div className="space-y-2 text-gray-400">
-              <p>Tuesday: 6:30 PM - Skegness</p>
-              <p>Wednesday: 6:30 PM - Spilsby</p>
-              <p>Thursday: 6:30 PM - Horncastle</p>
+              <p>Monday: 6:30 PM - Horncastle</p>
+              <p>Tuesday: 6:30 PM - Spilsby</p>
+              <p>Thursday: 6:30 PM - Skegness</p>
               <p>Thursday: 6:30 PM - Boston</p>
             </div>
           </div>
