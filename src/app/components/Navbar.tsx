@@ -22,32 +22,38 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   }, [isOpen]);
 
+  const scrollToSection = useCallback((sectionId: string) => {
+    if (pathname !== '/') {
+      // If we're not on the home page, navigate home first
+      const navigate = async () => {
+        await router.push('/');
+        setTimeout(() => {
+          const section = document.getElementById(sectionId);
+          if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      };
+      navigate();
+    } else {
+      // If we're already on the home page, just scroll
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [pathname, router]);
+
   const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     if (href.startsWith('/#')) {
       const sectionId = href.split('#')[1];
-      if (pathname !== '/') {
-        // If we're not on the home page, navigate home first
-        router.push('/').then(() => {
-          setTimeout(() => {
-            const section = document.getElementById(sectionId);
-            if (section) {
-              section.scrollIntoView({ behavior: 'smooth' });
-            }
-          }, 100);
-        });
-      } else {
-        // If we're already on the home page, just scroll
-        const section = document.getElementById(sectionId);
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
+      scrollToSection(sectionId);
     } else {
       router.push(href);
     }
     setIsOpen(false);
-  }, [pathname, router]);
+  }, [scrollToSection]);
 
   const isActive = useCallback((path: string) => {
     if (path === '/' && pathname !== '/') {
