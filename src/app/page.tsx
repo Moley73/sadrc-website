@@ -12,7 +12,7 @@ export default function Home() {
       name: 'Skegness', 
       description: 'Meeting at the Links Bar/Hotel on Thursday nights for a 6:30 PM start', 
       icon: FaMapMarkerAlt,
-      image: '/images/locations/skegness-location.jpg',
+      image: './images/locations/skegness-location.jpg',
       day: 'Thursday',
       mapUrl: 'https://maps.google.com/?q=Links+Hotel+Skegness'
     },
@@ -20,7 +20,7 @@ export default function Home() {
       name: 'Spilsby', 
       description: 'Meeting at the New Life Centre on Tuesday nights for a 6:30 PM start', 
       icon: FaRunning,
-      image: '/images/locations/spilsby-location.jpg',
+      image: './images/locations/spilsby-location.jpg',
       day: 'Tuesday',
       mapUrl: 'https://maps.google.com/?q=New+Life+Centre+Spilsby'
     },
@@ -28,7 +28,7 @@ export default function Home() {
       name: 'Horncastle', 
       description: 'Meeting at the Cattle Market Car Park on Monday nights for a 6:30 PM start', 
       icon: FaMapMarkerAlt,
-      image: '/images/locations/horncastle-location.jpg',
+      image: './images/locations/horncastle-location.jpg',
       day: 'Monday',
       mapUrl: 'https://maps.google.com/?q=Cattle+Market+Car+Park+Horncastle'
     },
@@ -36,7 +36,7 @@ export default function Home() {
       name: 'Boston', 
       description: 'Meeting at the Fuddy Duck (PE21 7TW) on Thursday nights for a 6:30 PM start', 
       icon: FaMapMarkerAlt,
-      image: '/images/locations/boston-location.jpg',
+      image: './images/locations/boston-location.jpg',
       day: 'Thursday',
       mapUrl: 'https://maps.google.com/?q=Fuddy+Duck+Boston+PE21+7TW'
     },
@@ -47,7 +47,7 @@ export default function Home() {
       name: 'Spilsby Show 10K',
       date: 'July 14, 2025',
       time: '11:00 AM',
-      image: '/images/locations/spilsby-show.jpg',
+      image: './images/locations/spilsby-show.jpg',
       description: 'A fantastic multi-terrain 10K race at the annual Spilsby Show. Perfect for all abilities!',
       registrationLink: 'https://www.spilsbyshow.co.uk/runners/'
     },
@@ -55,7 +55,7 @@ export default function Home() {
       name: 'Bolingbroke Breaker',
       date: 'September 2025',
       time: '10:00 AM',
-      image: '/images/locations/breaker-10k.avif',
+      image: './images/locations/breaker-10k.avif',
       description: 'The legendary Bolingbroke Breaker returns! A tough but rewarding race through historic Bolingbroke.',
       registrationLink: null
     }

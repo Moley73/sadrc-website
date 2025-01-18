@@ -6,35 +6,35 @@ export default function Locations() {
   const locations = [
     {
       name: 'Skegness',
-      description: 'Our main club location',
+      description: 'Meeting at the Links Bar/Hotel on Thursday nights for a 6:30 PM start',
       details: 'Meeting point: Links Bar/Hotel, Skegness',
       times: 'Thursday at 6:30 PM',
       mapUrl: 'https://maps.google.com/?q=Links+Hotel+Skegness',
-      image: '/images/locations/skegness-location.jpg'
+      image: './images/locations/skegness-location.jpg'
     },
     {
       name: 'Spilsby',
-      description: 'Perfect for countryside runs',
+      description: 'Meeting at the New Life Centre on Tuesday nights for a 6:30 PM start',
       details: 'Meeting point: New Life Centre, Spilsby',
       times: 'Tuesday at 6:30 PM',
       mapUrl: 'https://maps.google.com/?q=New+Life+Centre+Spilsby',
-      image: '/images/locations/spilsby-location.jpg'
+      image: './images/locations/spilsby-location.jpg'
     },
     {
       name: 'Horncastle',
-      description: 'Beautiful Lincolnshire Wolds',
+      description: 'Meeting at the Cattle Market Car Park on Monday nights for a 6:30 PM start',
       details: 'Meeting point: Cattle Market Car Park, Horncastle',
       times: 'Monday at 6:30 PM',
       mapUrl: 'https://maps.google.com/?q=Cattle+Market+Car+Park+Horncastle',
-      image: '/images/locations/horncastle-location.jpg'
+      image: './images/locations/horncastle-location.jpg'
     },
     {
       name: 'Boston',
-      description: 'Historic market town routes',
+      description: 'Meeting at the Fuddy Duck (PE21 7TW) on Thursday nights for a 6:30 PM start',
       details: 'Meeting point: Fuddy Duck, PE21 7TW, Boston',
       times: 'Thursday at 6:30 PM',
-      mapUrl: 'https://maps.google.com/?q=Fuddy+Duck+PE21+7TW+Boston',
-      image: '/images/locations/boston-location.jpg'
+      mapUrl: 'https://maps.google.com/?q=Fuddy+Duck+Boston+PE21+7TW',
+      image: './images/locations/boston-location.jpg'
     }
   ]
 
