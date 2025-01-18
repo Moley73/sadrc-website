@@ -4,11 +4,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  trailingSlash: true,
-  // Disable server components for static export
   experimental: {
-    appDir: true,
-  },
+    typedRoutes: true
+  }
 }
 
 module.exports = nextConfig
