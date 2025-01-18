@@ -71,11 +71,12 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <Image
-                src="/sadrc-logo.png"
+                src="/images/locations/Logo.avif"
                 alt="SADRC Logo"
-                width={40}
-                height={40}
-                className="h-8 w-auto"
+                width={50}
+                height={50}
+                unoptimized
+                className="h-10 w-auto"
               />
               <span className="ml-2 text-white font-bold text-lg">SADRC</span>
             </Link>
