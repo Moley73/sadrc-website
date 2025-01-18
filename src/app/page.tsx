@@ -1,7 +1,10 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaMapMarkerAlt, FaRunning, FaCalendarAlt, FaClock, FaDirections } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaRunning, FaCalendarAlt, FaClock, FaDirections, FaFileDownload } from 'react-icons/fa';
 import Navbar from './components/Navbar';
+import FacebookFeed from './components/FacebookFeed';
 
 export default function Home() {
   const locations = [
@@ -58,6 +61,14 @@ export default function Home() {
     }
   ];
 
+  const handleJoinUsClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const contactSection = document.getElementById('contact-section');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <main className="min-h-screen bg-[#121212]">
       <Navbar />
@@ -82,13 +93,14 @@ export default function Home() {
           <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-2xl text-gray-200 px-4">
             Join our friendly community of runners across Lincolnshire
           </p>
-          <Link
-            href="/contact"
+          <a
+            href="#contact-section"
             className="bg-sadrc-orange hover:bg-orange-600 text-white font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-full text-base sm:text-lg transition-colors transform hover:scale-105 duration-200 flex items-center space-x-2"
+            onClick={handleJoinUsClick}
           >
             <FaRunning className="text-lg sm:text-xl" />
             <span>Join Us Today</span>
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -267,21 +279,63 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Facebook Feed */}
+      <FacebookFeed />
+
       {/* Call to Action */}
-      <section className="py-12 sm:py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8">
-            Ready to <span className="text-sadrc-orange">Join Us?</span>
-          </h2>
-          <p className="text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-base px-4">
-            Come along to any of our sessions and give it a try. Your first three sessions are free!
-          </p>
-          <Link 
-            href="/contact"
-            className="inline-block bg-sadrc-orange text-white px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors text-sm sm:text-base"
-          >
-            Get Started
-          </Link>
+      <section id="contact-section" className="py-12 sm:py-16 bg-black/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">
+              SADRC <span className="text-sadrc-orange">Membership 2025</span>
+            </h2>
+
+            {/* Membership Details */}
+            <div className="space-y-6 mb-8">
+              {/* Key Points */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                <div className="bg-black/20 p-6 rounded-lg border border-gray-800">
+                  <h3 className="text-xl font-semibold text-sadrc-orange mb-3">Club Membership</h3>
+                  <ul className="space-y-2 text-gray-300">
+                    <li>• Club membership is FREE</li>
+                    <li>• Open to anyone aged 15 or over</li>
+                    <li>• Membership year: April to March</li>
+                    <li>• Optional England Athletics affiliation: £19</li>
+                  </ul>
+                </div>
+                <div className="bg-black/20 p-6 rounded-lg border border-gray-800">
+                  <h3 className="text-xl font-semibold text-sadrc-orange mb-3">Member Benefits</h3>
+                  <ul className="space-y-2 text-gray-300">
+                    <li>• Enter races under SADRC name</li>
+                    <li>• Participate in Lincs League Cross Country</li>
+                    <li>• Eligible for London Marathon club places draw*</li>
+                    <li>• Race entry discounts (if EA affiliated)</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Additional Info */}
+              <div className="bg-black/20 p-6 rounded-lg border border-gray-800 text-left">
+                <h3 className="text-xl font-semibold text-sadrc-orange mb-3">How to Join</h3>
+                <ol className="space-y-2 text-gray-300">
+                  <li>1. Download and complete the membership form below</li>
+                  <li>2. Email your completed form to <a href="mailto:skegadrc.membership@gmail.com" className="text-sadrc-orange hover:text-orange-400">skegadrc.membership@gmail.com</a></li>
+                  <li>3. If choosing EA affiliation, bank details will be provided for payment</li>
+                </ol>
+                <p className="text-sm text-gray-400 mt-4">* Subject to terms & conditions, including having been rejected in the ballot</p>
+              </div>
+            </div>
+
+            {/* Download Button */}
+            <a
+              href="/images/locations/SADRC application 2024-25.docx"
+              download
+              className="inline-flex items-center bg-sadrc-orange hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 space-x-3"
+            >
+              <FaFileDownload className="text-2xl" />
+              <span className="text-lg">Download Membership Form</span>
+            </a>
+          </div>
         </div>
       </section>
     </main>

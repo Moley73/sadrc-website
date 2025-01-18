@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useRouter, usePathname } from 'next/navigation';
 
@@ -13,8 +14,7 @@ export default function Navbar() {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
-    { name: 'Events', href: '/#events-section' },
-    { name: 'Contact', href: '/contact' }
+    { name: 'Events', href: '/#events-section' }
   ];
 
   const handleNavClick = (e: React.MouseEvent, href: string) => {
@@ -45,8 +45,15 @@ export default function Navbar() {
     <nav className="fixed w-full bg-sadrc-black/95 backdrop-blur-sm z-50 border-b border-gray-800">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="text-2xl font-bold text-sadrc-orange">
-            SADRC
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/locations/Logo.avif"
+              alt="SADRC Logo"
+              width={40}
+              height={40}
+              className="mr-3"
+            />
+            <span className="self-center text-2xl font-bold whitespace-nowrap text-sadrc-orange">SADRC</span>
           </Link>
 
           {/* Desktop Navigation */}
