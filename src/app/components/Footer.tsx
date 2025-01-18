@@ -1,23 +1,14 @@
-import { FaFacebook, FaEnvelope, FaFileDownload, FaYoutube, FaStrava } from 'react-icons/fa';
+import { FaFacebook, FaEnvelope, FaFileDownload, FaYoutube, FaInstagram } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="bg-sadrc-black py-12 border-t border-gray-800">
+    <footer className="bg-[#1a1a1a] text-white py-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* About */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-bold text-white mb-4">About SADRC</h3>
-            <p className="text-gray-400 text-sm">
-              Skegness and District Running Club is a friendly community of runners across Lincolnshire.
-              We welcome runners of all abilities and offer structured training sessions throughout the week.
-            </p>
-          </div>
-
-          {/* Contact */}
-          <div id="contact-section">
-            <h3 className="text-xl font-bold text-white mb-4">Contact Us</h3>
-            <div className="space-y-3">
+            <h3 className="text-xl font-bold mb-4">Contact Us</h3>
+            <div className="space-y-2">
               <a
                 href="mailto:skegadrc.membership@gmail.com"
                 className="flex items-center text-gray-400 hover:text-sadrc-orange transition-colors"
@@ -36,13 +27,13 @@ export default function Footer() {
                   <FaFacebook className="h-6 w-6" />
                 </a>
                 <a
-                  href="https://www.strava.com/clubs/sadrc"
+                  href="https://www.instagram.com/skegnessanddistrictrunningclub"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-sadrc-orange"
-                  aria-label="Strava"
+                  aria-label="Instagram"
                 >
-                  <FaStrava className="h-6 w-6" />
+                  <FaInstagram className="h-6 w-6" />
                 </a>
                 <a
                   href="https://www.youtube.com/@skegnessanddistrictrunning3040"
@@ -65,21 +56,36 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Training Locations */}
+          {/* Training Times */}
           <div>
-            <h3 className="text-xl font-bold text-white mb-4">Training Locations</h3>
-            <ul className="text-gray-400 space-y-2">
-              <li>Skegness - Thursday 6:30 PM</li>
-              <li>Spilsby - Tuesday 6:30 PM</li>
-              <li>Horncastle - Monday 6:30 PM</li>
-              <li>Boston - Thursday 6:30 PM</li>
-            </ul>
+            <h3 className="text-xl font-bold mb-4">Training Times</h3>
+            <div className="space-y-2 text-gray-400">
+              <p>Tuesday: 6:30 PM - Skegness</p>
+              <p>Wednesday: 6:30 PM - Spilsby</p>
+              <p>Thursday: 6:30 PM - Horncastle</p>
+              <p>Thursday: 6:30 PM - Boston</p>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+            <div className="space-y-2">
+              <a href="/about" className="block text-gray-400 hover:text-sadrc-orange transition-colors">
+                About Us
+              </a>
+              <a href="/join" className="block text-gray-400 hover:text-sadrc-orange transition-colors">
+                Join the Club
+              </a>
+              <a href="/#events" className="block text-gray-400 hover:text-sadrc-orange transition-colors">
+                Events
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
-          {new Date().getFullYear()} Skegness and District Running Club. All rights reserved.
+        <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
+          <p>&copy; {new Date().getFullYear()} Skegness and District Running Club. All rights reserved.</p>
         </div>
       </div>
     </footer>
