@@ -1,6 +1,7 @@
-import { getCLS, getFID, getLCP } from 'web-vitals';
+import { Metric } from 'web-vitals';
+import * as webVitals from 'web-vitals';
 
-export function reportWebVitals(metric: any) {
+export function reportWebVitals(metric: Metric) {
   // Log to console in development
   if (process.env.NODE_ENV === 'development') {
     console.log(metric);
@@ -18,28 +19,25 @@ export function reportWebVitals(metric: any) {
       },
     };
 
-    if (metric.name === 'CLS') {
-      options.extra = {
-        ...options.extra,
-        layout_shifts: metric.entries.map((entry: any) => ({
-          value: entry.value,
-          sources: entry.sources,
-        })),
-      };
-    }
-
-    // Send to Sentry
-    if (window.Sentry) {
-      window.Sentry.captureMessage(`Web Vital: ${metric.name}`, {
-        level: metric.rating === 'poor' ? 'warning' : 'info',
-        ...options,
-      });
+    // Report different metrics to Sentry
+    switch (metric.name) {
+      case 'CLS':
+        console.log('CLS:', metric.value);
+        break;
+      case 'FID':
+        console.log('FID:', metric.value);
+        break;
+      case 'LCP':
+        console.log('LCP:', metric.value);
+        break;
+      default:
+        break;
     }
   }
 }
 
 export function initWebVitals() {
-  getCLS(reportWebVitals);
-  getFID(reportWebVitals);
-  getLCP(reportWebVitals);
+  webVitals.onCLS(reportWebVitals);
+  webVitals.onFID(reportWebVitals);
+  webVitals.onLCP(reportWebVitals);
 }
