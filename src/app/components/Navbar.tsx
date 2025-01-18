@@ -9,7 +9,7 @@ import { useRouter, usePathname } from 'next/navigation';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
-  { href: '/#events-section', label: 'Events' },
+  { href: '/#events', label: 'Events' },
   { href: '/join', label: 'Join Us', highlight: true }
 ];
 
@@ -18,30 +18,29 @@ export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
 
-  // Memoize the isActive function
-  const isActive = useCallback((path: string) => {
-    if (path === '/' && pathname !== '/') {
-      return false;
-    }
-    return pathname?.startsWith(path);
-  }, [pathname]);
+  const toggleMenu = useCallback(() => {
+    setIsOpen(!isOpen);
+  }, [isOpen]);
 
-  const handleNavClick = useCallback((e: React.MouseEvent, href: string) => {
+  const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    if (href === '/#events-section') {
+    if (href.startsWith('/#')) {
+      const sectionId = href.split('#')[1];
       if (pathname !== '/') {
-        router.push('/');
-        // Wait for navigation to complete before scrolling
-        setTimeout(() => {
-          const eventsSection = document.getElementById('events-section');
-          if (eventsSection) {
-            eventsSection.scrollIntoView({ behavior: 'smooth' });
-          }
-        }, 100);
+        // If we're not on the home page, navigate home first
+        router.push('/').then(() => {
+          setTimeout(() => {
+            const section = document.getElementById(sectionId);
+            if (section) {
+              section.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 100);
+        });
       } else {
-        const eventsSection = document.getElementById('events-section');
-        if (eventsSection) {
-          eventsSection.scrollIntoView({ behavior: 'smooth' });
+        // If we're already on the home page, just scroll
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
         }
       }
     } else {
@@ -49,6 +48,16 @@ export default function Navbar() {
     }
     setIsOpen(false);
   }, [pathname, router]);
+
+  const isActive = useCallback((path: string) => {
+    if (path === '/' && pathname !== '/') {
+      return false;
+    }
+    if (path.startsWith('/#')) {
+      return false;
+    }
+    return pathname?.startsWith(path);
+  }, [pathname]);
 
   return (
     <nav 
@@ -64,7 +73,7 @@ export default function Navbar() {
             aria-label="SADRC Home"
           >
             <Image
-              src="/images/sadrc-logo.png"
+              src="/images/locations/Logo.avif"
               alt="SADRC Logo"
               width={40}
               height={40}
@@ -77,9 +86,10 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8" role="menubar">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.href}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className={`text-sm font-medium transition-colors duration-200 ${
                   isActive(link.href)
                     ? 'text-sadrc-orange'
@@ -89,18 +99,17 @@ export default function Navbar() {
                     ? 'px-4 py-2 bg-sadrc-orange text-white rounded-lg hover:bg-opacity-90 hover:text-white'
                     : ''
                 }`}
-                onClick={(e) => handleNavClick(e, link.href)}
                 role="menuitem"
                 aria-current={isActive(link.href) ? 'page' : undefined}
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={toggleMenu}
             className="md:hidden text-gray-300 hover:text-sadrc-orange"
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
@@ -122,7 +131,7 @@ export default function Navbar() {
             role="menu"
           >
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
@@ -139,7 +148,7 @@ export default function Navbar() {
                 aria-current={isActive(link.href) ? 'page' : undefined}
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
           </div>
         )}

@@ -44,18 +44,18 @@ export default function Home() {
 
   const events = [
     {
-      name: 'The Spilsby Show 10k',
-      date: 'Sunday 13th July 2025',
-      time: '10:00 AM',
-      image: '/images/events/spilsby-show.jpg',
-      description: 'Join us for our annual Spilsby Show 10k race - a challenging and scenic route through the Lincolnshire countryside.',
+      name: 'Spilsby Show 10K',
+      date: 'July 14, 2025',
+      time: '11:00 AM',
+      image: '/images/locations/spilsby-show.jpg',
+      description: 'A fantastic multi-terrain 10K race at the annual Spilsby Show. Perfect for all abilities!',
       registrationLink: 'https://www.spilsbyshow.co.uk/runners/'
     },
     {
       name: 'Bolingbroke Breaker',
       date: 'September 2025',
       time: '10:00 AM',
-      image: '/images/events/bolingbroke-breaker.jpg',
+      image: '/images/locations/breaker-10k.avif',
       description: 'The legendary Bolingbroke Breaker returns! A tough but rewarding race through historic Bolingbroke.',
       registrationLink: null
     }
@@ -177,7 +177,7 @@ export default function Home() {
       </section>
 
       {/* Events Section */}
-      <section id="events-section" className="py-16 sm:py-24 bg-[#1a1a1a] scroll-mt-16">
+      <section id="events" className="py-16 sm:py-24 bg-[#1a1a1a] scroll-mt-16">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-3 sm:mb-4">
             Upcoming <span className="text-sadrc-orange">Events</span>

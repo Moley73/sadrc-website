@@ -3,11 +3,9 @@ const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
-    loader: 'custom',
-    loaderFile: './image-loader.js',
   },
-  basePath: '/sadrc-website',
-  assetPrefix: '/sadrc-website',
+  basePath: '',
+  assetPrefix: '',
 }
 
 module.exports = nextConfig
