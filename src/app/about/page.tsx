@@ -96,6 +96,75 @@ export default function About() {
             <blockquote className="border-l-4 border-sadrc-orange pl-4 my-4 italic">
               'Sports equity is about fairness in sport, equality of access, recognizing inequalities and taking steps to address them. It is about changing the culture and structure of sport to ensure it becomes equally accessible to everyone in society.'
             </blockquote>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>The Club respects the rights, dignity and worth of every person and shall treat everyone equally within the context of their sport, regardless of age, ability, gender, race, ethnicity, religious belief, sexuality or social/economic status.</li>
+              <li>The Club is committed to everyone having the right to enjoy their sport in an environment free from threat of intimidation, harassment and abuse.</li>
+              <li>All Members have a responsibility to oppose discriminatory behaviour and promote equality of opportunity.</li>
+              <li>The Club will deal with any incidence of discriminatory behaviour seriously according to the Club's disciplinary procedures.</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold mt-8 mb-4">Exercise of Powers</h3>
+            <p className="mb-4">In furtherance of the Objects but not otherwise the Club may exercise the following powers:</p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>to carry on a sports club;</li>
+              <li>to provide sports coaching, training and equipment;</li>
+              <li>to participate in and organise leagues, competitions, tournaments and matches and related activities;</li>
+              <li>to provide information, advice and guidance in running and/or competitions, coach development and other related activities;</li>
+              <li>to publish or distribute information including by means of reports, books, leaflets, films, videos, websites and any other media;</li>
+              <li>to draw, make, accept, endorse, discount, execute and issue bills, cheques and other instruments and to open and operate bank accounts in the name of the Club;</li>
+              <li>to accept or disclaim gifts of money or any other property;</li>
+              <li>to raise funds and to invite and receive contributions;</li>
+              <li>to purchase, take on, hire, lease, acquire, alter, improve, construct and maintain property and equip it for use;</li>
+              <li>to sell, charge, let, mortgage or otherwise dispose of property and buildings;</li>
+              <li>to insure the property of the Club against any foreseeable risk and to take out other insurance policies to protect the Club and the Officers when required including the provision of indemnity insurance to cover the liability of the Officers and other staff and volunteers;</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold mt-8 mb-4">Club Finances and Property</h3>
+            <div className="space-y-4">
+              <p>A bank account shall be opened and maintained in the name of the Club (Skegness and District Running Club). Designated account signatories shall be the Chair, the Secretary and the Treasurer.</p>
+              <p>No sum shall be expended from the Club Account except by cheque signed by two of the designated signatories or by electronic transfer approved by at least one of the designated signatories subject to a maximum amount fixed by the Committee.</p>
+              <p>All monies payable to the Club shall be received by the Treasurer and deposited in the Club Account as soon as is reasonably practicable.</p>
+              <p>The Club's financial year shall end on 5th April each year or such other date as the Committee may determine from time to time provided that no financial year shall be shortened to less than nine months or extended to more than fifteen months.</p>
+            </div>
+
+            <h3 className="text-xl font-semibold mt-8 mb-4">Club Membership</h3>
+            <div className="space-y-4">
+              <p>The Members from time to time shall be those persons listed in the Club's register of members which shall be maintained by the Membership Secretary.</p>
+              <p>The Committee may make bye laws establishing classes of membership with different rights and obligations and shall record such rights and obligations in the Club's register of members.</p>
+            </div>
+
+            <h3 className="text-xl font-semibold mt-8 mb-4">Admission to Membership</h3>
+            <div className="space-y-4">
+              <p>Any person who wishes to be a Member must apply in such form as is determined by the Committee from time to time and deliver it to the Chair or the Secretary.</p>
+              <p>Membership of the Club is open to all without discrimination and may only be refused where admission to membership would be contrary to the best interests of sport or the good conduct and interests of the Club.</p>
+              <p>No person shall be denied membership of the Club on the grounds of race, ethnic origin, colour, age, disability, sex, occupation, sexual orientation, religion, political or other beliefs.</p>
+              <p>The Committee or the Members may from time to time fix the levels of admission fees and annual subscriptions to be paid by different categories of Members.</p>
+            </div>
+
+            <h3 className="text-xl font-semibold mt-8 mb-4">The Committee</h3>
+            <p className="mb-4">The Committee shall consist of a minimum of three Officers, including the following Officers:</p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>Club Chair</li>
+              <li>Vice Chair</li>
+              <li>Club Treasurer</li>
+              <li>Club Secretary</li>
+              <li>Welfare Officer</li>
+              <li>Membership secretary</li>
+              <li>DBS verifier</li>
+              <li>Any other Officers elected at a General Meeting</li>
+            </ul>
+            <p className="mt-4">At least three members of the clubs committee should be unrelated or not co-habiting.</p>
+
+            <h3 className="text-xl font-semibold mt-8 mb-4">General Meetings</h3>
+            <div className="space-y-4">
+              <p>The Committee shall call an Annual General Meeting (AGM) each year and no more than fifteen months shall pass between one AGM and the next following one. The business of an AGM shall include:</p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>the receipt of a report of the activities of the Club over the previous year;</li>
+                <li>the receipt of a report of the Club's finances over the previous year;</li>
+                <li>the election and retirement of Officers;</li>
+                <li>any other business.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
