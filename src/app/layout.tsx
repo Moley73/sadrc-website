@@ -1,12 +1,16 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { Suspense } from 'react'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import LoadingState from './components/LoadingState'
+'use client';
 
-const inter = Inter({ subsets: ['latin'] })
+import './globals.css';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import { Suspense, useEffect } from 'react';
+import * as Sentry from '@sentry/nextjs';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import LoadingState from './components/LoadingState';
+import { initWebVitals } from '@/utils/analytics';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Skegness and District Running Club',
@@ -29,30 +33,48 @@ export const metadata: Metadata = {
   viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
   themeColor: '#ff6600',
-}
-
-function LoadingSpinner() {
-  return (
-    <div className="flex items-center justify-center h-screen">
-      <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-sadrc-orange"></div>
-    </div>
-  );
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
+  useEffect(() => {
+    // Initialize web vitals monitoring
+    initWebVitals();
+
+    // Add resize event listener for responsive design
+    const handleResize = () => {
+      // Update CSS custom property for viewport height
+      document.documentElement.style.setProperty(
+        '--vh',
+        `${window.innerHeight * 0.01}px`
+      );
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#1a1a1a] text-white min-h-screen`}>
+      <body 
+        className={`${inter.className} bg-[#1a1a1a] text-white min-h-screen flex flex-col`}
+        style={{ height: 'calc(var(--vh, 1vh) * 100)' }}
+      >
         <Suspense fallback={<LoadingState fullScreen size="large" text="Loading SADRC..." />}>
-          <Navbar />
-          {children}
-          <Footer />
+          <div className="flex flex-col flex-grow">
+            <Navbar />
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </Suspense>
       </body>
     </html>
-  )
+  );
 }
