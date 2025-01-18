@@ -142,9 +142,10 @@ export default function Home() {
                   <Image
                     src={location.image}
                     alt={`${location.name} running location`}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-110"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    width={500}
+                    height={300}
+                    unoptimized
+                    className="w-full h-64 object-cover rounded-lg"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60" />
                 </div>
@@ -193,9 +194,10 @@ export default function Home() {
                   <Image
                     src={event.image}
                     alt={event.name}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-110"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    width={500}
+                    height={300}
+                    unoptimized
+                    className="w-full h-64 object-cover rounded-lg"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60" />
                 </div>

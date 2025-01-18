@@ -80,11 +80,11 @@ export default function Navbar() {
           >
             <Image
               src="/images/locations/Logo.avif"
-              alt="SADRC Logo"
-              width={40}
-              height={40}
-              className="mr-3"
-              priority
+              alt="Skegness and District Running Club Logo"
+              width={50}
+              height={50}
+              unoptimized
+              className="h-12 w-auto"
             />
             <span className="self-center text-2xl font-bold whitespace-nowrap text-sadrc-orange">SADRC</span>
           </Link>

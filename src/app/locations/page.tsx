@@ -55,12 +55,11 @@ export default function Locations() {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1a1a1a] z-10" />
                 <Image
                   src={location.image}
-                  alt={`${location.name} running location`}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  alt={location.name}
+                  width={500}
+                  height={300}
                   unoptimized
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority={location.name === 'Skegness'}
+                  className="w-full h-64 object-cover rounded-lg"
                 />
               </div>
               <div className="p-6 relative z-20 -mt-8">
