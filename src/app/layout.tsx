@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Suspense } from 'react'
 import Navbar from './components/Navbar'
-import Footer from './components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,7 +31,6 @@ export default function RootLayout({
         <Suspense fallback={<LoadingSpinner />}>
           <Navbar />
           {children}
-          <Footer />
         </Suspense>
       </body>
     </html>
