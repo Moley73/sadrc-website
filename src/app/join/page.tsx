@@ -77,7 +77,7 @@ export default function Join() {
               <ul className="space-y-4 sm:space-y-6">
                 <li className="flex items-center text-gray-300 text-base sm:text-lg">
                   <FaRunning className="text-sadrc-orange mr-3 sm:mr-4 text-lg sm:text-xl flex-shrink-0" />
-                  Enter races under SADRC name
+                  Enter races under Skegness and District RC name
                 </li>
                 <li className="flex items-center text-gray-300 text-base sm:text-lg">
                   <FaTrophy className="text-sadrc-orange mr-3 sm:mr-4 text-lg sm:text-xl flex-shrink-0" />
