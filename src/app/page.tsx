@@ -126,7 +126,7 @@ export default function Home() {
       </section>
 
       {/* Locations Section */}
-      <section className="py-16 px-4">
+      <section id="locations" className="py-16 px-4 scroll-mt-16">
         <h2 className="text-3xl font-bold text-center mb-4">
           Our <span className="text-sadrc-orange">Locations</span>
         </h2>

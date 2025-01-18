@@ -10,6 +10,7 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
   { name: 'Events', href: '/#events' },
+  { name: 'Locations', href: '/#locations' },
   { name: 'Contact', href: '/#footer' },
 ];
 
@@ -56,100 +57,99 @@ export default function Navbar() {
   }, [scrollToSection]);
 
   const isActive = useCallback((path: string) => {
-    if (path === '/' && pathname !== '/') {
-      return false;
+    if (path === '/') {
+      return pathname === path;
     }
-    if (path.startsWith('/#')) {
-      return false;
-    }
-    return pathname?.startsWith(path);
+    return pathname.startsWith(path);
   }, [pathname]);
 
   return (
-    <nav 
-      className="fixed w-full bg-sadrc-black/95 backdrop-blur-sm z-50 border-b border-gray-800"
-      role="navigation"
-      aria-label="Main navigation"
-    >
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
-          <Link 
-            href="/" 
-            className="flex items-center"
-            aria-label="SADRC Home"
-          >
-            <Image
-              src="/images/locations/Logo.avif"
-              alt="Skegness and District Running Club Logo"
-              width={50}
-              height={50}
-              unoptimized
-              className="h-12 w-auto"
-            />
-            <span className="self-center text-2xl font-bold whitespace-nowrap text-sadrc-orange">SADRC</span>
-          </Link>
+    <nav className="bg-[#1a1a1a] fixed w-full z-50 shadow-lg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/sadrc-logo.png"
+                alt="SADRC Logo"
+                width={40}
+                height={40}
+                className="h-8 w-auto"
+              />
+              <span className="ml-2 text-white font-bold text-lg">SADRC</span>
+            </Link>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button
+              type="button"
+              className="text-gray-300 hover:text-white p-2"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            </button>
+          </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8" role="menubar">
+          <div className="hidden md:flex items-center space-x-8">
             {navigation.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className={`text-sm font-medium transition-colors duration-200 ${
+                className={`${
                   isActive(link.href)
                     ? 'text-sadrc-orange'
                     : 'text-gray-300 hover:text-sadrc-orange'
-                }`}
+                } transition-colors duration-200`}
                 role="menuitem"
                 aria-current={isActive(link.href) ? 'page' : undefined}
+                onClick={(e) => handleNavClick(e, link.href)}
               >
                 {link.name}
               </a>
             ))}
+            <a
+              href="/join"
+              className="bg-sadrc-orange text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-200 font-semibold"
+            >
+              Join Us
+            </a>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={toggleMenu}
-            className="md:hidden text-gray-300 hover:text-sadrc-orange"
-            aria-expanded={isOpen}
-            aria-controls="mobile-menu"
-            aria-label={isOpen ? 'Close menu' : 'Open menu'}
-          >
-            {isOpen ? (
-              <FaTimes className="h-6 w-6" aria-hidden="true" />
-            ) : (
-              <FaBars className="h-6 w-6" aria-hidden="true" />
-            )}
-          </button>
         </div>
+      </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div 
-            className="md:hidden py-4"
-            id="mobile-menu"
-            role="menu"
+      {/* Mobile menu */}
+      <div
+        className={`${
+          isOpen ? 'block' : 'hidden'
+        } md:hidden bg-[#1a1a1a] border-t border-gray-800`}
+      >
+        <div className="px-2 pt-2 pb-3 space-y-1">
+          {navigation.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className={`${
+                isActive(link.href)
+                  ? 'text-sadrc-orange'
+                  : 'text-gray-300 hover:text-sadrc-orange'
+              } block px-3 py-2 text-base transition-colors duration-200`}
+              role="menuitem"
+              aria-current={isActive(link.href) ? 'page' : undefined}
+              onClick={(e) => handleNavClick(e, link.href)}
+            >
+              {link.name}
+            </a>
+          ))}
+          <a
+            href="/join"
+            className="block px-3 py-2 mt-4 text-center bg-sadrc-orange text-white rounded-lg hover:bg-opacity-90 transition-all duration-200 font-semibold"
           >
-            {navigation.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className={`block py-2 text-base font-medium ${
-                  isActive(link.href)
-                    ? 'text-sadrc-orange'
-                    : 'text-gray-300 hover:text-sadrc-orange'
-                }`}
-                role="menuitem"
-                aria-current={isActive(link.href) ? 'page' : undefined}
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
-        )}
+            Join Us
+          </a>
+        </div>
       </div>
     </nav>
   );
