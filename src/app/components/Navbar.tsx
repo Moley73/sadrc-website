@@ -82,7 +82,7 @@ export default function Navbar() {
               className="text-gray-300 hover:text-white p-2"
               onClick={() => setIsOpen(!isOpen)}
             >
-              {isOpen ? <XMarkIcon size={24} /> : <Bars3Icon size={24} />}
+              {isOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
             </button>
           </div>
 
