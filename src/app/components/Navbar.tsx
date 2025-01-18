@@ -13,7 +13,7 @@ const navigation = [
   { name: 'Events', href: '/#events' },
   { name: 'Locations', href: '/#locations' },
   { name: 'Contact', href: '/#footer' },
-];
+] as const;
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,7 +47,7 @@ export default function Navbar() {
         scrollToSection(sectionId);
       }
     } else {
-      router.push(href);
+      router.push(href as any); // Type assertion to fix the error
     }
     setIsOpen(false);
   }, [router, scrollToSection, scrollToFooter]);
