@@ -324,6 +324,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer id="footer" className="bg-[#1a1a1a] text-gray-300 py-16 scroll-mt-16">
+        {/* Footer content */}
+      </footer>
     </main>
   );
 }
