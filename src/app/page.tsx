@@ -310,9 +310,9 @@ export default function Home() {
               {/* Additional Info */}
               <div className="bg-black/20 p-6 rounded-lg border border-gray-800 text-left">
                 <h3 className="text-xl font-semibold text-sadrc-orange mb-3">How to Join</h3>
-                <ol className="space-y-2 text-gray-300">
-                  <li>1. Download and complete the membership form below</li>
-                  <li>2. Email your completed form to <a href="mailto:skegadrc.membership@gmail.com" className="text-sadrc-orange hover:text-orange-400">skegadrc.membership@gmail.com</a></li>
+                <ol className="list-decimal list-inside space-y-2 text-gray-300">
+                  <li>1. Download and complete the membership form</li>
+                  <li>2. Email your completed form to <a href="mailto:infosadrc@mail.com" className="text-sadrc-orange hover:text-orange-400">infosadrc@mail.com</a></li>
                   <li>3. If choosing EA affiliation, bank details will be provided for payment</li>
                 </ol>
                 <p className="text-sm text-gray-400 mt-4">* Subject to terms & conditions, including having been rejected in the ballot</p>

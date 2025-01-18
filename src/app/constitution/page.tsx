@@ -40,11 +40,11 @@ export default function ConstitutionPage() {
             <p>
               If you have any questions about our constitution or club governance, 
               please contact our club secretary at{' '}
-              <a 
-                href="mailto:skegadrc.membership@gmail.com"
-                className="text-sadrc-orange hover:underline"
+              <a
+                className="text-sadrc-orange hover:text-orange-400"
+                href="mailto:infosadrc@mail.com"
               >
-                skegadrc.membership@gmail.com
+                infosadrc@mail.com
               </a>
             </p>
           </div>
