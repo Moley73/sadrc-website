@@ -9,7 +9,7 @@ export default function Join() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
         {/* Header */}
         <div className="mb-12 sm:mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold text-sadrc-orange mb-3 sm:mb-4">SADRC</h1>
+          <h1 className="text-4xl sm:text-5xl font-bold text-sadrc-orange mb-3 sm:mb-4">Skegness and District Running Club</h1>
           <p className="text-lg sm:text-xl text-gray-400">Join our running community</p>
         </div>
 
@@ -77,7 +77,7 @@ export default function Join() {
               <ul className="space-y-4 sm:space-y-6">
                 <li className="flex items-center text-gray-300 text-base sm:text-lg">
                   <FaRunning className="text-sadrc-orange mr-3 sm:mr-4 text-lg sm:text-xl flex-shrink-0" />
-                  Enter races under Skegness and District RC name
+                  Enter races under Skegness and District Running Club name
                 </li>
                 <li className="flex items-center text-gray-300 text-base sm:text-lg">
                   <FaTrophy className="text-sadrc-orange mr-3 sm:mr-4 text-lg sm:text-xl flex-shrink-0" />
