@@ -5,6 +5,10 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
+  // Disable server components for static export
+  experimental: {
+    appDir: true,
+  },
 }
 
 module.exports = nextConfig
