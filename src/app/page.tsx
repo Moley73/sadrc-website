@@ -328,78 +328,88 @@ export default function Home() {
       {/* Footer */}
       <footer id="footer" className="bg-[#1a1a1a] text-gray-300 py-16 scroll-mt-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Contact */}
             <div>
               <h3 className="text-xl font-bold text-sadrc-orange mb-4">Contact Us</h3>
-              <p className="mb-2">Get in touch with us:</p>
-              <a href="mailto:infosadrc@mail.com" className="text-gray-400 hover:text-sadrc-orange block mb-2">
+              <p className="mb-2">General Inquiries:</p>
+              <a href="mailto:infosadrc@mail.com" className="text-gray-400 hover:text-sadrc-orange block mb-4">
                 <FaEnvelope className="inline-block mr-2" />
                 infosadrc@mail.com
               </a>
-              <p className="text-sm text-gray-400">For membership inquiries, please contact our membership team at:</p>
-              <a href="mailto:membership.sadrc@gmail.com" className="text-gray-400 hover:text-sadrc-orange block mt-1">
+              <p className="mb-2">Membership Inquiries:</p>
+              <a href="mailto:membership.sadrc@gmail.com" className="text-gray-400 hover:text-sadrc-orange block">
                 <FaEnvelope className="inline-block mr-2" />
                 membership.sadrc@gmail.com
               </a>
             </div>
 
-            {/* Quick Links */}
+            {/* Training Times */}
             <div>
-              <h3 className="text-xl font-bold text-sadrc-orange mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li>
-                  <a href="/#events" className="text-gray-400 hover:text-sadrc-orange">Events</a>
-                </li>
-                <li>
-                  <a href="/#locations" className="text-gray-400 hover:text-sadrc-orange">Locations</a>
-                </li>
-                <li>
-                  <a href="/join" className="text-gray-400 hover:text-sadrc-orange">Join Us</a>
-                </li>
+              <h3 className="text-xl font-bold text-sadrc-orange mb-4">Training Times</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li>Tuesday: 6:30 PM - Skegness</li>
+                <li>Wednesday: 6:30 PM - Spilsby</li>
+                <li>Thursday: 6:30 PM - Horncastle</li>
+                <li>Thursday: 6:30 PM - Boston</li>
               </ul>
             </div>
 
-            {/* Social Media */}
+            {/* Club Links */}
             <div>
-              <h3 className="text-xl font-bold text-sadrc-orange mb-4">Follow Us</h3>
-              <div className="flex space-x-4">
-                <a
-                  href="https://www.facebook.com/skegnessrunningclub"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-sadrc-orange text-2xl"
-                >
-                  <FaFacebook />
-                </a>
-                <a
-                  href="https://www.instagram.com/skegnessrunningclub"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-sadrc-orange text-2xl"
-                >
-                  <FaInstagram />
-                </a>
+              <h3 className="text-xl font-bold text-sadrc-orange mb-4">Club Links</h3>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <ul className="space-y-2">
+                    <li>
+                      <a href="/about" className="text-gray-400 hover:text-sadrc-orange">About Us</a>
+                    </li>
+                    <li>
+                      <a href="/#events" className="text-gray-400 hover:text-sadrc-orange">Events</a>
+                    </li>
+                    <li>
+                      <a href="/#locations" className="text-gray-400 hover:text-sadrc-orange">Locations</a>
+                    </li>
+                    <li>
+                      <a href="/join" className="text-gray-400 hover:text-sadrc-orange">Join Us</a>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <ul className="space-y-2">
+                    <li>
+                      <a href="/constitution" className="text-gray-400 hover:text-sadrc-orange">Constitution</a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.facebook.com/skegnessrunningclub"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-sadrc-orange"
+                      >
+                        Facebook
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.instagram.com/skegnessrunningclub"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-sadrc-orange"
+                      >
+                        Instagram
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
-
-            {/* Club Info */}
-            <div>
-              <h3 className="text-xl font-bold text-sadrc-orange mb-4">Club Information</h3>
-              <p className="text-gray-400 mb-2">Established in 2012</p>
-              <p className="text-gray-400">Affiliated with England Athletics</p>
-              <a
-                href="/constitution"
-                className="inline-block mt-4 text-gray-400 hover:text-sadrc-orange"
-              >
-                View Club Constitution
-              </a>
             </div>
           </div>
 
           {/* Copyright */}
           <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
             <p>&copy; {new Date().getFullYear()} Skegness and District Running Club. All rights reserved.</p>
+            <p className="mt-2 text-sm">Affiliated with England Athletics</p>
           </div>
         </div>
       </footer>
