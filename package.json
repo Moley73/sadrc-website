@@ -2,12 +2,12 @@
   "name": "sadrc-website",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://moley73.github.io/sadrc-website",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "export": "next export"
+    "lint": "next lint"
   },
   "dependencies": {
     "jspdf": "^2.5.2",
