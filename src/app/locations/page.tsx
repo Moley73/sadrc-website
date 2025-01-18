@@ -50,35 +50,35 @@ export default function Locations() {
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
           {locations.map((location) => (
-            <div key={location.name} className="bg-[#1a1a1a] rounded-lg overflow-hidden hover:bg-[#222222] transition-all duration-300">
-              <div className="h-64 relative">
+            <div key={location.name} className="bg-[#1a1a1a] rounded-lg overflow-hidden hover:bg-[#222222] transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-black/20">
+              <div className="h-64 relative overflow-hidden">
                 <Image
                   src={location.image}
                   alt={location.name}
                   width={600}
                   height={400}
                   unoptimized
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-6 transform transition-all duration-300">
                 <div className="flex justify-between items-start">
-                  <h2 className="text-2xl font-bold text-sadrc-orange mb-2">{location.name}</h2>
+                  <h2 className="text-2xl font-bold text-sadrc-orange mb-2 transform transition-all duration-300 hover:translate-x-1">{location.name}</h2>
                   <a
                     href={location.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-sadrc-orange transition-colors flex items-center gap-2 bg-[#222222] py-1 px-3 rounded-full"
+                    className="text-gray-400 hover:text-sadrc-orange transition-all duration-300 flex items-center gap-2 bg-[#222222] py-1 px-3 rounded-full hover:scale-105 hover:shadow-lg"
                   >
-                    <FaMapMarkerAlt className="text-sm" />
+                    <FaMapMarkerAlt className="text-sm transition-all duration-300" />
                     <span className="text-sm">View Map</span>
-                    <FaExternalLinkAlt className="text-xs" />
+                    <FaExternalLinkAlt className="text-xs transition-all duration-300" />
                   </a>
                 </div>
                 <p className="text-gray-300 mb-2">{location.description}</p>
                 <p className="text-gray-400 mb-3">{location.details}</p>
-                <p className="text-sadrc-orange font-medium flex items-center gap-2">
-                  <span className="inline-block w-2 h-2 bg-sadrc-orange rounded-full" />
+                <p className="text-sadrc-orange font-medium flex items-center gap-2 transform transition-all duration-300 hover:translate-x-1">
+                  <span className="inline-block w-2 h-2 bg-sadrc-orange rounded-full transition-all duration-300" />
                   {location.times}
                 </p>
               </div>

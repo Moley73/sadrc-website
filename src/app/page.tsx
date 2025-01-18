@@ -135,27 +135,27 @@ export default function Home() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {locations.map((location) => (
-            <div key={location.name} className="bg-[#1a1a1a] rounded-lg overflow-hidden hover:bg-[#222222] transition-all duration-300">
-              <div className="h-48 relative">
+            <div key={location.name} className="bg-[#1a1a1a] rounded-lg overflow-hidden hover:bg-[#222222] transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-black/20">
+              <div className="h-48 relative overflow-hidden">
                 <Image
                   src={location.image}
                   alt={location.name}
                   width={400}
                   height={300}
                   unoptimized
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <div className="p-4">
-                <h3 className="text-xl font-bold text-sadrc-orange">{location.name}</h3>
+              <div className="p-4 transform transition-all duration-300">
+                <h3 className="text-xl font-bold text-sadrc-orange transform transition-all duration-300 hover:translate-x-1">{location.name}</h3>
                 <p className="text-gray-300 text-sm mt-2">{location.description}</p>
-                <div className="flex items-center mt-4">
-                  <FaMapMarkerAlt className="text-sadrc-orange mr-2" />
+                <div className="flex items-center mt-4 transform transition-all duration-300 hover:translate-x-1">
+                  <FaMapMarkerAlt className="text-sadrc-orange mr-2 transition-all duration-300" />
                   <a
                     href={location.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-sadrc-orange text-sm"
+                    className="text-gray-400 hover:text-sadrc-orange text-sm transition-colors duration-300"
                   >
                     Get Directions
                   </a>
@@ -176,23 +176,23 @@ export default function Home() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {events.map((event) => (
-            <div key={event.name} className="bg-[#222222] rounded-lg overflow-hidden hover:bg-[#2a2a2a] transition-all duration-300">
-              <div className="h-56 relative">
+            <div key={event.name} className="bg-[#222222] rounded-lg overflow-hidden hover:bg-[#2a2a2a] transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-black/20">
+              <div className="h-56 relative overflow-hidden">
                 <Image
                   src={event.image}
                   alt={event.name}
                   width={600}
                   height={400}
                   unoptimized
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-sadrc-orange mb-2">{event.name}</h3>
-                <div className="flex items-center text-gray-400 mb-4">
-                  <FaCalendarAlt className="mr-2" />
+              <div className="p-6 transform transition-all duration-300">
+                <h3 className="text-2xl font-bold text-sadrc-orange mb-2 transform transition-all duration-300 hover:translate-x-1">{event.name}</h3>
+                <div className="flex items-center text-gray-400 mb-4 transform transition-all duration-300 hover:translate-x-1">
+                  <FaCalendarAlt className="mr-2 transition-all duration-300" />
                   <span>{event.date}</span>
-                  <FaClock className="ml-4 mr-2" />
+                  <FaClock className="ml-4 mr-2 transition-all duration-300" />
                   <span>{event.time}</span>
                 </div>
                 <p className="text-gray-300 mb-4">{event.description}</p>
@@ -201,7 +201,7 @@ export default function Home() {
                     href={event.registrationLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block bg-sadrc-orange hover:bg-orange-600 text-white px-6 py-2 rounded-full transition-colors"
+                    className="inline-block bg-sadrc-orange hover:bg-orange-600 text-white px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/20"
                   >
                     Register Now
                   </a>
