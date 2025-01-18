@@ -50,15 +50,15 @@ export default function Locations() {
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
           {locations.map((location) => (
-            <div key={location.name} className="bg-[#1a1a1a] rounded-lg overflow-hidden group hover:bg-[#222222] transition-all duration-300">
-              <div className="relative aspect-video w-full">
+            <div key={location.name} className="bg-[#1a1a1a] rounded-lg overflow-hidden hover:bg-[#222222] transition-all duration-300">
+              <div className="h-64 relative">
                 <Image
                   src={location.image}
                   alt={location.name}
-                  width={500}
-                  height={300}
+                  width={600}
+                  height={400}
                   unoptimized
-                  className="w-full h-64 object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
@@ -68,7 +68,7 @@ export default function Locations() {
                     href={location.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-sadrc-orange transition-colors flex items-center gap-2 bg-[#1a1a1a] py-1 px-3 rounded-full hover:bg-[#222222]"
+                    className="text-gray-400 hover:text-sadrc-orange transition-colors flex items-center gap-2 bg-[#222222] py-1 px-3 rounded-full"
                   >
                     <FaMapMarkerAlt className="text-sm" />
                     <span className="text-sm">View Map</span>

@@ -126,108 +126,89 @@ export default function Home() {
       </section>
 
       {/* Locations Section */}
-      <section className="py-16 sm:py-24">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-3 sm:mb-4">
-            Our <span className="text-sadrc-orange">Locations</span>
-          </h2>
-          <p className="text-center text-gray-400 mb-8 sm:mb-12 text-sm sm:text-base">
-            Choose from our four fantastic locations across Lincolnshire
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {locations.map((location) => (
-              <div key={location.name} 
-                   className="bg-black/50 backdrop-blur-sm rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-sadrc-orange group">
-                <div className="relative h-40 sm:h-48">
-                  <Image
-                    src={location.image}
-                    alt={`${location.name} running location`}
-                    width={500}
-                    height={300}
-                    unoptimized
-                    className="w-full h-64 object-cover rounded-lg"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60" />
-                </div>
-                <div className="p-4 sm:p-6">
-                  <div className="flex items-center justify-between text-sadrc-orange mb-3 sm:mb-4">
-                    <location.icon className="text-3xl sm:text-4xl group-hover:scale-110 transition-transform" />
-                    <div className="flex items-center space-x-2">
-                      <FaClock className="text-base sm:text-lg" />
-                      <span className="text-gray-300 text-sm sm:text-base">{location.day}s 6:30 PM</span>
-                    </div>
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-bold mb-2 text-white group-hover:text-sadrc-orange transition-colors">
-                    {location.name}
-                  </h3>
-                  <p className="text-gray-400 mb-4 text-sm sm:text-base">{location.description}</p>
-                  <a 
+      <section className="py-16 px-4">
+        <h2 className="text-3xl font-bold text-center mb-4">
+          Our <span className="text-sadrc-orange">Locations</span>
+        </h2>
+        <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+          Choose from our four fantastic locations across Lincolnshire
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {locations.map((location) => (
+            <div key={location.name} className="bg-[#1a1a1a] rounded-lg overflow-hidden hover:bg-[#222222] transition-all duration-300">
+              <div className="h-48 relative">
+                <Image
+                  src={location.image}
+                  alt={location.name}
+                  width={400}
+                  height={300}
+                  unoptimized
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="text-xl font-bold text-sadrc-orange">{location.name}</h3>
+                <p className="text-gray-300 text-sm mt-2">{location.description}</p>
+                <div className="flex items-center mt-4">
+                  <FaMapMarkerAlt className="text-sadrc-orange mr-2" />
+                  <a
                     href={location.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sadrc-orange hover:text-orange-400 transition-colors text-sm sm:text-base"
+                    className="text-gray-400 hover:text-sadrc-orange text-sm"
                   >
-                    <FaDirections className="mr-2" />
-                    <span>Get Directions</span>
+                    Get Directions
                   </a>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Events Section */}
-      <section id="events" className="py-16 sm:py-24 bg-[#1a1a1a] scroll-mt-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-3 sm:mb-4">
-            Upcoming <span className="text-sadrc-orange">Events</span>
-          </h2>
-          <p className="text-center text-gray-400 mb-8 sm:mb-12 text-sm sm:text-base">
-            Challenge yourself at our exciting upcoming races
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
-            {events.map((event) => (
-              <div key={event.name} 
-                   className="bg-black/50 backdrop-blur-sm rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-sadrc-orange group">
-                <div className="relative h-48 sm:h-56">
-                  <Image
-                    src={event.image}
-                    alt={event.name}
-                    width={500}
-                    height={300}
-                    unoptimized
-                    className="w-full h-64 object-cover rounded-lg"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60" />
-                </div>
-                <div className="p-4 sm:p-6">
-                  <div className="flex items-center text-sadrc-orange mb-3 sm:mb-4 space-x-2">
-                    <FaCalendarAlt className="text-xl sm:text-2xl" />
-                    <span className="text-gray-300 text-sm sm:text-base">{event.date} at {event.time}</span>
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-bold mb-2 text-white group-hover:text-sadrc-orange transition-colors">
-                    {event.name}
-                  </h3>
-                  <p className="text-gray-400 mb-4 text-sm sm:text-base">{event.description}</p>
-                  {event.registrationLink ? (
-                    <a 
-                      href={event.registrationLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block bg-sadrc-orange text-white px-4 sm:px-6 py-2 rounded-lg font-semibold hover:bg-orange-600 transition-colors text-sm sm:text-base"
-                    >
-                      Register Now
-                    </a>
-                  ) : (
-                    <span className="inline-block bg-gray-700 text-white px-4 sm:px-6 py-2 rounded-lg font-semibold text-sm sm:text-base cursor-not-allowed">
-                      TBC
-                    </span>
-                  )}
-                </div>
+      <section className="py-16 px-4 bg-[#1a1a1a]">
+        <h2 className="text-3xl font-bold text-center mb-4">
+          Upcoming <span className="text-sadrc-orange">Events</span>
+        </h2>
+        <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+          Join us at our upcoming races and events
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {events.map((event) => (
+            <div key={event.name} className="bg-[#222222] rounded-lg overflow-hidden hover:bg-[#2a2a2a] transition-all duration-300">
+              <div className="h-56 relative">
+                <Image
+                  src={event.image}
+                  alt={event.name}
+                  width={600}
+                  height={400}
+                  unoptimized
+                  className="w-full h-full object-cover"
+                />
               </div>
-            ))}
-          </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-sadrc-orange mb-2">{event.name}</h3>
+                <div className="flex items-center text-gray-400 mb-4">
+                  <FaCalendarAlt className="mr-2" />
+                  <span>{event.date}</span>
+                  <FaClock className="ml-4 mr-2" />
+                  <span>{event.time}</span>
+                </div>
+                <p className="text-gray-300 mb-4">{event.description}</p>
+                {event.registrationLink && (
+                  <a
+                    href={event.registrationLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-sadrc-orange hover:bg-orange-600 text-white px-6 py-2 rounded-full transition-colors"
+                  >
+                    Register Now
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
