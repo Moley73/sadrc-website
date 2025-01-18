@@ -2,8 +2,13 @@
 
 import { FaRunning, FaTrophy, FaUsers, FaPoundSign, FaDownload, FaEnvelope } from 'react-icons/fa';
 import FacebookFeed from '../components/FacebookFeed';
+import { useEffect } from 'react';
 
 export default function Join() {
+  useEffect(() => {
+    // Any client-side initialization can go here
+  }, []);
+
   return (
     <main className="min-h-screen bg-[#1a1a1a]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
@@ -79,11 +84,11 @@ export default function Join() {
               <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-sadrc-orange">Member Benefits</h2>
               <ul className="space-y-4 sm:space-y-6">
                 <li className="flex items-center text-gray-300 text-base sm:text-lg">
-                  <FaRunning className="text-sadrc-orange mr-3 sm:mr-4 text-lg sm:text-xl flex-shrink-0" />
-                  Enter races under Skegness and District Running Club name
+                  <FaTrophy className="text-sadrc-orange mr-3 sm:mr-4 text-lg sm:text-xl flex-shrink-0" />
+                  Enter races under SADRC name
                 </li>
                 <li className="flex items-center text-gray-300 text-base sm:text-lg">
-                  <FaTrophy className="text-sadrc-orange mr-3 sm:mr-4 text-lg sm:text-xl flex-shrink-0" />
+                  <FaRunning className="text-sadrc-orange mr-3 sm:mr-4 text-lg sm:text-xl flex-shrink-0" />
                   Participate in Lincs League Cross Country
                 </li>
                 <li className="flex items-center text-gray-300 text-base sm:text-lg">
@@ -95,13 +100,12 @@ export default function Join() {
                   Race entry discounts (if EA affiliated)
                 </li>
               </ul>
-              <p className="text-xs sm:text-sm text-gray-500 mt-4 sm:mt-6">* Subject to club and England Athletics membership criteria</p>
             </section>
 
             {/* Facebook Feed */}
             <section>
               <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-sadrc-orange">Latest Updates</h2>
-              <div className="bg-black/20 rounded-lg overflow-hidden">
+              <div className="bg-[#242424] p-4 rounded-lg">
                 <FacebookFeed />
               </div>
             </section>
