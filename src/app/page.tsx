@@ -266,7 +266,14 @@ export default function Home() {
       </section>
 
       {/* Facebook Feed */}
-      <FacebookFeed />
+      <section className="py-16 px-4">
+        <h2 className="text-3xl font-bold text-center mb-12">
+          Latest from <span className="text-sadrc-orange">Facebook</span>
+        </h2>
+        <div className="max-w-2xl mx-auto">
+          <FacebookFeed />
+        </div>
+      </section>
 
       {/* Call to Action */}
       <section id="contact-section" className="py-12 sm:py-16 bg-black/30">
