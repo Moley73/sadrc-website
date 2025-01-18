@@ -29,8 +29,21 @@ export default function RootLayout({
 }) {
   useEffect(() => {
     // Initialize web vitals monitoring
-    initWebVitals();
+    if (typeof window !== 'undefined') {
+      initWebVitals();
+    }
+  }, []);
 
+  useEffect(() => {
+    if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
+      Sentry.init({
+        dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
+        tracesSampleRate: 1.0,
+      });
+    }
+  }, []);
+
+  useEffect(() => {
     // Add resize event listener for responsive design
     const handleResize = () => {
       // Update CSS custom property for viewport height
