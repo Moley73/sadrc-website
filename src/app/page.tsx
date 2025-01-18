@@ -167,7 +167,7 @@ export default function Home() {
       </section>
 
       {/* Events Section */}
-      <section className="py-16 px-4 bg-[#1a1a1a]">
+      <section id="events" className="py-16 px-4 bg-[#1a1a1a] scroll-mt-16">
         <h2 className="text-3xl font-bold text-center mb-4">
           Upcoming <span className="text-sadrc-orange">Events</span>
         </h2>

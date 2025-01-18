@@ -6,11 +6,12 @@ import Image from 'next/image';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useRouter, usePathname } from 'next/navigation';
 
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/#events', label: 'Events' },
-  { href: '/join', label: 'Join Us', highlight: true }
+const navigation = [
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Events', href: '/#events' },
+  { name: 'Locations', href: '/locations' },
+  { name: 'Contact', href: '/#contact' },
 ];
 
 export default function Navbar() {
@@ -91,7 +92,7 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8" role="menubar">
-            {navLinks.map((link) => (
+            {navigation.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -100,15 +101,11 @@ export default function Navbar() {
                   isActive(link.href)
                     ? 'text-sadrc-orange'
                     : 'text-gray-300 hover:text-sadrc-orange'
-                } ${
-                  link.highlight
-                    ? 'px-4 py-2 bg-sadrc-orange text-white rounded-lg hover:bg-opacity-90 hover:text-white'
-                    : ''
                 }`}
                 role="menuitem"
                 aria-current={isActive(link.href) ? 'page' : undefined}
               >
-                {link.label}
+                {link.name}
               </a>
             ))}
           </div>
@@ -136,7 +133,7 @@ export default function Navbar() {
             id="mobile-menu"
             role="menu"
           >
-            {navLinks.map((link) => (
+            {navigation.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -145,15 +142,11 @@ export default function Navbar() {
                   isActive(link.href)
                     ? 'text-sadrc-orange'
                     : 'text-gray-300 hover:text-sadrc-orange'
-                } ${
-                  link.highlight
-                    ? 'mt-4 px-4 py-2 bg-sadrc-orange text-white rounded-lg hover:bg-opacity-90 text-center hover:text-white'
-                    : ''
                 }`}
                 role="menuitem"
                 aria-current={isActive(link.href) ? 'page' : undefined}
               >
-                {link.label}
+                {link.name}
               </a>
             ))}
           </div>
