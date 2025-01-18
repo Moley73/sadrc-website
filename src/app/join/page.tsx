@@ -45,7 +45,7 @@ export default function Join() {
               <div className="space-y-6">
                 <ol className="list-decimal list-inside space-y-4 text-gray-300 text-base sm:text-lg ml-4">
                   <li>Download and complete the membership form below</li>
-                  <li>Email your completed form to <span className="text-sadrc-orange">infosadrc@mail.com</span></li>
+                  <li>Email your completed form to <span className="text-sadrc-orange">skegadrc.membership@gmail.com</span></li>
                   <li>If choosing EA affiliation, bank details will be provided for payment</li>
                 </ol>
                 <p className="text-gray-400 text-sm mt-4">* Subject to terms & conditions, including having been rejected in the ballot</p>
@@ -61,7 +61,7 @@ export default function Join() {
                     <span>Download Form</span>
                   </a>
                   <a 
-                    href="mailto:infosadrc@mail.com"
+                    href="mailto:skegadrc.membership@gmail.com"
                     className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-transparent text-sadrc-orange text-base sm:text-lg font-medium border-2 border-sadrc-orange overflow-hidden transition-all duration-300 ease-out hover:text-white focus:outline-none focus:ring-2 focus:ring-sadrc-orange focus:ring-offset-2 focus:ring-offset-[#1a1a1a] rounded-md w-full sm:w-auto"
                   >
                     <span className="absolute inset-0 w-full h-full bg-sadrc-orange transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></span>
