@@ -79,7 +79,7 @@ export default function Navbar() {
             aria-label="SADRC Home"
           >
             <Image
-              src="./images/locations/Logo.avif"
+              src="/images/locations/Logo.avif"
               alt="Skegness and District Running Club Logo"
               width={50}
               height={50}

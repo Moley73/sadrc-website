@@ -10,7 +10,7 @@ export default function Locations() {
       details: 'Meeting point: Links Bar/Hotel, Skegness',
       times: 'Thursday at 6:30 PM',
       mapUrl: 'https://maps.google.com/?q=Links+Hotel+Skegness',
-      image: './images/locations/skegness-location.jpg'
+      image: '/images/locations/skegness-location.jpg'
     },
     {
       name: 'Spilsby',
@@ -18,7 +18,7 @@ export default function Locations() {
       details: 'Meeting point: New Life Centre, Spilsby',
       times: 'Tuesday at 6:30 PM',
       mapUrl: 'https://maps.google.com/?q=New+Life+Centre+Spilsby',
-      image: './images/locations/spilsby-location.jpg'
+      image: '/images/locations/spilsby-location.jpg'
     },
     {
       name: 'Horncastle',
@@ -26,7 +26,7 @@ export default function Locations() {
       details: 'Meeting point: Cattle Market Car Park, Horncastle',
       times: 'Monday at 6:30 PM',
       mapUrl: 'https://maps.google.com/?q=Cattle+Market+Car+Park+Horncastle',
-      image: './images/locations/horncastle-location.jpg'
+      image: '/images/locations/horncastle-location.jpg'
     },
     {
       name: 'Boston',
@@ -34,7 +34,7 @@ export default function Locations() {
       details: 'Meeting point: Fuddy Duck, PE21 7TW, Boston',
       times: 'Thursday at 6:30 PM',
       mapUrl: 'https://maps.google.com/?q=Fuddy+Duck+Boston+PE21+7TW',
-      image: './images/locations/boston-location.jpg'
+      image: '/images/locations/boston-location.jpg'
     }
   ]
 
