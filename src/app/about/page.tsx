@@ -46,6 +46,38 @@ export default function About() {
           </div>
         </div>
 
+        {/* Committee Members Section */}
+        <div className="bg-[#1a1a1a] p-6 rounded-lg mb-8">
+          <h2 className="text-2xl font-bold mb-6 text-sadrc-orange">Committee Members</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Main Committee Positions */}
+            <div>
+              <h3 className="text-xl font-semibold mb-4 text-white">Main Committee</h3>
+              <ul className="space-y-2 text-gray-300">
+                <li><span className="font-semibold text-sadrc-orange">Chair:</span> Shawn Thomas</li>
+                <li><span className="font-semibold text-sadrc-orange">Vice Chair:</span> Mark Sands</li>
+                <li><span className="font-semibold text-sadrc-orange">Secretary:</span> Claire Harness</li>
+                <li><span className="font-semibold text-sadrc-orange">Treasurer:</span> Helena Shelton</li>
+                <li><span className="font-semibold text-sadrc-orange">Membership Secretary:</span> Position Available</li>
+                <li><span className="font-semibold text-sadrc-orange">DBS Verifier:</span> Leanne Rickett</li>
+                <li><span className="font-semibold text-sadrc-orange">Kit Officer:</span> Phillip Weaver</li>
+              </ul>
+            </div>
+
+            {/* Welfare Officers */}
+            <div>
+              <h3 className="text-xl font-semibold mb-4 text-white">Welfare Officers</h3>
+              <ul className="space-y-2 text-gray-300">
+                <li>Sarah Thomas</li>
+                <li>Sally Sharp</li>
+                <li>Rob Cox</li>
+                <li>Rebecca Grice</li>
+                <li>Mark Sands</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         {/* Constitution Section */}
         <div className="bg-[#1a1a1a] p-6 rounded-lg">
           <div className="flex justify-between items-center mb-6">
