@@ -1,4 +1,4 @@
-import { FaFacebook, FaEnvelope, FaFileDownload, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaEnvelope, FaFileDownload, FaYoutube, FaStrava } from 'react-icons/fa';
 
 export default function Footer() {
   return (
