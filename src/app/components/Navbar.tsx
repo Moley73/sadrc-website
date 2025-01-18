@@ -3,22 +3,40 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { useRouter, usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
-    { name: 'Events', href: '/events' },
+    { name: 'Events', href: '/#events-section' },
     { name: 'Contact', href: '/contact' }
   ];
 
-  const scrollToEvents = (e: React.MouseEvent) => {
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
     e.preventDefault();
-    const eventsSection = document.getElementById('events-section');
-    if (eventsSection) {
-      eventsSection.scrollIntoView({ behavior: 'smooth' });
+    if (href === '/#events-section') {
+      if (pathname !== '/') {
+        router.push('/');
+        // Wait for navigation to complete before scrolling
+        setTimeout(() => {
+          const eventsSection = document.getElementById('events-section');
+          if (eventsSection) {
+            eventsSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        const eventsSection = document.getElementById('events-section');
+        if (eventsSection) {
+          eventsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    } else {
+      router.push(href);
     }
     setIsOpen(false);
   };
@@ -33,15 +51,15 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {navItems.map((item, index) => (
-              <Link
+            {navItems.map((item) => (
+              <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:text-sadrc-orange transition-colors"
-                onClick={index === 2 ? scrollToEvents : undefined}
+                className="text-gray-300 hover:text-sadrc-orange transition-colors cursor-pointer"
+                onClick={(e) => handleNavClick(e, item.href)}
               >
                 {item.name}
-              </Link>
+              </a>
             ))}
           </div>
 
@@ -59,15 +77,15 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 bg-sadrc-black/95 backdrop-blur-sm border-b border-gray-800">
-            {navItems.map((item, index) => (
-              <Link
+            {navItems.map((item) => (
+              <a
                 key={item.name}
                 href={item.href}
-                className="block px-3 py-2 text-gray-300 hover:text-sadrc-orange transition-colors"
-                onClick={index === 2 ? scrollToEvents : () => setIsOpen(false)}
+                className="block px-3 py-2 text-gray-300 hover:text-sadrc-orange transition-colors cursor-pointer"
+                onClick={(e) => handleNavClick(e, item.href)}
               >
                 {item.name}
-              </Link>
+              </a>
             ))}
           </div>
         </div>
