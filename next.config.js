@@ -1,14 +1,17 @@
 /** @type {import('next').NextConfig} */
+const isProduction = process.env.NODE_ENV === 'production'
+const basePath = isProduction ? '/sadrc-website' : ''
+
 const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
     loader: 'custom',
     loaderFile: './image-loader.js',
-    path: '/sadrc-website',
+    path: basePath,
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/sadrc-website' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/sadrc-website' : '',
+  basePath: basePath,
+  assetPrefix: basePath,
 }
 
 module.exports = nextConfig
