@@ -10,7 +10,7 @@ export default function Join() {
         {/* Header */}
         <div className="mb-12 sm:mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold text-sadrc-orange mb-3 sm:mb-4">Skegness and District Running Club</h1>
-          <p className="text-lg sm:text-xl text-gray-400">Join our running community, established in 2012</p>
+          <p className="text-lg sm:text-xl text-gray-400">Join our running community, established in 2015</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
