@@ -64,7 +64,7 @@ export default function Navbar() {
             aria-label="SADRC Home"
           >
             <Image
-              src="/images/locations/Logo.avif"
+              src="/images/sadrc-logo.png"
               alt="SADRC Logo"
               width={40}
               height={40}

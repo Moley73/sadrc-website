@@ -47,7 +47,7 @@ export default function Home() {
       name: 'The Spilsby Show 10k',
       date: 'Sunday 13th July 2025',
       time: '10:00 AM',
-      image: '/images/locations/spilsby-show.jpg',
+      image: '/images/events/spilsby-show.jpg',
       description: 'Join us for our annual Spilsby Show 10k race - a challenging and scenic route through the Lincolnshire countryside.',
       registrationLink: 'https://www.spilsbyshow.co.uk/runners/'
     },
@@ -55,7 +55,7 @@ export default function Home() {
       name: 'Bolingbroke Breaker',
       date: 'September 2025',
       time: '10:00 AM',
-      image: '/images/locations/breaker-10k.avif',
+      image: '/images/events/bolingbroke-breaker.jpg',
       description: 'The legendary Bolingbroke Breaker returns! A tough but rewarding race through historic Bolingbroke.',
       registrationLink: null
     }
@@ -81,6 +81,7 @@ export default function Home() {
           fill
           className="object-cover"
           priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-sadrc-black/80 via-sadrc-black/50 to-sadrc-black" />
         <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center pt-16">
@@ -143,6 +144,7 @@ export default function Home() {
                     alt={`${location.name} running location`}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60" />
                 </div>
@@ -193,6 +195,7 @@ export default function Home() {
                     alt={event.name}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60" />
                 </div>
