@@ -212,6 +212,16 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Facebook Feed */}
+      <section className="py-16 px-4">
+        <h2 className="text-3xl font-bold text-center mb-12">
+          Latest from <span className="text-sadrc-orange">Facebook</span>
+        </h2>
+        <div className="max-w-2xl mx-auto">
+          <FacebookFeed />
+        </div>
+      </section>
+
       {/* Race League and Challenge Trophy Section */}
       <section className="py-16 sm:py-24">
         <div className="container mx-auto px-4">
@@ -265,17 +275,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Facebook Feed */}
-      <section className="py-16 px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          Latest from <span className="text-sadrc-orange">Facebook</span>
-        </h2>
-        <div className="max-w-2xl mx-auto">
-          <FacebookFeed />
-        </div>
-      </section>
-
-      {/* Call to Action */}
+      {/* Membership Section */}
       <section id="contact-section" className="py-12 sm:py-16 bg-black/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
@@ -355,9 +355,9 @@ export default function Home() {
             <div>
               <h3 className="text-xl font-bold text-sadrc-orange mb-4">Training Times</h3>
               <ul className="space-y-2 text-gray-400">
-                <li>Tuesday: 6:30 PM - Skegness</li>
-                <li>Wednesday: 6:30 PM - Spilsby</li>
-                <li>Thursday: 6:30 PM - Horncastle</li>
+                <li>Monday: 6:30 PM - Horncastle</li>
+                <li>Tuesday: 6:30 PM - Spilsby</li>
+                <li>Thursday: 6:30 PM - Skegness</li>
                 <li>Thursday: 6:30 PM - Boston</li>
               </ul>
             </div>
