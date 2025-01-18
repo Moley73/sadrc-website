@@ -1,4 +1,4 @@
-import { FaFacebook, FaEnvelope, FaFileDownload } from 'react-icons/fa';
+import { FaFacebook, FaEnvelope, FaFileDownload, FaYoutube } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -25,15 +25,35 @@ export default function Footer() {
                 <FaEnvelope className="mr-2" />
                 skegadrc.membership@gmail.com
               </a>
-              <a
-                href="https://www.facebook.com/SkegnessAndDistrictRunningClub"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center text-gray-400 hover:text-sadrc-orange transition-colors"
-              >
-                <FaFacebook className="mr-2" />
-                Follow us on Facebook
-              </a>
+              <div className="flex space-x-4">
+                <a
+                  href="https://www.facebook.com/groups/skegnessanddistrictrunningclub"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-sadrc-orange"
+                  aria-label="Facebook"
+                >
+                  <FaFacebook className="h-6 w-6" />
+                </a>
+                <a
+                  href="https://www.strava.com/clubs/sadrc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-sadrc-orange"
+                  aria-label="Strava"
+                >
+                  <FaStrava className="h-6 w-6" />
+                </a>
+                <a
+                  href="https://www.youtube.com/@skegnessanddistrictrunning3040"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-sadrc-orange"
+                  aria-label="YouTube"
+                >
+                  <FaYoutube className="h-6 w-6" />
+                </a>
+              </div>
               <a
                 href="/images/locations/SADRC application 2024-25.docx"
                 download
