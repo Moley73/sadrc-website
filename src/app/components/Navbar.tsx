@@ -111,6 +111,22 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
+            <Link
+              href="/constitution"
+              className={`text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${
+                pathname === '/constitution' ? 'bg-sadrc-orange text-white' : ''
+              }`}
+            >
+              Constitution
+            </Link>
+            <a
+              href="https://clubshop.fastraxrunning.com/product-category/skegness_and_district_rc/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+            >
+              Club Shop
+            </a>
             <a
               href="/join"
               className="bg-sadrc-orange text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-200 font-semibold"
@@ -144,6 +160,22 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
+          <Link
+            href="/constitution"
+            className={`text-gray-300 hover:text-white block px-3 py-2 text-base rounded-md text-sm font-medium ${
+              pathname === '/constitution' ? 'bg-sadrc-orange text-white' : ''
+            }`}
+          >
+            Constitution
+          </Link>
+          <a
+            href="https://clubshop.fastraxrunning.com/product-category/skegness_and_district_rc/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-300 hover:text-white block px-3 py-2 text-base rounded-md text-sm font-medium"
+          >
+            Club Shop
+          </a>
           <a
             href="/join"
             className="block px-3 py-2 mt-4 text-center bg-sadrc-orange text-white rounded-lg hover:bg-opacity-90 transition-all duration-200 font-semibold"

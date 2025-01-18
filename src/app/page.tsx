@@ -212,6 +212,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Club Shop Section */}
+      <section className="py-16 sm:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-sadrc-orange mb-4">Club Shop</h2>
+            <p className="text-gray-400 text-lg">Get your official SADRC running gear</p>
+          </div>
+          <div className="bg-black/20 p-6 rounded-lg border border-gray-800 text-center">
+            <p className="text-gray-300 mb-6">
+              Visit our club shop to purchase official SADRC running gear. Show your club pride with our range of high-quality running apparel.
+            </p>
+            <a
+              href="https://clubshop.fastraxrunning.com/product-category/skegness_and_district_rc/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-6 py-3 bg-sadrc-orange text-white text-lg font-medium rounded-lg hover:bg-opacity-90 transition-all duration-200"
+            >
+              <span>Visit Club Shop</span>
+              <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Facebook Feed */}
       <section className="py-16 px-4">
         <h2 className="text-3xl font-bold text-center mb-12">
