@@ -52,17 +52,16 @@ export default function Locations() {
           {locations.map((location) => (
             <div key={location.name} className="bg-[#1a1a1a] rounded-lg overflow-hidden group hover:bg-[#222222] transition-all duration-300">
               <div className="relative aspect-video w-full">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1a1a1a] z-10" />
                 <Image
                   src={location.image}
                   alt={location.name}
                   width={500}
                   height={300}
                   unoptimized
-                  className="w-full h-64 object-cover rounded-lg"
+                  className="w-full h-64 object-cover"
                 />
               </div>
-              <div className="p-6 relative z-20 -mt-8">
+              <div className="p-6">
                 <div className="flex justify-between items-start">
                   <h2 className="text-2xl font-bold text-sadrc-orange mb-2">{location.name}</h2>
                   <a

@@ -83,7 +83,7 @@ export default function Home() {
           priority
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-sadrc-black/80 via-sadrc-black/50 to-sadrc-black" />
+        <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center pt-16">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 text-sadrc-orange">
             Skegness and District
