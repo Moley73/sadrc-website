@@ -65,11 +65,12 @@ export default function Footer() {
                 className="inline-block"
               >
                 <Image
-                  src="/images/england-athletics-logo.svg"
+                  src="/images/england-athletics-logo.png"
                   alt="England Athletics Logo"
                   width={200}
                   height={100}
                   className="opacity-80 hover:opacity-100 transition-opacity"
+                  priority
                 />
               </a>
             </div>
