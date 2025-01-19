@@ -32,7 +32,7 @@ export default function Footer() {
             <h3 className="text-xl font-bold text-sadrc-orange mb-4">Follow Us</h3>
             <div className="flex space-x-4">
               <a
-                href="https://www.facebook.com/skegnessrunningclub"
+                href="https://www.facebook.com/skegnessanddistrictrunningclub"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-sadrc-orange transition-colors"
@@ -40,7 +40,7 @@ export default function Footer() {
                 <FaFacebook className="h-6 w-6" />
               </a>
               <a
-                href="https://www.instagram.com/skegnessrunningclub"
+                href="https://www.instagram.com/sadrc_uk?hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-sadrc-orange transition-colors"

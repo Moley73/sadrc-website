@@ -5,7 +5,7 @@ import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -18,6 +18,12 @@ const navigation = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+
+  const isActive = (href: string) => {
+    if (href === '/') return pathname === href;
+    return pathname.startsWith(href);
+  };
 
   const scrollToSection = useCallback((sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -27,56 +33,45 @@ export default function Navbar() {
     }
   }, []);
 
-  const scrollToFooter = useCallback((e: React.MouseEvent) => {
-    e.preventDefault();
-    const footer = document.getElementById('footer');
-    if (footer) {
-      footer.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsOpen(false);
-  }, []);
-
   const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     if (href.startsWith('/#')) {
       const sectionId = href.substring(2);
-      if (sectionId === 'footer') {
-        scrollToFooter(e);
-      } else {
+      if (pathname === '/') {
+        // If we're on the home page, just scroll
         scrollToSection(sectionId);
+      } else {
+        // If we're on another page, navigate home first then scroll
+        router.push('/');
+        // Wait for navigation to complete before scrolling
+        setTimeout(() => {
+          const section = document.getElementById(sectionId);
+          if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
       }
     }
-    setIsOpen(false);
-  }, [scrollToSection, scrollToFooter]);
-
-  const isActive = useCallback((path: string) => {
-    if (path === '/') {
-      return pathname === '/';
-    }
-    return pathname.startsWith(path);
-  }, [pathname]);
+  }, [scrollToSection, pathname, router]);
 
   return (
-    <nav className="bg-[#1a1a1a] fixed w-full z-50 shadow-lg">
+    <nav className="bg-[#121212] fixed w-full z-50 top-0 left-0 border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center">
+        <div className="flex justify-between h-16">
+          <div className="flex items-center">
+            <Link href="/" className="flex-shrink-0">
               <Image
                 src="/images/locations/Logo.avif"
                 alt="SADRC Logo"
-                width={50}
-                height={50}
-                unoptimized
-                className="h-10 w-auto"
+                width={40}
+                height={40}
+                className="rounded-full"
               />
-              <span className="ml-2 text-white font-bold text-lg">SADRC</span>
             </Link>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="flex md:hidden">
             <button
               type="button"
               className="text-gray-300 hover:text-white p-2"
@@ -99,8 +94,6 @@ export default function Navbar() {
                       ? 'text-sadrc-orange'
                       : 'text-gray-300 hover:text-sadrc-orange'
                   } transition-colors duration-200`}
-                  role="menuitem"
-                  aria-current={isActive(link.href) ? 'page' : undefined}
                 >
                   {link.name}
                 </a>
@@ -113,21 +106,11 @@ export default function Navbar() {
                       ? 'text-sadrc-orange'
                       : 'text-gray-300 hover:text-sadrc-orange'
                   } transition-colors duration-200`}
-                  role="menuitem"
-                  aria-current={isActive(link.href) ? 'page' : undefined}
                 >
                   {link.name}
                 </Link>
               )
             ))}
-            <Link
-              href="/constitution"
-              className={`text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${
-                pathname === '/constitution' ? 'bg-sadrc-orange text-white' : ''
-              }`}
-            >
-              Constitution
-            </Link>
             <a
               href="https://clubshop.fastraxrunning.com/product-category/skegness_and_district_rc/"
               target="_blank"
@@ -163,9 +146,7 @@ export default function Navbar() {
                   isActive(link.href)
                     ? 'text-sadrc-orange'
                     : 'text-gray-300 hover:text-sadrc-orange'
-                } block px-3 py-2 text-base transition-colors duration-200`}
-                role="menuitem"
-                aria-current={isActive(link.href) ? 'page' : undefined}
+                } block px-3 py-2 text-base font-medium transition-colors duration-200`}
               >
                 {link.name}
               </a>
@@ -177,33 +158,23 @@ export default function Navbar() {
                   isActive(link.href)
                     ? 'text-sadrc-orange'
                     : 'text-gray-300 hover:text-sadrc-orange'
-                } block px-3 py-2 text-base transition-colors duration-200`}
-                role="menuitem"
-                aria-current={isActive(link.href) ? 'page' : undefined}
+                } block px-3 py-2 text-base font-medium transition-colors duration-200`}
               >
                 {link.name}
               </Link>
             )
           ))}
-          <Link
-            href="/constitution"
-            className={`text-gray-300 hover:text-white block px-3 py-2 text-base rounded-md text-sm font-medium ${
-              pathname === '/constitution' ? 'bg-sadrc-orange text-white' : ''
-            }`}
-          >
-            Constitution
-          </Link>
           <a
             href="https://clubshop.fastraxrunning.com/product-category/skegness_and_district_rc/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-300 hover:text-white block px-3 py-2 text-base rounded-md text-sm font-medium"
+            className="text-gray-300 hover:text-white block px-3 py-2 text-base font-medium"
           >
             Club Shop
           </a>
           <Link
             href="/join"
-            className="block px-3 py-2 mt-4 text-center bg-sadrc-orange text-white rounded-lg hover:bg-opacity-90 transition-all duration-200 font-semibold"
+            className="bg-sadrc-orange text-white block px-3 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-200 font-semibold mt-2 mx-2"
           >
             Join Us
           </Link>

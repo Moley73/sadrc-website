@@ -47,7 +47,7 @@ export default function Home() {
       name: 'Spilsby Show 10K',
       date: 'July 14, 2025',
       time: '11:00 AM',
-      image: '/images/locations/spilsby-show.jpg',
+      image: '/images/events/spilsby-show.jpg',
       description: 'A fantastic multi-terrain 10K race at the annual Spilsby Show. Perfect for all abilities!',
       registrationLink: 'https://www.spilsbyshow.co.uk/runners/'
     },
@@ -55,7 +55,7 @@ export default function Home() {
       name: 'Bolingbroke Breaker',
       date: 'September 2025',
       time: '10:00 AM',
-      image: '/images/locations/breaker-10k.avif',
+      image: '/images/events/Breaker-10.jpg',
       description: 'The legendary Bolingbroke Breaker returns! A tough but rewarding race through historic Bolingbroke.',
       registrationLink: null
     }
@@ -74,14 +74,15 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <div className="relative min-h-[600px] h-screen">
+      <div className="relative h-screen min-h-[600px]">
         <Image
-          src="/running-hero.jpg"
+          src="/images/hero/running-hero.jpg"
           alt="Runners at sunset"
-          fill
-          className="object-cover"
+          width={1920}
+          height={1080}
+          className="absolute inset-0 object-cover w-full h-full"
           priority
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+          quality={100}
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center pt-16">
@@ -353,6 +354,46 @@ export default function Home() {
             >
               <FaFileDownload className="text-2xl" />
               <span className="text-lg">Download Membership Form</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <section id="footer" className="py-16 bg-[#1a1a1a]">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">
+              Get in <span className="text-sadrc-orange">Touch</span>
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Have a question or want to join our running community? Send us a message and we'll get back to you as soon as possible.
+            </p>
+          </div>
+          <div className="mt-16 text-center text-gray-400">
+            <p className="mb-2">You can also reach us directly at:</p>
+            <a href="mailto:infosadrc@mail.com" className="text-sadrc-orange hover:text-orange-400 font-semibold">
+              infosadrc@mail.com
+            </a>
+          </div>
+
+          {/* Social Media Links */}
+          <div className="flex justify-center space-x-6 mt-8">
+            <a
+              href="https://www.facebook.com/skegnessanddistrictrunningclub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-sadrc-orange transition-colors duration-300"
+            >
+              <FaFacebook className="text-2xl" />
+            </a>
+            <a
+              href="https://www.instagram.com/sadrc_uk?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-sadrc-orange transition-colors duration-300"
+            >
+              <FaInstagram className="text-2xl" />
             </a>
           </div>
         </div>

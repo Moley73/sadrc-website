@@ -6,9 +6,7 @@ const nextConfig = {
   },
   experimental: {
     typedRoutes: true
-  },
-  basePath: '/sadrc-website',
-  assetPrefix: '/sadrc-website'
+  }
 }
 
 module.exports = nextConfig

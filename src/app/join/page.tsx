@@ -1,117 +1,103 @@
 'use client';
 
-import { FaRunning, FaTrophy, FaUsers, FaPoundSign, FaDownload, FaEnvelope } from 'react-icons/fa';
-import FacebookFeed from '../components/FacebookFeed';
-import { useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { FaMapMarkerAlt, FaRunning, FaClock, FaEnvelope, FaFacebook } from 'react-icons/fa';
+import Navbar from '../components/Navbar';
 
-export default function Join() {
-  useEffect(() => {
-    // Any client-side initialization can go here
-  }, []);
-
+export default function JoinUs() {
   return (
-    <main className="min-h-screen bg-[#1a1a1a]">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-        {/* Header */}
-        <div className="mb-12 sm:mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold text-sadrc-orange mb-3 sm:mb-4">Skegness and District Running Club</h1>
-          <p className="text-lg sm:text-xl text-gray-400">Join our running community, established in 2015</p>
+    <main className="min-h-screen bg-[#121212]">
+      <Navbar />
+      
+      {/* Hero Section */}
+      <div className="relative h-[40vh] min-h-[300px]">
+        <Image
+          src="/images/hero/running-hero.jpg"
+          alt="Runners at sunset"
+          width={1920}
+          height={1080}
+          className="absolute inset-0 object-cover w-full h-full"
+          priority
+          quality={100}
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
+          <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-sadrc-orange">Join Our Running Community</h1>
+          <p className="text-lg sm:text-xl text-gray-200 max-w-2xl">
+            Become part of a supportive and friendly running club that welcomes runners of all abilities
+          </p>
         </div>
+      </div>
 
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
-          {/* Left Column */}
-          <div className="space-y-12">
-            {/* Club Membership */}
-            <section>
-              <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-sadrc-orange">Club Membership</h2>
-              <ul className="space-y-4 sm:space-y-6">
-                <li className="flex items-center text-gray-300 text-base sm:text-lg">
-                  <FaPoundSign className="text-sadrc-orange mr-3 sm:mr-4 text-lg sm:text-xl flex-shrink-0" />
-                  Club membership is FREE
-                </li>
-                <li className="flex items-center text-gray-300 text-base sm:text-lg">
-                  <FaUsers className="text-sadrc-orange mr-3 sm:mr-4 text-lg sm:text-xl flex-shrink-0" />
-                  Open to anyone aged 15 or over
-                </li>
-                <li className="flex items-center text-gray-300 text-base sm:text-lg">
-                  <FaRunning className="text-sadrc-orange mr-3 sm:mr-4 text-lg sm:text-xl flex-shrink-0" />
-                  Membership year: April to March
-                </li>
-                <li className="flex items-center text-gray-300 text-base sm:text-lg">
-                  <FaPoundSign className="text-sadrc-orange mr-3 sm:mr-4 text-lg sm:text-xl flex-shrink-0" />
-                  Optional England Athletics affiliation: £19
-                </li>
-              </ul>
-            </section>
+      {/* Membership Benefits */}
+      <section className="py-16 bg-gray-900">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12 text-sadrc-orange">Why Join SADRC?</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-gray-800 p-6 rounded-lg">
+              <FaRunning className="text-sadrc-orange text-4xl mb-4" />
+              <h3 className="text-xl font-semibold mb-2 text-white">Group Runs</h3>
+              <p className="text-gray-300">Join our regular group runs across multiple locations. We cater to all abilities with different pace groups.</p>
+            </div>
+            <div className="bg-gray-800 p-6 rounded-lg">
+              <FaClock className="text-sadrc-orange text-4xl mb-4" />
+              <h3 className="text-xl font-semibold mb-2 text-white">Structured Training</h3>
+              <p className="text-gray-300">Access structured training sessions and expert advice to help improve your running.</p>
+            </div>
+            <div className="bg-gray-800 p-6 rounded-lg">
+              <FaMapMarkerAlt className="text-sadrc-orange text-4xl mb-4" />
+              <h3 className="text-xl font-semibold mb-2 text-white">Multiple Locations</h3>
+              <p className="text-gray-300">Run with us in Skegness, Spilsby, Horncastle, or Boston - choose the location that suits you best.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            {/* How to Join */}
-            <section>
-              <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-sadrc-orange">How to Join</h2>
-              <div className="space-y-6">
-                <ol className="list-decimal list-inside space-y-4 text-gray-300 text-base sm:text-lg ml-4">
-                  <li>Download and complete the membership form below</li>
-                  <li>Email your completed form to <span className="text-sadrc-orange">infosadrc@mail.com</span></li>
-                  <li>If choosing EA affiliation, bank details will be provided for payment</li>
-                </ol>
-                <p className="text-gray-400 text-sm mt-4">* Subject to terms & conditions, including having been rejected in the ballot</p>
-                <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="/membership-form.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-sadrc-orange text-white text-base sm:text-lg font-medium overflow-hidden transition-all duration-300 ease-out hover:bg-sadrc-orange/90 focus:outline-none focus:ring-2 focus:ring-sadrc-orange focus:ring-offset-2 focus:ring-offset-[#1a1a1a] rounded-md w-full sm:w-auto"
-                  >
-                    <span className="absolute right-full w-12 h-full bg-white/10 transform translate-x-0 group-hover:translate-x-[500%] transition-transform duration-700 ease-in-out block"></span>
-                    <FaDownload className="mr-2 sm:mr-3 text-lg sm:text-xl" aria-hidden="true" />
-                    <span>Download Form</span>
-                  </a>
+      {/* How to Join */}
+      <section className="py-16 bg-[#121212]">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12 text-sadrc-orange">How to Join</h2>
+          <div className="max-w-3xl mx-auto bg-gray-800 rounded-lg p-8">
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold mb-2 text-white">1. Try Us Out First</h3>
+                <p className="text-gray-300">Come along to any of our sessions for free! We offer three trial runs before you need to become a member.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2 text-white">2. Complete the Application</h3>
+                <p className="text-gray-300">Download and fill out our membership application form. Annual membership is just £19.</p>
+                <Link 
+                  href="/images/locations/SADRC application 2024-25.docx"
+                  className="inline-block mt-4 bg-sadrc-orange hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-full transition duration-200"
+                >
+                  Download Application Form
+                </Link>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2 text-white">3. Get in Touch</h3>
+                <p className="text-gray-300">Have questions? Contact us through any of these channels:</p>
+                <div className="mt-4 flex flex-col sm:flex-row gap-4">
                   <a 
                     href="mailto:infosadrc@mail.com"
-                    className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-transparent text-sadrc-orange text-base sm:text-lg font-medium border-2 border-sadrc-orange overflow-hidden transition-all duration-300 ease-out hover:text-white focus:outline-none focus:ring-2 focus:ring-sadrc-orange focus:ring-offset-2 focus:ring-offset-[#1a1a1a] rounded-md w-full sm:w-auto"
+                    className="flex items-center gap-2 text-gray-200 hover:text-sadrc-orange transition-colors"
                   >
-                    <span className="absolute inset-0 w-full h-full bg-sadrc-orange transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></span>
-                    <FaEnvelope className="mr-2 sm:mr-3 text-lg sm:text-xl relative z-10" aria-hidden="true" />
-                    <span className="relative z-10">Email Us</span>
+                    <FaEnvelope /> infosadrc@mail.com
+                  </a>
+                  <a 
+                    href="https://www.facebook.com/groups/sadrc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-gray-200 hover:text-sadrc-orange transition-colors"
+                  >
+                    <FaFacebook /> Join our Facebook Group
                   </a>
                 </div>
               </div>
-            </section>
-          </div>
-
-          {/* Right Column */}
-          <div className="space-y-12">
-            <section>
-              <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-sadrc-orange">Member Benefits</h2>
-              <ul className="space-y-4 sm:space-y-6">
-                <li className="flex items-center text-gray-300 text-base sm:text-lg">
-                  <FaTrophy className="text-sadrc-orange mr-3 sm:mr-4 text-lg sm:text-xl flex-shrink-0" />
-                  Enter races under SADRC name
-                </li>
-                <li className="flex items-center text-gray-300 text-base sm:text-lg">
-                  <FaRunning className="text-sadrc-orange mr-3 sm:mr-4 text-lg sm:text-xl flex-shrink-0" />
-                  Participate in Lincs League Cross Country
-                </li>
-                <li className="flex items-center text-gray-300 text-base sm:text-lg">
-                  <FaTrophy className="text-sadrc-orange mr-3 sm:mr-4 text-lg sm:text-xl flex-shrink-0" />
-                  Eligible for London Marathon club places draw*
-                </li>
-                <li className="flex items-center text-gray-300 text-base sm:text-lg">
-                  <FaPoundSign className="text-sadrc-orange mr-3 sm:mr-4 text-lg sm:text-xl flex-shrink-0" />
-                  Race entry discounts (if EA affiliated)
-                </li>
-              </ul>
-            </section>
-
-            {/* Facebook Feed */}
-            <section>
-              <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-sadrc-orange">Latest Updates</h2>
-              <div className="bg-[#242424] p-4 rounded-lg">
-                <FacebookFeed />
-              </div>
-            </section>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </main>
   );
 }
