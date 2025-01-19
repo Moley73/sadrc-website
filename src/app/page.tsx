@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FaMapMarkerAlt, FaRunning, FaCalendarAlt, FaClock, FaDirections, FaFileDownload, FaEnvelope, FaFacebook, FaInstagram } from 'react-icons/fa';
 import Navbar from './components/Navbar';
-import FacebookFeed from './components/FacebookFeed';
 
 export default function Home() {
   const locations = [
@@ -235,15 +234,6 @@ export default function Home() {
                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Facebook Feed */}
-      <section className="py-12 sm:py-16 bg-[#1a1a1a]">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <FacebookFeed />
           </div>
         </div>
       </section>
