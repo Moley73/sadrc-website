@@ -62,14 +62,14 @@ export default function Footer() {
                 href="https://www.englandathletics.org/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-block"
+                className="inline-block max-w-[200px] hover:opacity-90 transition-opacity"
               >
                 <Image
                   src="/images/england-athletics-logo.png"
                   alt="England Athletics Logo"
                   width={200}
-                  height={100}
-                  className="opacity-80 hover:opacity-100 transition-opacity"
+                  height={80}
+                  className="w-full h-auto"
                   priority
                 />
               </a>
