@@ -2,14 +2,14 @@
 
 import { useEffect, useState } from 'react';
 
-// Extend the Window interface globally
-declare global {
+// Use module augmentation for global types
+declare module global {
   interface Window {
-    FB?: {
+    FB: {
       XFBML: {
         parse(): void;
       };
-    };
+    } | undefined;
   }
 }
 
