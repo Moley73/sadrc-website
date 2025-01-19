@@ -2,52 +2,54 @@
 
 import { useEffect, useState } from 'react';
 
+declare global {
+  interface Window {
+    FB?: any;
+  }
+}
+
 export default function FacebookFeed() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    // Add Facebook SDK
     const loadFacebookSDK = () => {
-      try {
-        // Load Facebook SDK
-        const script = document.createElement('script');
-        script.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v18.0';
-        script.async = true;
-        script.defer = true;
-        script.onload = () => setIsLoading(false);
-        script.onerror = () => setError('Failed to load Facebook feed');
-        document.body.appendChild(script);
-
-        // Add FB root if not present
-        if (!document.getElementById('fb-root')) {
-          const fbRoot = document.createElement('div');
-          fbRoot.id = 'fb-root';
-          document.body.appendChild(fbRoot);
-        }
-
-        // Cleanup function
-        return () => {
-          const existingScript = document.querySelector(`script[src="${script.src}"]`);
-          if (existingScript) {
-            document.body.removeChild(existingScript);
-          }
-          const fbRoot = document.getElementById('fb-root');
-          if (fbRoot) {
-            document.body.removeChild(fbRoot);
-          }
-        };
-      } catch (err) {
-        setError('Failed to initialize Facebook feed');
-        setIsLoading(false);
+      if (document.getElementById('facebook-jssdk')) {
+        return;
       }
+
+      const js = document.createElement('script');
+      js.id = 'facebook-jssdk';
+      js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v18.0';
+      js.async = true;
+      js.defer = true;
+      js.crossOrigin = 'anonymous';
+      js.onload = () => {
+        setIsLoading(false);
+        if (window.FB) {
+          window.FB.XFBML.parse();
+        }
+      };
+      js.onerror = () => setError('Failed to load Facebook feed');
+
+      const fjs = document.getElementsByTagName('script')[0];
+      fjs.parentNode?.insertBefore(js, fjs);
     };
 
-    return loadFacebookSDK();
+    loadFacebookSDK();
+
+    return () => {
+      const script = document.getElementById('facebook-jssdk');
+      if (script) {
+        script.remove();
+      }
+    };
   }, []);
 
   return (
-    <div className="w-full">
-      <div className="w-full bg-black/20 rounded-xl p-4">
+    <div className="flex flex-col items-center w-full">
+      <div className="w-full max-w-xl bg-black/20 rounded-xl p-4">
         {isLoading && (
           <div className="flex items-center justify-center h-[600px]">
             <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-sadrc-orange"></div>
@@ -59,7 +61,7 @@ export default function FacebookFeed() {
           </div>
         )}
         <div 
-          className={`fb-page ${isLoading ? 'hidden' : ''}`}
+          className="fb-page"
           data-href="https://www.facebook.com/profile.php?id=61554240866294"
           data-tabs="timeline"
           data-width="500"
@@ -76,7 +78,6 @@ export default function FacebookFeed() {
         target="_blank"
         rel="noopener noreferrer"
         className="mt-8 inline-flex items-center px-6 py-3 bg-sadrc-orange text-white rounded-lg hover:bg-opacity-90 transition-colors"
-        aria-label="Visit our Facebook page"
       >
         <svg 
           className="w-5 h-5 mr-2" 
