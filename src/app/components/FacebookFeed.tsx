@@ -2,15 +2,14 @@
 
 import { useEffect, useState } from 'react';
 
-interface FacebookSDK {
-  XFBML: {
-    parse: () => void;
-  };
-}
-
+// Extend the Window interface globally
 declare global {
   interface Window {
-    FB?: FacebookSDK;
+    FB?: {
+      XFBML: {
+        parse(): void;
+      };
+    };
   }
 }
 
@@ -78,7 +77,7 @@ export default function FacebookFeed() {
         )}
         <div 
           className="fb-page"
-          data-href="https://www.facebook.com/profile.php?id=61554240866294"
+          data-href="https://www.facebook.com/skegnessanddistrictrunningclub"
           data-tabs="timeline"
           data-width="500"
           data-height="600"
@@ -90,7 +89,7 @@ export default function FacebookFeed() {
       </div>
       
       <a 
-        href="https://www.facebook.com/profile.php?id=61554240866294" 
+        href="https://www.facebook.com/skegnessanddistrictrunningclub" 
         target="_blank"
         rel="noopener noreferrer"
         className="mt-8 inline-flex items-center px-6 py-3 bg-sadrc-orange text-white rounded-lg hover:bg-opacity-90 transition-colors"
