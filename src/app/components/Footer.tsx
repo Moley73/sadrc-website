@@ -69,8 +69,8 @@ export default function Footer() {
                   alt="England Athletics Logo"
                   width={200}
                   height={80}
-                  className="w-full h-auto"
-                  priority
+                  style={{ width: '100%', height: 'auto' }}
+                  unoptimized
                 />
               </a>
             </div>
