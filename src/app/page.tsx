@@ -240,12 +240,20 @@ export default function Home() {
       </section>
 
       {/* Facebook Feed */}
-      <section className="py-16 px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          Latest from <span className="text-sadrc-orange">Facebook</span>
-        </h2>
-        <div className="max-w-2xl mx-auto">
-          <FacebookFeed />
+      <section className="py-12 sm:py-16 bg-[#1a1a1a]">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <div className="fb-page w-full" 
+              data-href="https://www.facebook.com/profile.php?id=61554240866294"
+              data-tabs="timeline" 
+              data-width="500"
+              data-height="800" 
+              data-small-header="false"
+              data-adapt-container-width="true" 
+              data-hide-cover="false"
+              data-show-facepile="true">
+            </div>
+          </div>
         </div>
       </section>
 
