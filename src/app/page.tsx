@@ -110,7 +110,7 @@ export default function Home() {
       <section className="py-12 sm:py-16 bg-[#1a1a1a]">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl sm:text-3xl font-bold text-center text-white mb-6 sm:mb-8">
-            Welcome to <span className="text-sadrc-orange">SADRC</span>
+            Welcome to <span className="text-sadrc-orange">Skegness and District RC</span>
           </h2>
           <div className="max-w-3xl mx-auto text-gray-300 space-y-3 sm:space-y-4 px-4 sm:px-6">
             <p className="text-sm sm:text-base">
@@ -218,11 +218,11 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-sadrc-orange mb-4">Club Shop</h2>
-            <p className="text-gray-400 text-lg">Get your official SADRC running gear</p>
+            <p className="text-gray-400 text-lg">Get your official Skegness and District RC running gear</p>
           </div>
           <div className="bg-black/20 p-6 rounded-lg border border-gray-800 text-center">
             <p className="text-gray-300 mb-6">
-              Visit our club shop to purchase official SADRC running gear. Show your club pride with our range of high-quality running apparel.
+              Visit our club shop to purchase official Skegness and District RC running gear. Show your club pride with our range of high-quality running apparel.
             </p>
             <a
               href="https://clubshop.fastraxrunning.com/product-category/skegness_and_district_rc/"
@@ -257,10 +257,10 @@ export default function Home() {
             <div className="bg-black/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-800 hover:border-sadrc-orange group transition-all duration-300">
               <div className="p-6 sm:p-8">
                 <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-                  SADRC <span className="text-sadrc-orange">Race League</span>
+                  Skegness and District RC <span className="text-sadrc-orange">Race League</span>
                 </h2>
                 <p className="text-gray-300 mb-6 text-sm sm:text-base">
-                  Exclusive to SADRC members! Join our exciting Race League where you can compete with fellow club members, track your progress, and challenge yourself throughout the year. Follow our Facebook page for updates, results, and upcoming race events.
+                  Exclusive to Skegness and District RC members! Join our exciting Race League where you can compete with fellow club members, track your progress, and challenge yourself throughout the year. Follow our Facebook page for updates, results, and upcoming race events.
                 </p>
                 <a 
                   href="https://www.facebook.com/profile.php?id=61554240866294"
@@ -307,7 +307,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">
-              SADRC <span className="text-sadrc-orange">Membership 2025</span>
+              Skegness and District RC <span className="text-sadrc-orange">Membership 2025</span>
             </h2>
 
             {/* Membership Details */}
@@ -326,7 +326,7 @@ export default function Home() {
                 <div className="bg-black/20 p-6 rounded-lg border border-gray-800">
                   <h3 className="text-xl font-semibold text-sadrc-orange mb-3">Member Benefits</h3>
                   <ul className="space-y-2 text-gray-300">
-                    <li>• Enter races under SADRC name</li>
+                    <li>• Enter races under Skegness and District RC name</li>
                     <li>• Participate in Lincs League Cross Country</li>
                     <li>• Eligible for London Marathon club places draw*</li>
                     <li>• Race entry discounts (if EA affiliated)</li>
