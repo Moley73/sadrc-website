@@ -2,9 +2,15 @@
 
 import { useEffect, useState } from 'react';
 
+interface FacebookSDK {
+  XFBML: {
+    parse: () => void;
+  };
+}
+
 declare global {
   interface Window {
-    FB?: any;
+    FB: FacebookSDK;
   }
 }
 
