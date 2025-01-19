@@ -94,6 +94,12 @@ export default function JoinUs() {
                   </a>
                 </div>
               </div>
+              <div className="space-y-2">
+                <h3 className="text-xl font-bold text-sadrc-orange">Member Benefits</h3>
+                <ul className="list-disc list-inside space-y-2 text-gray-300">
+                  <li>Enter races under <span className="text-white">Skegness and District RC</span> name</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
