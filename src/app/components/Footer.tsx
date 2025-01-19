@@ -1,4 +1,5 @@
 import { FaEnvelope, FaFacebook, FaInstagram } from 'react-icons/fa';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -51,10 +52,28 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Skegness and District Running Club. All rights reserved.</p>
-          <p className="mt-2 text-sm">Affiliated with England Athletics</p>
+        {/* Copyright and Affiliation */}
+        <div className="mt-8 pt-8 border-t border-gray-800 text-center">
+          <div className="flex flex-col items-center justify-center space-y-4">
+            <p className="text-gray-400">&copy; {new Date().getFullYear()} Skegness and District Running Club. All rights reserved.</p>
+            <div className="flex flex-col items-center">
+              <p className="text-sm text-gray-400 mb-2">Affiliated with</p>
+              <a 
+                href="https://www.englandathletics.org/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <Image
+                  src="/images/england-athletics-logo.svg"
+                  alt="England Athletics Logo"
+                  width={200}
+                  height={100}
+                  className="opacity-80 hover:opacity-100 transition-opacity"
+                />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

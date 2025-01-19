@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <g>
+    <path fill="#E31B23" d="M120 80 C 140 60, 160 60, 180 80 A 40 40 0 0 1 180 120"/>
+    <path fill="#8C8C8C" d="M180 80 L 220 80 L 220 120 L 180 120 Z"/>
+    <path fill="#8C8C8C" d="M240 60 L 280 60 L 280 140 L 240 140 Z"/>
+    <text x="120" y="160" font-family="Arial" font-size="24" fill="#8C8C8C">ENGLAND ATHLETICS</text>
+    <path fill="#8C8C8C" d="M160 90 Q 180 60, 200 90" stroke="#8C8C8C" stroke-width="2" fill="none"/>
+  </g>
+</svg>
