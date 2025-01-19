@@ -228,7 +228,7 @@ export default function Home() {
               href="https://clubshop.fastraxrunning.com/product-category/skegness_and_district_rc/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3 bg-sadrc-orange text-white text-lg font-medium rounded-lg hover:bg-opacity-90 transition-all duration-200"
+              className="inline-flex items-center bg-sadrc-orange text-white text-lg font-medium rounded-lg hover:bg-opacity-90 transition-all duration-200"
             >
               <span>Visit Club Shop</span>
               <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -243,16 +243,7 @@ export default function Home() {
       <section className="py-12 sm:py-16 bg-[#1a1a1a]">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
-            <div className="fb-page w-full" 
-              data-href="https://www.facebook.com/profile.php?id=61554240866294"
-              data-tabs="timeline" 
-              data-width="500"
-              data-height="800" 
-              data-small-header="false"
-              data-adapt-container-width="true" 
-              data-hide-cover="false"
-              data-show-facepile="true">
-            </div>
+            <FacebookFeed />
           </div>
         </div>
       </section>
