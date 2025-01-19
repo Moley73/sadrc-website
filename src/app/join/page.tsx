@@ -68,7 +68,7 @@ export default function JoinUs() {
                 <h3 className="text-xl font-semibold mb-2 text-white">2. Complete the Application</h3>
                 <p className="text-gray-300">Download and fill out our membership application form. Annual membership is just £19.</p>
                 <Link 
-                  href="/images/locations/SADRC application 2024-25.docx"
+                  href="/images/locations/SADRC application 2024-25 (1).docx"
                   className="inline-block mt-4 bg-sadrc-orange hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-full transition duration-200"
                 >
                   Download Application Form
