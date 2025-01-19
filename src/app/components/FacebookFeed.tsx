@@ -10,7 +10,7 @@ interface FacebookSDK {
 
 declare global {
   interface Window {
-    FB: FacebookSDK;
+    FB?: FacebookSDK;
   }
 }
 
@@ -19,10 +19,16 @@ export default function FacebookFeed() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Add Facebook SDK
     const loadFacebookSDK = () => {
       if (document.getElementById('facebook-jssdk')) {
         return;
+      }
+
+      // Add FB root div if not present
+      if (!document.getElementById('fb-root')) {
+        const fbRoot = document.createElement('div');
+        fbRoot.id = 'fb-root';
+        document.body.appendChild(fbRoot);
       }
 
       const js = document.createElement('script');
@@ -49,6 +55,10 @@ export default function FacebookFeed() {
       const script = document.getElementById('facebook-jssdk');
       if (script) {
         script.remove();
+      }
+      const fbRoot = document.getElementById('fb-root');
+      if (fbRoot) {
+        fbRoot.remove();
       }
     };
   }, []);
