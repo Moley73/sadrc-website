@@ -252,7 +252,7 @@ export default function Home() {
                   Exclusive to Skegness and District RC members! Join our exciting Race League where you can compete with fellow club members, track your progress, and challenge yourself throughout the year. Follow our Facebook page for updates, results, and upcoming race events.
                 </p>
                 <a 
-                  href="https://www.facebook.com/profile.php?id=61554240866294"
+                  href="https://www.facebook.com/profile.php?id=61572382600721"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center bg-sadrc-orange text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-all duration-300 transform group-hover:scale-105"
