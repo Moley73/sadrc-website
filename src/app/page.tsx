@@ -227,7 +227,7 @@ export default function Home() {
               href="https://clubshop.fastraxrunning.com/product-category/skegness_and_district_rc/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center bg-sadrc-orange text-white text-lg font-medium rounded-lg hover:bg-opacity-90 transition-all duration-200"
+              className="inline-flex items-center bg-sadrc-orange text-white text-lg font-medium rounded-lg hover:bg-opacity-90 transition-all duration-200 shadow-lg transform hover:scale-105"
             >
               <span>Visit Club Shop</span>
               <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -255,7 +255,7 @@ export default function Home() {
                   href="https://www.facebook.com/profile.php?id=61572382600721"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center bg-sadrc-orange text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-all duration-300 transform group-hover:scale-105"
+                  className="inline-flex items-center bg-sadrc-orange text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >
                   <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
@@ -278,7 +278,7 @@ export default function Home() {
                   href="https://www.facebook.com/profile.php?id=100083222857849"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center bg-sadrc-orange text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-all duration-300 transform group-hover:scale-105"
+                  className="inline-flex items-center bg-sadrc-orange text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >
                   <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
@@ -339,7 +339,7 @@ export default function Home() {
             <a
               href="/images/locations/SADRC application 2024-25.docx"
               download
-              className="inline-flex items-center bg-sadrc-orange hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 space-x-3"
+              className="inline-flex items-center bg-sadrc-orange hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 space-x-3 shadow-lg"
             >
               <FaFileDownload className="text-2xl" />
               <span className="text-lg">Download Membership Form</span>
