@@ -221,7 +221,7 @@ export default function Home() {
           </div>
           <div className="bg-black/20 p-6 rounded-lg border border-gray-800 text-center">
             <p className="text-gray-300 mb-6">
-              Visit our club shop to purchase official Skegness and District RC running gear. Show your club pride with our range of high-quality running apparel.
+              Visit our club shop to purchase official Skegness and District RC running gear. Show your club pride with our range of high-quality running apparel. Club vests, training t-shirts, and fast wraps are available from the club Kit Officer.
             </p>
             <a
               href="https://clubshop.fastraxrunning.com/product-category/skegness_and_district_rc/"
