@@ -31,38 +31,70 @@ export default function About() {
         </h1>
         
         {/* Club Introduction */}
-        <div className="bg-[#1a1a1a] p-6 rounded-lg mb-8 shadow-lg">
-          <h2 className="text-3xl font-bold mb-4 text-sadrc-orange">
-            Our Club
+        <div className="bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] p-8 rounded-lg mb-8 shadow-xl border-l-4 border-sadrc-orange">
+          <h2 className="text-3xl font-bold mb-6 text-sadrc-orange flex items-center">
+            <span className="mr-2">Our Club</span>
+            <div className="w-10 h-1 bg-sadrc-orange ml-2"></div>
           </h2>
+          
           <div className="space-y-6 text-gray-300 leading-relaxed">
-            <p className="text-lg">
+            <p className="text-lg border-l-2 border-gray-700 pl-4">
               Welcome to Skegness and District Running Club! We are a friendly community of runners based in Lincolnshire.
             </p>
-            <p className="text-lg">
-              Our club welcomes runners of all abilities, from beginners to experienced athletes. We offer structured training sessions, social runs, and participate in various local and national events.
-            </p>
-            <p className="text-lg">
-              With four locations across Lincolnshire - Skegness, Spilsby, Horncastle, and Boston - we provide accessible running opportunities for everyone in our community.
-            </p>
-            <p className="text-lg">
-              Established in 2015, Skegness & District Running Club is a popular, thriving club with over 150 members across Skegness, Spilsby, Horncastle and Boston.
-            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+              <div className="bg-[#222222] p-4 rounded-lg">
+                <h3 className="text-xl font-semibold text-sadrc-orange mb-3">All Abilities Welcome</h3>
+                <p className="text-gray-300">
+                  Our club welcomes runners of all abilities, from beginners to experienced athletes. We offer structured training sessions, social runs, and participate in various local and national events.
+                </p>
+              </div>
+              
+              <div className="bg-[#222222] p-4 rounded-lg">
+                <h3 className="text-xl font-semibold text-sadrc-orange mb-3">Multiple Locations</h3>
+                <p className="text-gray-300">
+                  With four locations across Lincolnshire - Skegness, Spilsby, Horncastle, and Boston - we provide accessible running opportunities for everyone in our community.
+                </p>
+              </div>
+            </div>
+            
+            <div className="bg-[#222222] p-5 rounded-lg mb-6">
+              <p className="text-lg italic">
+                "Established in 2015, Skegness & District Running Club is a popular, thriving club with over 150 members across Skegness, Spilsby, Horncastle and Boston."
+              </p>
+            </div>
+            
+            <h3 className="text-2xl font-semibold text-sadrc-orange mb-4">Our Story</h3>
+            
             <p className="text-lg">
               Co-founder Andy Shelton, a dedicated runner since 1986 inspired his wife Helena to join him in running in 2012. Helena quickly developed a passion for the sport, and together with Glenn Hillaby who at the time was landlord of the Nelson Butt in Spilsby and a keen runner, they founded SADRC in January 2015, running from The Crown Hotel in Skegness, as well as the Nelson Butt. Their shared vision was to make running accessible to athletes of all abilities in the local area.
             </p>
+            
             <p className="text-lg">
               The club received affiliation from England Athletics in April 2015. Shortly afterwards, a group was formed in Boston and four years later, a group in Horncastle was established due to increasing demand.
             </p>
+            
+            <div className="flex items-center my-6">
+              <div className="flex-grow h-px bg-gray-700"></div>
+              <div className="mx-4 text-gray-500">2025</div>
+              <div className="flex-grow h-px bg-gray-700"></div>
+            </div>
+            
             <p className="text-lg">
               Fast forward to 2025 Skegness club night is run by Andy and Helena now at the Links Hotel and the Spilsby, Boston, and Horncastle groups are led by a group of extremely dedicated Run Leaders. For more information about these groups and their leaders, please look on our website.
             </p>
+            
+            <h3 className="text-2xl font-semibold text-sadrc-orange mb-4">Club Activities</h3>
+            
             <p className="text-lg">
               Qualified Coach Andy continues to guide club runners, while Helena supports beginners with programmes like the popular 'Couch to 5k'. She has successfully helped many runners progress through the club. Members regularly participate in 10k runs in Skegness, Grimsby, Cleethorpes, and Woodhall Spa, and in their own event, the Bolingbroke Breaker. The club is also involved in organising the Spilsby Show 10k. They also host a monthly Boating Lake Run in Skegness, a free event marshalled and timed by volunteers for both club members and other locals.
             </p>
-            <p className="text-lg">
-              The club stands testament to the power of dedication, teamwork, and friendship. The committed Run Leaders and committee continue to inspire and lead the club, promoting physical and mental well-being and fostering a welcoming environment where every runner feels valued and encouraged. The vision and hard work that's been created has a lasting legacy that has positively impacted many in the East Lincolnshire running community.
-            </p>
+            
+            <div className="bg-[#222222] p-5 rounded-lg mt-6">
+              <p className="text-lg">
+                The club stands testament to the power of dedication, teamwork, and friendship. The committed Run Leaders and committee continue to inspire and lead the club, promoting physical and mental well-being and fostering a welcoming environment where every runner feels valued and encouraged. The vision and hard work that's been created has a lasting legacy that has positively impacted many in the East Lincolnshire running community.
+              </p>
+            </div>
           </div>
         </div>
 
