@@ -67,7 +67,7 @@ export default function About() {
             <h3 className="text-2xl font-semibold text-sadrc-orange mb-4">Our Story</h3>
             
             <p className="text-lg">
-              Co-founder Andy Shelton, a dedicated runner since 1986 inspired his wife Helena to join him in running in 2012. Helena quickly developed a passion for the sport, and together with Glenn Hillaby who at the time was landlord of the Nelson Butt in Spilsby and a keen runner, they founded SADRC in January 2015, running from The Crown Hotel in Skegness, as well as the Nelson Butt. Their shared vision was to make running accessible to athletes of all abilities in the local area.
+              Co-founder Andy Shelton, a dedicated runner since 1986 and qualified coach, inspired his wife Helena to join him in running in 2012. Helena quickly developed a passion for the sport and is now also a qualified coach. Together with Glenn Hillaby who at the time was landlord of the Nelson Butt in Spilsby and a keen runner, they founded SADRC in January 2015, running from The Crown Hotel in Skegness, as well as the Nelson Butt. Their shared vision was to make running accessible to athletes of all abilities in the local area.
             </p>
             
             <p className="text-lg">
@@ -87,7 +87,7 @@ export default function About() {
             <h3 className="text-2xl font-semibold text-sadrc-orange mb-4">Club Activities</h3>
             
             <p className="text-lg">
-              Qualified Coach Andy continues to guide club runners, while Helena supports beginners with programmes like the popular 'Couch to 5k'. She has successfully helped many runners progress through the club. Members regularly participate in 10k runs in Skegness, Grimsby, Cleethorpes, and Woodhall Spa, and in their own event, the Bolingbroke Breaker. The club is also involved in organising the Spilsby Show 10k. They also host a monthly Boating Lake Run in Skegness, a free event marshalled and timed by volunteers for both club members and other locals.
+              As qualified coaches, Andy and Helena continue to guide club runners. Andy works with more experienced runners, while Helena supports beginners with programmes like the popular 'Couch to 5k'. She has successfully helped many runners progress through the club. Members regularly participate in 10k runs in Skegness, Grimsby, Cleethorpes, and Woodhall Spa, and in their own event, the Bolingbroke Breaker. The club is also involved in organising the Spilsby Show 10k. They also host a monthly Boating Lake Run in Skegness, a free event marshalled and timed by volunteers for both club members and other locals.
             </p>
             
             <div className="bg-[#222222] p-5 rounded-lg mt-6">
