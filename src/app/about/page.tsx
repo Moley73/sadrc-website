@@ -43,6 +43,24 @@ export default function About() {
             <p>
               With four locations across Lincolnshire - Skegness, Spilsby, Horncastle, and Boston - we provide accessible running opportunities for everyone in our community.
             </p>
+            <p>
+              Established in 2015, Skegness & District Running Club is a popular, thriving club with over 150 members across Skegness, Spilsby, Horncastle and Boston.
+            </p>
+            <p>
+              Co-founder Andy Shelton, a dedicated runner since 1986 inspired his wife Helena to join him in running in 2012. Helena quickly developed a passion for the sport, and together with Glenn Hillaby who at the time was landlord of the Nelson Butt in Spilsby and a keen runner, they founded SADRC in January 2015, running from The Crown Hotel in Skegness, as well as the Nelson Butt. Their shared vision was to make running accessible to athletes of all abilities in the local area.
+            </p>
+            <p>
+              The club received affiliation from England Athletics in April 2015. Shortly afterwards, a group was formed in Boston and four years later, a group in Horncastle was established due to increasing demand.
+            </p>
+            <p>
+              Fast forward to 2025 Skegness club night is run by Andy and Helena now at the Links Hotel and the Spilsby, Boston, and Horncastle groups are led by a group of extremely dedicated Run Leaders. For more information about these groups and their leaders, please look on our website.
+            </p>
+            <p>
+              Qualified Coach Andy continues to guide club runners, while Helena supports beginners with programmes like the popular 'Couch to 5k'. She has successfully helped many runners progress through the club. Members regularly participate in 10k runs in Skegness, Grimsby, Cleethorpes, and Woodhall Spa, and in their own event, the Bolingbroke Breaker. The club is also involved in organising the Spilsby Show 10k. They also host a monthly Boating Lake Run in Skegness, a free event marshalled and timed by volunteers for both club members and other locals.
+            </p>
+            <p>
+              The club stands testament to the power of dedication, teamwork, and friendship. The committed Run Leaders and committee continue to inspire and lead the club, promoting physical and mental well-being and fostering a welcoming environment where every runner feels valued and encouraged. The vision and hard work that’s been created has a lasting legacy that has positively impacted many in the East Lincolnshire running community.
+            </p>
           </div>
         </div>
 
