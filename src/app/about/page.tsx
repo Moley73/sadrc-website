@@ -32,9 +32,8 @@ export default function About() {
         
         {/* Club Introduction */}
         <div className="bg-[#1a1a1a] p-6 rounded-lg mb-8 shadow-lg">
-          <h2 className="text-3xl font-bold mb-4 text-sadrc-orange flex items-center">
-            <span className="mr-2">Our Club</span>
-            <img src="/images/icons/club-icon.png" alt="Club Icon" className="w-8 h-8" />
+          <h2 className="text-3xl font-bold mb-4 text-sadrc-orange">
+            Our Club
           </h2>
           <div className="space-y-6 text-gray-300 leading-relaxed">
             <p className="text-lg">
@@ -62,7 +61,7 @@ export default function About() {
               Qualified Coach Andy continues to guide club runners, while Helena supports beginners with programmes like the popular 'Couch to 5k'. She has successfully helped many runners progress through the club. Members regularly participate in 10k runs in Skegness, Grimsby, Cleethorpes, and Woodhall Spa, and in their own event, the Bolingbroke Breaker. The club is also involved in organising the Spilsby Show 10k. They also host a monthly Boating Lake Run in Skegness, a free event marshalled and timed by volunteers for both club members and other locals.
             </p>
             <p className="text-lg">
-              The club stands testament to the power of dedication, teamwork, and friendship. The committed Run Leaders and committee continue to inspire and lead the club, promoting physical and mental well-being and fostering a welcoming environment where every runner feels valued and encouraged. The vision and hard work that’s been created has a lasting legacy that has positively impacted many in the East Lincolnshire running community.
+              The club stands testament to the power of dedication, teamwork, and friendship. The committed Run Leaders and committee continue to inspire and lead the club, promoting physical and mental well-being and fostering a welcoming environment where every runner feels valued and encouraged. The vision and hard work that's been created has a lasting legacy that has positively impacted many in the East Lincolnshire running community.
             </p>
           </div>
         </div>
