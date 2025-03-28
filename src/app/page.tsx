@@ -227,7 +227,7 @@ export default function Home() {
               href="https://clubshop.fastraxrunning.com/product-category/skegness_and_district_rc/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-sadrc-orange to-[#ff7b00] text-white text-lg font-bold rounded-lg hover:from-[#ff7b00] hover:to-sadrc-orange transition-all duration-300 shadow-lg transform hover:scale-105 hover:shadow-xl border-2 border-[#ff9933] min-w-[200px]"
+              className="inline-flex items-center justify-center bg-sadrc-orange hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               <span className="mr-2">Visit Club Shop</span>
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -336,23 +336,23 @@ export default function Home() {
             </div>
 
             {/* Download Buttons */}
-            <div className="flex flex-col md:flex-row gap-4 mt-6">
+            <div className="flex flex-col sm:flex-row gap-4 mt-6">
               <a
                 href="/files/SADRC membership form 2025-26 - Final.pdf"
                 download
-                className="inline-flex items-center bg-sadrc-orange hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="inline-flex items-center justify-center bg-sadrc-orange hover:bg-orange-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto text-center"
               >
-                <FaFileDownload className="text-2xl mr-3" />
-                <span className="text-lg">Download Membership Form</span>
+                <FaFileDownload className="text-xl sm:text-2xl mr-2 sm:mr-3 flex-shrink-0" />
+                <span className="text-base sm:text-lg">Download Membership Form</span>
               </a>
               
               <a
                 href="/files/codes-of-conduct-senior-athletes-1.pdf"
                 download
-                className="inline-flex items-center bg-[#333333] hover:bg-[#444444] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg border border-gray-700"
+                className="inline-flex items-center justify-center bg-[#333333] hover:bg-[#444444] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg border border-gray-700 w-full sm:w-auto text-center"
               >
-                <FaFileDownload className="text-2xl mr-3" />
-                <span className="text-lg">Download Code of Conduct</span>
+                <FaFileDownload className="text-xl sm:text-2xl mr-2 sm:mr-3 flex-shrink-0" />
+                <span className="text-base sm:text-lg">Download Code of Conduct</span>
               </a>
             </div>
           </div>

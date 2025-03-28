@@ -99,33 +99,33 @@ export default function About() {
         </div>
 
         {/* Committee Members Section */}
-        <div className="bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] p-8 rounded-lg mb-8 shadow-lg border-l-4 border-sadrc-orange">
-          <h2 className="text-2xl font-bold mb-6 text-sadrc-orange flex items-center">
+        <div className="bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] p-4 sm:p-6 md:p-8 rounded-lg mb-8 shadow-lg border-l-4 border-sadrc-orange">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 md:mb-6 text-sadrc-orange flex items-center">
             <span className="mr-2">Committee Members</span>
-            <div className="w-10 h-1 bg-sadrc-orange ml-2"></div>
+            <div className="w-8 md:w-10 h-1 bg-sadrc-orange ml-2"></div>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             {/* Main Committee Positions */}
-            <div className="bg-[#222222] p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4 text-white border-b border-gray-700 pb-2">Main Committee</h3>
-              <ul className="space-y-3 text-gray-300">
-                <li className="flex items-center"><span className="font-semibold text-sadrc-orange w-48">Chair:</span> Helena Shelton</li>
-                <li className="flex items-center"><span className="font-semibold text-sadrc-orange w-48">Vice Chair:</span> Mark Sands</li>
-                <li className="flex items-center"><span className="font-semibold text-sadrc-orange w-48">Club Secretary:</span> Claire Harness</li>
-                <li className="flex items-center"><span className="font-semibold text-sadrc-orange w-48">Treasurer:</span> Sally Sharp</li>
-                <li className="flex items-center"><span className="font-semibold text-sadrc-orange w-48">Membership Secretary:</span> Andy Shelton</li>
-                <li className="flex items-center"><span className="font-semibold text-sadrc-orange w-48">Kit Officer:</span> Darren Fissenden</li>
-                <li className="flex items-center"><span className="font-semibold text-sadrc-orange w-48">Website Administrator:</span> Brian Darrington</li>
-                <li className="flex items-center"><span className="font-semibold text-sadrc-orange w-48">DBS Verifier:</span> Leanne Rickett</li>
+            <div className="bg-[#222222] p-4 md:p-6 rounded-lg">
+              <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 text-white border-b border-gray-700 pb-2">Main Committee</h3>
+              <ul className="space-y-2 md:space-y-3 text-gray-300 text-sm md:text-base">
+                <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">Chair:</span> Helena Shelton</li>
+                <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">Vice Chair:</span> Mark Sands</li>
+                <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">Club Secretary:</span> Claire Harness</li>
+                <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">Treasurer:</span> Sally Sharp</li>
+                <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">Membership Secretary:</span> Andy Shelton</li>
+                <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">Kit Officer:</span> Darren Fissenden</li>
+                <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">Website Administrator:</span> Brian Darrington</li>
+                <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">DBS Verifier:</span> Leanne Rickett</li>
               </ul>
             </div>
 
             {/* Welfare Officers */}
-            <div className="bg-[#222222] p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4 text-white border-b border-gray-700 pb-2">Welfare Officers</h3>
-              <ul className="space-y-3 text-gray-300">
-                <li className="flex items-center"><span className="font-semibold text-sadrc-orange w-48">Senior/Lead Welfare Officer:</span> Sarah Thomas</li>
-                <li className="flex items-center"><span className="font-semibold text-sadrc-orange w-48">Welfare Officer:</span> Becca Grice (Becca Louise on Facebook)</li>
+            <div className="bg-[#222222] p-4 md:p-6 rounded-lg">
+              <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 text-white border-b border-gray-700 pb-2">Welfare Officers</h3>
+              <ul className="space-y-2 md:space-y-3 text-gray-300 text-sm md:text-base">
+                <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">Senior/Lead Welfare Officer:</span> Sarah Thomas</li>
+                <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">Welfare Officer:</span> Becca Grice (Becca Louise on Facebook)</li>
               </ul>
             </div>
           </div>
