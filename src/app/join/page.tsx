@@ -65,14 +65,23 @@ export default function JoinUs() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-white">2. Complete the Application</h3>
-                <p className="text-gray-300">Download and fill out our membership application form. Annual membership is just £19.</p>
-                <a 
-                  href="/files/SADRC application 2024-25.docx"
-                  className="inline-block mt-4 bg-sadrc-orange hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-full transition duration-200"
-                  download
-                >
-                  Download Application Form
-                </a>
+                <p className="text-gray-300">Download and fill out our membership application form and review our code of conduct. Annual membership is just £19.</p>
+                <div className="flex flex-col sm:flex-row gap-4 mt-4">
+                  <a 
+                    href="/files/SADRC membership form 2025-26 - Final.pdf"
+                    className="inline-block bg-sadrc-orange hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-lg transition duration-200"
+                    download
+                  >
+                    Download Membership Form
+                  </a>
+                  <a 
+                    href="/files/codes-of-conduct-senior-athletes-1.pdf"
+                    className="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-6 rounded-lg transition duration-200 border border-gray-600"
+                    download
+                  >
+                    Download Code of Conduct
+                  </a>
+                </div>
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-white">3. Get in Touch</h3>
