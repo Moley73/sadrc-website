@@ -335,15 +335,26 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Download Button */}
-            <a
-              href="/files/SADRC membership form 2025-26 - Final.pdf"
-              download
-              className="inline-flex items-center bg-sadrc-orange hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              <FaFileDownload className="text-2xl" />
-              <span className="text-lg">Download Membership Form</span>
-            </a>
+            {/* Download Buttons */}
+            <div className="flex flex-col md:flex-row gap-4 mt-6">
+              <a
+                href="/files/SADRC membership form 2025-26 - Final.pdf"
+                download
+                className="inline-flex items-center bg-sadrc-orange hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                <FaFileDownload className="text-2xl mr-3" />
+                <span className="text-lg">Download Membership Form</span>
+              </a>
+              
+              <a
+                href="/files/codes-of-conduct-senior-athletes-1.pdf"
+                download
+                className="inline-flex items-center bg-[#333333] hover:bg-[#444444] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg border border-gray-700"
+              >
+                <FaFileDownload className="text-2xl mr-3" />
+                <span className="text-lg">Download Code of Conduct</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
