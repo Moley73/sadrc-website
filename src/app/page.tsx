@@ -73,34 +73,44 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <div className="relative h-screen min-h-[600px]">
-        <Image
-          src="/images/hero/running-hero.jpg"
-          alt="Runners at sunset"
-          width={1920}
-          height={1080}
-          className="absolute inset-0 object-cover w-full h-full"
-          priority
-          quality={100}
-        />
-        <div className="absolute inset-0 bg-black/50" />
+      <div className="relative h-screen min-h-[600px] overflow-hidden">
+        <div className="absolute inset-0 animate-subtle-zoom">
+          <Image
+            src="/images/hero/running-hero.jpg"
+            alt="Runners at sunset"
+            width={1920}
+            height={1080}
+            className="absolute inset-0 object-cover w-full h-full"
+            priority
+            quality={100}
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/40" />
         <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center pt-16">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 text-sadrc-orange">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 text-sadrc-orange animate-fade-in">
             Skegness and District
             <br className="hidden sm:block" />
             <span className="sm:hidden"> </span>
             Running Club
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-2xl text-gray-200 px-4">
+          <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-2xl text-gray-200 px-4 animate-fade-in-delayed">
             Join our friendly community of runners across Lincolnshire
           </p>
           <a
             href="#contact-section"
-            className="bg-sadrc-orange hover:bg-orange-600 text-white font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-full text-base sm:text-lg transition-colors transform hover:scale-105 duration-200 flex items-center space-x-2"
+            className="bg-sadrc-orange hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-base sm:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30 flex items-center space-x-2 group"
             onClick={handleJoinUsClick}
           >
-            <FaRunning className="text-lg sm:text-xl" />
             <span>Join Us Today</span>
+            <svg 
+              className="w-5 h-5 transition-transform duration-300 transform group-hover:translate-x-1" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
           </a>
         </div>
       </div>
@@ -126,40 +136,51 @@ export default function Home() {
       </section>
 
       {/* Locations Section */}
-      <section id="locations" className="py-16 px-4 scroll-mt-16">
+      <section id="locations" className="py-16 px-4 bg-[#121212] scroll-mt-16">
         <h2 className="text-3xl font-bold text-center mb-4">
           Our <span className="text-sadrc-orange">Locations</span>
         </h2>
         <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-          Choose from our four fantastic locations across Lincolnshire
+          We run from multiple locations across Lincolnshire
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {locations.map((location) => (
-            <div key={location.name} className="bg-[#1a1a1a] rounded-lg overflow-hidden hover:bg-[#222222] transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-black/20">
+            <div 
+              key={location.name} 
+              className="bg-gradient-to-br from-[#222222] to-[#1a1a1a] rounded-lg overflow-hidden shadow-lg group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-black/30 border border-transparent hover:border-sadrc-orange/20"
+            >
               <div className="h-48 relative overflow-hidden">
                 <Image
                   src={location.image}
                   alt={location.name}
                   width={400}
                   height={300}
-                  unoptimized
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-              </div>
-              <div className="p-4 transform transition-all duration-300">
-                <h3 className="text-xl font-bold text-sadrc-orange transform transition-all duration-300 hover:translate-x-1">{location.name}</h3>
-                <p className="text-gray-300 text-sm mt-2">{location.description}</p>
-                <div className="flex items-center mt-4 transform transition-all duration-300 hover:translate-x-1">
-                  <FaMapMarkerAlt className="text-sadrc-orange mr-2 transition-all duration-300" />
-                  <a
-                    href={location.mapUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-sadrc-orange text-sm transition-colors duration-300"
-                  >
-                    Get Directions
-                  </a>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 p-4 w-full">
+                  <div className="flex items-center">
+                    <div className="bg-sadrc-orange p-2 rounded-full mr-3 text-white group-hover:animate-pulse-grow">
+                      <location.icon className="text-lg" />
+                    </div>
+                    <h3 className="text-xl font-bold text-white group-hover:text-sadrc-orange transition-colors duration-300">{location.name}</h3>
+                  </div>
+                  <div className="flex items-center mt-2 text-white/80 text-sm">
+                    <span className="bg-sadrc-orange/20 px-2 py-1 rounded text-white font-medium">{location.day}</span>
+                  </div>
                 </div>
+              </div>
+              <div className="p-4">
+                <p className="text-gray-300 text-sm mb-4">{location.description}</p>
+                <a
+                  href={location.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sadrc-orange hover:text-white bg-sadrc-orange/10 hover:bg-sadrc-orange transition-all duration-300 px-3 py-2 rounded-lg text-sm font-medium w-full justify-center"
+                >
+                  <FaDirections className="mr-2" />
+                  Get Directions
+                </a>
               </div>
             </div>
           ))}
@@ -176,35 +197,52 @@ export default function Home() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {events.map((event) => (
-            <div key={event.name} className="bg-[#222222] rounded-lg overflow-hidden hover:bg-[#2a2a2a] transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-black/20">
+            <div key={event.name} className="bg-gradient-to-br from-[#222222] to-[#1a1a1a] rounded-lg overflow-hidden group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-black/30 border border-transparent hover:border-sadrc-orange/20">
               <div className="h-56 relative overflow-hidden">
                 <Image
                   src={event.image}
                   alt={event.name}
                   width={600}
                   height={400}
-                  unoptimized
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-              </div>
-              <div className="p-6 transform transition-all duration-300">
-                <h3 className="text-2xl font-bold text-sadrc-orange mb-2 transform transition-all duration-300 hover:translate-x-1">{event.name}</h3>
-                <div className="flex items-center text-gray-400 mb-4 transform transition-all duration-300 hover:translate-x-1">
-                  <FaCalendarAlt className="mr-2 transition-all duration-300" />
-                  <span>{event.date}</span>
-                  <FaClock className="ml-4 mr-2 transition-all duration-300" />
-                  <span>{event.time}</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+                <div className="absolute top-4 right-4">
+                  <div className="bg-sadrc-orange text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
+                    Upcoming
+                  </div>
                 </div>
-                <p className="text-gray-300 mb-4">{event.description}</p>
-                {event.registrationLink && (
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-sadrc-orange mb-2 group-hover:translate-x-1 transition-transform duration-300">{event.name}</h3>
+                <div className="flex flex-wrap items-center text-gray-400 mb-4 space-x-4">
+                  <div className="flex items-center">
+                    <div className="bg-sadrc-orange/20 p-1.5 rounded-full mr-2 group-hover:animate-pulse-grow">
+                      <FaCalendarAlt className="text-sadrc-orange text-sm" />
+                    </div>
+                    <span className="text-sm">{event.date}</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="bg-sadrc-orange/20 p-1.5 rounded-full mr-2 group-hover:animate-pulse-grow">
+                      <FaClock className="text-sadrc-orange text-sm" />
+                    </div>
+                    <span className="text-sm">{event.time}</span>
+                  </div>
+                </div>
+                <p className="text-gray-300 mb-6 text-sm">{event.description}</p>
+                {event.registrationLink ? (
                   <a
                     href={event.registrationLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block bg-sadrc-orange hover:bg-orange-600 text-white px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/20"
+                    className="inline-flex items-center justify-center w-full bg-sadrc-orange hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 transform group-hover:scale-105"
                   >
                     Register Now
                   </a>
+                ) : (
+                  <div className="inline-flex items-center justify-center w-full bg-gray-700 text-gray-300 font-medium py-2 px-4 rounded-lg cursor-not-allowed">
+                    Registration Coming Soon
+                  </div>
                 )}
               </div>
             </div>

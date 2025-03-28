@@ -91,8 +91,8 @@ export default function Navbar() {
                   onClick={(e) => handleNavClick(e, link.href)}
                   className={`${
                     isActive(link.href)
-                      ? 'text-sadrc-orange'
-                      : 'text-gray-300 hover:text-sadrc-orange'
+                      ? 'text-sadrc-orange relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-sadrc-orange after:rounded-full'
+                      : 'text-gray-300 hover:text-sadrc-orange relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-sadrc-orange after:rounded-full after:transition-all after:duration-300 hover:after:w-full'
                   } transition-colors duration-200`}
                 >
                   {link.name}
@@ -103,8 +103,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`${
                     isActive(link.href)
-                      ? 'text-sadrc-orange'
-                      : 'text-gray-300 hover:text-sadrc-orange'
+                      ? 'text-sadrc-orange relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-sadrc-orange after:rounded-full'
+                      : 'text-gray-300 hover:text-sadrc-orange relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-sadrc-orange after:rounded-full after:transition-all after:duration-300 hover:after:w-full'
                   } transition-colors duration-200`}
                 >
                   {link.name}
@@ -115,13 +115,13 @@ export default function Navbar() {
               href="https://clubshop.fastraxrunning.com/product-category/skegness_and_district_rc/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-white after:rounded-full after:transition-all after:duration-300 hover:after:w-full"
             >
               Club Shop
             </a>
             <Link
               href="/join"
-              className="bg-sadrc-orange text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-200 font-semibold"
+              className="bg-sadrc-orange text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-200 font-semibold hover:shadow-lg hover:shadow-orange-500/20 hover:scale-105"
             >
               Join Us
             </Link>
