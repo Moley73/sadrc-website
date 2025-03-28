@@ -99,32 +99,33 @@ export default function About() {
         </div>
 
         {/* Committee Members Section */}
-        <div className="bg-[#1a1a1a] p-6 rounded-lg mb-8">
-          <h2 className="text-2xl font-bold mb-6 text-sadrc-orange">Committee Members</h2>
+        <div className="bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] p-8 rounded-lg mb-8 shadow-lg border-l-4 border-sadrc-orange">
+          <h2 className="text-2xl font-bold mb-6 text-sadrc-orange flex items-center">
+            <span className="mr-2">Committee Members</span>
+            <div className="w-10 h-1 bg-sadrc-orange ml-2"></div>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Main Committee Positions */}
-            <div>
-              <h3 className="text-xl font-semibold mb-4 text-white">Main Committee</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li><span className="font-semibold text-sadrc-orange">Chair:</span> Shawn Thomas</li>
-                <li><span className="font-semibold text-sadrc-orange">Vice Chair:</span> Mark Sands</li>
-                <li><span className="font-semibold text-sadrc-orange">Secretary:</span> Claire Harness</li>
-                <li><span className="font-semibold text-sadrc-orange">Treasurer:</span> Helena Shelton</li>
-                <li><span className="font-semibold text-sadrc-orange">Membership Secretary:</span> Position Available</li>
-                <li><span className="font-semibold text-sadrc-orange">DBS Verifier:</span> Leanne Rickett</li>
-                <li><span className="font-semibold text-sadrc-orange">Kit Officer:</span> Phillip Weaver</li>
+            <div className="bg-[#222222] p-6 rounded-lg">
+              <h3 className="text-xl font-semibold mb-4 text-white border-b border-gray-700 pb-2">Main Committee</h3>
+              <ul className="space-y-3 text-gray-300">
+                <li className="flex items-center"><span className="font-semibold text-sadrc-orange w-48">Chair:</span> Helena Shelton</li>
+                <li className="flex items-center"><span className="font-semibold text-sadrc-orange w-48">Vice Chair:</span> Mark Sands</li>
+                <li className="flex items-center"><span className="font-semibold text-sadrc-orange w-48">Club Secretary:</span> Claire Harness</li>
+                <li className="flex items-center"><span className="font-semibold text-sadrc-orange w-48">Treasurer:</span> Sally Sharp</li>
+                <li className="flex items-center"><span className="font-semibold text-sadrc-orange w-48">Membership Secretary:</span> Andy Shelton</li>
+                <li className="flex items-center"><span className="font-semibold text-sadrc-orange w-48">Kit Officer:</span> Darren Fissenden</li>
+                <li className="flex items-center"><span className="font-semibold text-sadrc-orange w-48">Website Administrator:</span> Brian Darrington</li>
+                <li className="flex items-center"><span className="font-semibold text-sadrc-orange w-48">DBS Verifier:</span> Leanne Rickett</li>
               </ul>
             </div>
 
             {/* Welfare Officers */}
-            <div>
-              <h3 className="text-xl font-semibold mb-4 text-white">Welfare Officers</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li>Sarah Thomas</li>
-                <li>Sally Sharp</li>
-                <li>Rob Cox</li>
-                <li>Rebecca Grice</li>
-                <li>Mark Sands</li>
+            <div className="bg-[#222222] p-6 rounded-lg">
+              <h3 className="text-xl font-semibold mb-4 text-white border-b border-gray-700 pb-2">Welfare Officers</h3>
+              <ul className="space-y-3 text-gray-300">
+                <li className="flex items-center"><span className="font-semibold text-sadrc-orange w-48">Senior/Lead Welfare Officer:</span> Sarah Thomas</li>
+                <li className="flex items-center"><span className="font-semibold text-sadrc-orange w-48">Welfare Officer:</span> Becca Grice (Becca Louise on Facebook)</li>
               </ul>
             </div>
           </div>
