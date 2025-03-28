@@ -77,7 +77,7 @@ export default function Home() {
         <div className="absolute inset-0 animate-subtle-zoom">
           <Image
             src="/images/hero/running-hero.jpg"
-            alt="Runners at sunset"
+            alt="Runners at sunset in Skegness and District Running Club"
             width={1920}
             height={1080}
             className="absolute inset-0 object-cover w-full h-full"
@@ -137,116 +137,120 @@ export default function Home() {
 
       {/* Locations Section */}
       <section id="locations" className="py-16 px-4 bg-[#121212] scroll-mt-16">
-        <h2 className="text-3xl font-bold text-center mb-4">
-          Our <span className="text-sadrc-orange">Locations</span>
-        </h2>
-        <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-          We run from multiple locations across Lincolnshire
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-          {locations.map((location) => (
-            <div 
-              key={location.name} 
-              className="bg-gradient-to-br from-[#222222] to-[#1a1a1a] rounded-lg overflow-hidden shadow-lg group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-black/30 border border-transparent hover:border-sadrc-orange/20"
-            >
-              <div className="h-48 relative overflow-hidden">
-                <Image
-                  src={location.image}
-                  alt={location.name}
-                  width={400}
-                  height={300}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
-                <div className="absolute bottom-0 left-0 p-4 w-full">
-                  <div className="flex items-center">
-                    <div className="bg-sadrc-orange p-2 rounded-full mr-3 text-white group-hover:animate-pulse-grow">
-                      <location.icon className="text-lg" />
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-4">
+            Our <span className="text-sadrc-orange">Locations</span>
+          </h2>
+          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+            We run from multiple locations across Lincolnshire
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {locations.map((location) => (
+              <article 
+                key={location.name} 
+                className="bg-gradient-to-br from-[#222222] to-[#1a1a1a] rounded-lg overflow-hidden shadow-lg group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-black/30 border border-transparent hover:border-sadrc-orange/20"
+              >
+                <div className="h-48 relative overflow-hidden">
+                  <Image
+                    src={location.image}
+                    alt={`${location.name} running location - Skegness and District Running Club`}
+                    width={400}
+                    height={300}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-0 p-4 w-full">
+                    <div className="flex items-center">
+                      <div className="bg-sadrc-orange p-2 rounded-full mr-3 text-white group-hover:animate-pulse-grow">
+                        <location.icon className="text-lg" />
+                      </div>
+                      <h3 className="text-xl font-bold text-white group-hover:text-sadrc-orange transition-colors duration-300">{location.name}</h3>
                     </div>
-                    <h3 className="text-xl font-bold text-white group-hover:text-sadrc-orange transition-colors duration-300">{location.name}</h3>
-                  </div>
-                  <div className="flex items-center mt-2 text-white/80 text-sm">
-                    <span className="bg-sadrc-orange/20 px-2 py-1 rounded text-white font-medium">{location.day}</span>
+                    <div className="flex items-center mt-2 text-white/80 text-sm">
+                      <span className="bg-sadrc-orange/20 px-2 py-1 rounded text-white font-medium">{location.day}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="p-4">
-                <p className="text-gray-300 text-sm mb-4">{location.description}</p>
-                <a
-                  href={location.mapUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-sadrc-orange hover:text-white bg-sadrc-orange/10 hover:bg-sadrc-orange transition-all duration-300 px-3 py-2 rounded-lg text-sm font-medium w-full justify-center"
-                >
-                  <FaDirections className="mr-2" />
-                  Get Directions
-                </a>
-              </div>
-            </div>
-          ))}
+                <div className="p-4">
+                  <p className="text-gray-300 text-sm mb-4">{location.description}</p>
+                  <a
+                    href={location.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-sadrc-orange hover:text-white bg-sadrc-orange/10 hover:bg-sadrc-orange transition-all duration-300 px-3 py-2 rounded-lg text-sm font-medium w-full justify-center"
+                  >
+                    <FaDirections className="mr-2" />
+                    Get Directions
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Events Section */}
       <section id="events" className="py-16 px-4 bg-[#1a1a1a] scroll-mt-16">
-        <h2 className="text-3xl font-bold text-center mb-4">
-          Upcoming <span className="text-sadrc-orange">Events</span>
-        </h2>
-        <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-          Join us at our upcoming races and events
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {events.map((event) => (
-            <div key={event.name} className="bg-gradient-to-br from-[#222222] to-[#1a1a1a] rounded-lg overflow-hidden group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-black/30 border border-transparent hover:border-sadrc-orange/20">
-              <div className="h-56 relative overflow-hidden">
-                <Image
-                  src={event.image}
-                  alt={event.name}
-                  width={600}
-                  height={400}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
-                <div className="absolute top-4 right-4">
-                  <div className="bg-sadrc-orange text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
-                    Upcoming
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-4">
+            Upcoming <span className="text-sadrc-orange">Events</span>
+          </h2>
+          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+            Join us at our upcoming races and events
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {events.map((event) => (
+              <article key={event.name} className="bg-gradient-to-br from-[#222222] to-[#1a1a1a] rounded-lg overflow-hidden group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-black/30 border border-transparent hover:border-sadrc-orange/20">
+                <div className="h-56 relative overflow-hidden">
+                  <Image
+                    src={event.image}
+                    alt={`${event.name} - Running event by Skegness and District Running Club`}
+                    width={600}
+                    height={400}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+                  <div className="absolute top-4 right-4">
+                    <div className="bg-sadrc-orange text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
+                      Upcoming
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-sadrc-orange mb-2 group-hover:translate-x-1 transition-transform duration-300">{event.name}</h3>
-                <div className="flex flex-wrap items-center text-gray-400 mb-4 space-x-4">
-                  <div className="flex items-center">
-                    <div className="bg-sadrc-orange/20 p-1.5 rounded-full mr-2 group-hover:animate-pulse-grow">
-                      <FaCalendarAlt className="text-sadrc-orange text-sm" />
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold text-sadrc-orange mb-2 group-hover:translate-x-1 transition-transform duration-300">{event.name}</h3>
+                  <div className="flex flex-wrap items-center text-gray-400 mb-4 space-x-4">
+                    <div className="flex items-center">
+                      <div className="bg-sadrc-orange/20 p-1.5 rounded-full mr-2 group-hover:animate-pulse-grow">
+                        <FaCalendarAlt className="text-sadrc-orange text-sm" />
+                      </div>
+                      <span className="text-sm">{event.date}</span>
                     </div>
-                    <span className="text-sm">{event.date}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="bg-sadrc-orange/20 p-1.5 rounded-full mr-2 group-hover:animate-pulse-grow">
-                      <FaClock className="text-sadrc-orange text-sm" />
+                    <div className="flex items-center">
+                      <div className="bg-sadrc-orange/20 p-1.5 rounded-full mr-2 group-hover:animate-pulse-grow">
+                        <FaClock className="text-sadrc-orange text-sm" />
+                      </div>
+                      <span className="text-sm">{event.time}</span>
                     </div>
-                    <span className="text-sm">{event.time}</span>
                   </div>
+                  <p className="text-gray-300 mb-6 text-sm">{event.description}</p>
+                  {event.registrationLink ? (
+                    <a
+                      href={event.registrationLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-full bg-sadrc-orange hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 transform group-hover:scale-105"
+                    >
+                      Register Now
+                    </a>
+                  ) : (
+                    <div className="inline-flex items-center justify-center w-full bg-gray-700 text-gray-300 font-medium py-2 px-4 rounded-lg cursor-not-allowed">
+                      Registration Coming Soon
+                    </div>
+                  )}
                 </div>
-                <p className="text-gray-300 mb-6 text-sm">{event.description}</p>
-                {event.registrationLink ? (
-                  <a
-                    href={event.registrationLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center w-full bg-sadrc-orange hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 transform group-hover:scale-105"
-                  >
-                    Register Now
-                  </a>
-                ) : (
-                  <div className="inline-flex items-center justify-center w-full bg-gray-700 text-gray-300 font-medium py-2 px-4 rounded-lg cursor-not-allowed">
-                    Registration Coming Soon
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -344,23 +348,23 @@ export default function Home() {
                 <div className="bg-black/20 p-6 rounded-lg border border-gray-800">
                   <h3 className="text-xl font-semibold text-sadrc-orange mb-3">Club Membership</h3>
                   <ul className="space-y-2 text-gray-300">
-                    <li>• Club membership is £10 per year</li>
-                    <li>• Open to anyone aged 15 or over</li>
-                    <li>• Membership year: April 1st to March 31st</li>
-                    <li>• Optional England Athletics affiliation: £20</li>
+                    <li><span aria-hidden="true">•</span> Club membership is £10 per year</li>
+                    <li><span aria-hidden="true">•</span> Open to anyone aged 15 or over</li>
+                    <li><span aria-hidden="true">•</span> Membership year: April 1st to March 31st</li>
+                    <li><span aria-hidden="true">•</span> Optional England Athletics affiliation: £20</li>
                   </ul>
                 </div>
                 <div className="bg-black/20 p-6 rounded-lg border border-gray-800">
                   <h3 className="text-xl font-semibold text-sadrc-orange mb-3">Member Benefits</h3>
                   <ul className="space-y-2 text-gray-300">
-                    <li>• Enter races under Skegness and District RC name</li>
-                    <li>• Participate in Lincs League Cross Country</li>
-                    <li>• Eligible for London Marathon club places draw*</li>
-                    <li>• Race entry discounts (if EA affiliated)</li>
+                    <li><span aria-hidden="true">•</span> Enter races under Skegness and District RC name</li>
+                    <li><span aria-hidden="true">•</span> Participate in Lincs League Cross Country</li>
+                    <li><span aria-hidden="true">•</span> Eligible for London Marathon club places draw*</li>
+                    <li><span aria-hidden="true">•</span> Race entry discounts (if EA affiliated)</li>
                   </ul>
                 </div>
               </div>
-
+              
               {/* Additional Info */}
               <div className="bg-black/20 p-6 rounded-lg border border-gray-800 text-left mt-4">
                 <h3 className="text-xl font-semibold text-sadrc-orange mb-3">England Athletics Affiliation</h3>
@@ -372,9 +376,9 @@ export default function Home() {
               <div className="bg-black/20 p-6 rounded-lg border border-gray-800 text-left mt-4">
                 <h3 className="text-xl font-semibold text-sadrc-orange mb-3">How to Join</h3>
                 <ol className="list-decimal list-inside space-y-2 text-gray-300">
-                  <li>1. Download and complete the membership form</li>
-                  <li>2. Email your completed form to <a href="mailto:infosadrc@mail.com" className="text-sadrc-orange hover:text-orange-400">infosadrc@mail.com</a></li>
-                  <li>3. If choosing EA affiliation, bank details will be provided for payment</li>
+                  <li>Download and complete the membership form</li>
+                  <li>Email your completed form to <a href="mailto:infosadrc@mail.com" className="text-sadrc-orange hover:text-orange-400">infosadrc@mail.com</a></li>
+                  <li>If choosing EA affiliation, bank details will be provided for payment</li>
                 </ol>
                 <p className="text-sm text-gray-400 mt-4">* Subject to terms & conditions, including having been rejected in the ballot</p>
               </div>
