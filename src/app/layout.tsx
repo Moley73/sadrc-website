@@ -14,7 +14,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 const siteMetadata = {
   title: 'Skegness and District Running Club',
-  description: 'Join our friendly running community in Lincolnshire. Established in 2015, we offer group runs in Skegness, Spilsby, Horncastle, and Boston. Free membership with optional England Athletics affiliation.',
+  description: 'Join our friendly running community in Lincolnshire. Established in 2015, we offer group runs in Skegness, Spilsby, Horncastle, and Boston. Club membership £10 per year with optional England Athletics affiliation.',
   keywords: 'running club, Skegness, Lincolnshire, Spilsby, Horncastle, Boston, athletics, running group, England Athletics',
   author: 'Skegness and District Running Club',
   url: 'https://skegnessrunningclub.co.uk',

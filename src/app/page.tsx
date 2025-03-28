@@ -344,10 +344,10 @@ export default function Home() {
                 <div className="bg-black/20 p-6 rounded-lg border border-gray-800">
                   <h3 className="text-xl font-semibold text-sadrc-orange mb-3">Club Membership</h3>
                   <ul className="space-y-2 text-gray-300">
-                    <li>• Club membership is FREE</li>
+                    <li>• Club membership is £10 per year</li>
                     <li>• Open to anyone aged 15 or over</li>
-                    <li>• Membership year: April to March</li>
-                    <li>• Optional England Athletics affiliation: £19</li>
+                    <li>• Membership year: April 1st to March 31st</li>
+                    <li>• Optional England Athletics affiliation: £20</li>
                   </ul>
                 </div>
                 <div className="bg-black/20 p-6 rounded-lg border border-gray-800">
@@ -362,7 +362,14 @@ export default function Home() {
               </div>
 
               {/* Additional Info */}
-              <div className="bg-black/20 p-6 rounded-lg border border-gray-800 text-left">
+              <div className="bg-black/20 p-6 rounded-lg border border-gray-800 text-left mt-4">
+                <h3 className="text-xl font-semibold text-sadrc-orange mb-3">England Athletics Affiliation</h3>
+                <p className="text-gray-300 mb-3">If you choose to become affiliated, you are required to wear your club vest when competing for an England Athletics running club in a UK Athletics sanctioned race. The exception being if you are competing for your County, Country or in a Charity event.</p>
+                <p className="text-gray-300">This does not include club training nights or Parkruns. Club vests are available to buy from the SADRC Kit Officer.</p>
+              </div>
+              
+              {/* How to Join */}
+              <div className="bg-black/20 p-6 rounded-lg border border-gray-800 text-left mt-4">
                 <h3 className="text-xl font-semibold text-sadrc-orange mb-3">How to Join</h3>
                 <ol className="list-decimal list-inside space-y-2 text-gray-300">
                   <li>1. Download and complete the membership form</li>
