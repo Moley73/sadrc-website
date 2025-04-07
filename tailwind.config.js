@@ -34,4 +34,13 @@ module.exports = {
     },
   },
   plugins: [],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
+  safelist: [
+    'text-sadrc-orange',
+    'bg-sadrc-orange',
+    'hover:bg-orange-600',
+    'hover:text-sadrc-orange',
+  ],
 }

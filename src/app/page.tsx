@@ -1,72 +1,216 @@
+// Define TypeScript interfaces for our data structures
+interface LocationType {
+  name: string;
+  description: string;
+  icon: React.ComponentType<{ className?: string }>;
+  image: string;
+  day: string;
+  mapUrl: string;
+}
+
+interface EventType {
+  name: string;
+  date: string;
+  time: string;
+  image: string;
+  description: string;
+  registrationLink: string | null;
+}
+
 'use client';
 
+import { useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaMapMarkerAlt, FaRunning, FaCalendarAlt, FaClock, FaDirections, FaFileDownload, FaEnvelope, FaFacebook, FaInstagram } from 'react-icons/fa';
+import { 
+  FaMapMarkerAlt, 
+  FaRunning, 
+  FaCalendarAlt, 
+  FaClock, 
+  FaDirections, 
+  FaFileDownload, 
+  FaEnvelope, 
+  FaFacebook, 
+  FaInstagram 
+} from 'react-icons/fa';
 import Navbar from './components/Navbar';
 
+// Location data
+const locations: LocationType[] = [
+  { 
+    name: 'Skegness', 
+    description: 'Meeting at the Links Bar/Hotel on Thursday nights for a 6:30 PM start', 
+    icon: FaMapMarkerAlt,
+    image: '/images/locations/skegness-location.jpg',
+    day: 'Thursday',
+    mapUrl: 'https://maps.google.com/?q=Links+Hotel+Skegness'
+  },
+  { 
+    name: 'Spilsby', 
+    description: 'Meeting at the New Life Centre on Tuesday nights for a 6:30 PM start', 
+    icon: FaRunning,
+    image: '/images/locations/spilsby-location.jpg',
+    day: 'Tuesday',
+    mapUrl: 'https://maps.google.com/?q=New+Life+Centre+Spilsby'
+  },
+  { 
+    name: 'Horncastle', 
+    description: 'Meeting at the Cattle Market Car Park on Monday nights for a 6:30 PM start', 
+    icon: FaMapMarkerAlt,
+    image: '/images/locations/horncastle-location.jpg',
+    day: 'Monday',
+    mapUrl: 'https://maps.google.com/?q=Cattle+Market+Car+Park+Horncastle'
+  },
+  { 
+    name: 'Boston', 
+    description: 'Meeting at the Fuddy Duck (PE21 7TW) on Thursday nights for a 6:30 PM start', 
+    icon: FaMapMarkerAlt,
+    image: '/images/locations/boston-location.jpg',
+    day: 'Thursday',
+    mapUrl: 'https://maps.google.com/?q=Fuddy+Duck+Boston+PE21+7TW'
+  },
+];
+
+// Events data
+const events: EventType[] = [
+  {
+    name: 'Spilsby Show 10K',
+    date: 'July 14, 2025',
+    time: '11:00 AM',
+    image: '/images/events/spilsby-show.jpg',
+    description: 'A fantastic multi-terrain 10K race at the annual Spilsby Show. Perfect for all abilities!',
+    registrationLink: 'https://www.spilsbyshow.co.uk/runners/'
+  },
+  {
+    name: 'Bolingbroke Breaker',
+    date: 'September 2025',
+    time: '10:00 AM',
+    image: '/images/events/Breaker-10.jpg',
+    description: 'The legendary Bolingbroke Breaker returns! A tough but rewarding race through historic Bolingbroke.',
+    registrationLink: null
+  }
+];
+
+// Location Card Component for better code organization
+const LocationCard = ({ location }: { location: LocationType }) => {
+  const { name, description, icon: Icon, image, day, mapUrl } = location;
+  
+  return (
+    <article 
+      className="bg-gradient-to-br from-[#222222] to-[#1a1a1a] rounded-lg overflow-hidden shadow-lg group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-black/30 border border-transparent hover:border-sadrc-orange/20"
+    >
+      <div className="h-48 relative overflow-hidden">
+        <Image
+          src={image}
+          alt={`${name} running location - Skegness and District Running Club`}
+          width={400}
+          height={300}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+        <div className="absolute bottom-0 left-0 p-4 w-full">
+          <div className="flex items-center">
+            <div className="bg-sadrc-orange p-2 rounded-full mr-3 text-white group-hover:animate-pulse-grow">
+              <Icon className="text-lg" />
+            </div>
+            <h3 className="text-xl font-bold text-white group-hover:text-sadrc-orange transition-colors duration-300">{name}</h3>
+          </div>
+          <div className="flex items-center mt-2 text-white/80 text-sm">
+            <span className="bg-sadrc-orange/20 px-2 py-1 rounded text-white font-medium">{day}</span>
+          </div>
+        </div>
+      </div>
+      <div className="p-4">
+        <p className="text-gray-300 text-sm mb-4">{description}</p>
+        <a
+          href={mapUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center text-sadrc-orange hover:text-white bg-sadrc-orange/10 hover:bg-sadrc-orange transition-all duration-300 px-3 py-2 rounded-lg text-sm font-medium w-full justify-center"
+        >
+          <FaDirections className="mr-2" />
+          Get Directions
+        </a>
+      </div>
+    </article>
+  );
+};
+
+// Event Card Component
+const EventCard = ({ event }: { event: EventType }) => {
+  const { name, date, time, image, description, registrationLink } = event;
+  
+  return (
+    <article className="bg-gradient-to-br from-[#222222] to-[#1a1a1a] rounded-lg overflow-hidden shadow-lg group hover:shadow-xl hover:shadow-black/30 transition-all duration-300 transform hover:-translate-y-2 border border-transparent hover:border-sadrc-orange/20">
+      <div className="h-48 relative overflow-hidden">
+        <Image
+          src={image}
+          alt={`${name} - Skegness and District Running Club event`}
+          width={500}
+          height={300}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+        <div className="absolute bottom-0 left-0 p-4 w-full">
+          <h3 className="text-xl font-bold text-white group-hover:text-sadrc-orange transition-colors duration-300">{name}</h3>
+          <div className="flex items-center mt-2 space-x-3">
+            <div className="flex items-center text-white/80 text-sm">
+              <FaCalendarAlt className="mr-1 text-sadrc-orange" />
+              <span>{date}</span>
+            </div>
+            <div className="flex items-center text-white/80 text-sm">
+              <FaClock className="mr-1 text-sadrc-orange" />
+              <span>{time}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="p-4">
+        <p className="text-gray-300 text-sm mb-4">{description}</p>
+        {registrationLink ? (
+          <a
+            href={registrationLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-sadrc-orange hover:text-white bg-sadrc-orange/10 hover:bg-sadrc-orange transition-all duration-300 px-3 py-2 rounded-lg text-sm font-medium w-full justify-center"
+          >
+            <FaFileDownload className="mr-2" />
+            Register Now
+          </a>
+        ) : (
+          <div className="inline-flex items-center justify-center text-gray-400 bg-gray-800/50 px-3 py-2 rounded-lg text-sm font-medium w-full">
+            Coming Soon
+          </div>
+        )}
+      </div>
+    </article>
+  );
+};
+
 export default function Home() {
-  const locations = [
-    { 
-      name: 'Skegness', 
-      description: 'Meeting at the Links Bar/Hotel on Thursday nights for a 6:30 PM start', 
-      icon: FaMapMarkerAlt,
-      image: '/images/locations/skegness-location.jpg',
-      day: 'Thursday',
-      mapUrl: 'https://maps.google.com/?q=Links+Hotel+Skegness'
-    },
-    { 
-      name: 'Spilsby', 
-      description: 'Meeting at the New Life Centre on Tuesday nights for a 6:30 PM start', 
-      icon: FaRunning,
-      image: '/images/locations/spilsby-location.jpg',
-      day: 'Tuesday',
-      mapUrl: 'https://maps.google.com/?q=New+Life+Centre+Spilsby'
-    },
-    { 
-      name: 'Horncastle', 
-      description: 'Meeting at the Cattle Market Car Park on Monday nights for a 6:30 PM start', 
-      icon: FaMapMarkerAlt,
-      image: '/images/locations/horncastle-location.jpg',
-      day: 'Monday',
-      mapUrl: 'https://maps.google.com/?q=Cattle+Market+Car+Park+Horncastle'
-    },
-    { 
-      name: 'Boston', 
-      description: 'Meeting at the Fuddy Duck (PE21 7TW) on Thursday nights for a 6:30 PM start', 
-      icon: FaMapMarkerAlt,
-      image: '/images/locations/boston-location.jpg',
-      day: 'Thursday',
-      mapUrl: 'https://maps.google.com/?q=Fuddy+Duck+Boston+PE21+7TW'
-    },
-  ];
-
-  const events = [
-    {
-      name: 'Spilsby Show 10K',
-      date: 'July 14, 2025',
-      time: '11:00 AM',
-      image: '/images/events/spilsby-show.jpg',
-      description: 'A fantastic multi-terrain 10K race at the annual Spilsby Show. Perfect for all abilities!',
-      registrationLink: 'https://www.spilsbyshow.co.uk/runners/'
-    },
-    {
-      name: 'Bolingbroke Breaker',
-      date: 'September 2025',
-      time: '10:00 AM',
-      image: '/images/events/Breaker-10.jpg',
-      description: 'The legendary Bolingbroke Breaker returns! A tough but rewarding race through historic Bolingbroke.',
-      registrationLink: null
-    }
-  ];
-
-  const handleJoinUsClick = (e: React.MouseEvent) => {
+  const handleJoinUsClick = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
     const contactSection = document.getElementById('contact-section');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
-  };
+  }, []);
+
+  // Memoize location cards to prevent unnecessary re-renders
+  const locationCards = useMemo(() => (
+    locations.map((location, index) => (
+      <LocationCard key={`location-${index}`} location={location} />
+    ))
+  ), []);
+
+  // Memoize event cards to prevent unnecessary re-renders
+  const eventCards = useMemo(() => (
+    events.map((event, index) => (
+      <EventCard key={`event-${index}`} event={event} />
+    ))
+  ), []);
 
   return (
     <main className="min-h-screen bg-[#121212]">
@@ -82,7 +226,9 @@ export default function Home() {
             height={1080}
             className="absolute inset-0 object-cover w-full h-full"
             priority
-            quality={100}
+            quality={85}
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM+fUSXJr76CeQ2eH9GpSlIxEUOmf/9k="
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/40" />
@@ -98,7 +244,7 @@ export default function Home() {
           </p>
           <a
             href="#contact-section"
-            className="bg-sadrc-orange hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-base sm:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30 flex items-center space-x-2 group"
+            className="bg-sadrc-orange hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-base sm:text-lg transition-all duration-300 flex items-center space-x-2 group"
             onClick={handleJoinUsClick}
           >
             <span>Join Us Today</span>
@@ -145,46 +291,7 @@ export default function Home() {
             We run from multiple locations across Lincolnshire
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {locations.map((location) => (
-              <article 
-                key={location.name} 
-                className="bg-gradient-to-br from-[#222222] to-[#1a1a1a] rounded-lg overflow-hidden shadow-lg group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-black/30 border border-transparent hover:border-sadrc-orange/20"
-              >
-                <div className="h-48 relative overflow-hidden">
-                  <Image
-                    src={location.image}
-                    alt={`${location.name} running location - Skegness and District Running Club`}
-                    width={400}
-                    height={300}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
-                  <div className="absolute bottom-0 left-0 p-4 w-full">
-                    <div className="flex items-center">
-                      <div className="bg-sadrc-orange p-2 rounded-full mr-3 text-white group-hover:animate-pulse-grow">
-                        <location.icon className="text-lg" />
-                      </div>
-                      <h3 className="text-xl font-bold text-white group-hover:text-sadrc-orange transition-colors duration-300">{location.name}</h3>
-                    </div>
-                    <div className="flex items-center mt-2 text-white/80 text-sm">
-                      <span className="bg-sadrc-orange/20 px-2 py-1 rounded text-white font-medium">{location.day}</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <p className="text-gray-300 text-sm mb-4">{location.description}</p>
-                  <a
-                    href={location.mapUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-sadrc-orange hover:text-white bg-sadrc-orange/10 hover:bg-sadrc-orange transition-all duration-300 px-3 py-2 rounded-lg text-sm font-medium w-full justify-center"
-                  >
-                    <FaDirections className="mr-2" />
-                    Get Directions
-                  </a>
-                </div>
-              </article>
-            ))}
+            {locationCards}
           </div>
         </div>
       </section>
@@ -199,57 +306,7 @@ export default function Home() {
             Join us at our upcoming races and events
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {events.map((event) => (
-              <article key={event.name} className="bg-gradient-to-br from-[#222222] to-[#1a1a1a] rounded-lg overflow-hidden group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-black/30 border border-transparent hover:border-sadrc-orange/20">
-                <div className="h-56 relative overflow-hidden">
-                  <Image
-                    src={event.image}
-                    alt={`${event.name} - Running event by Skegness and District Running Club`}
-                    width={600}
-                    height={400}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
-                  <div className="absolute top-4 right-4">
-                    <div className="bg-sadrc-orange text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
-                      Upcoming
-                    </div>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-sadrc-orange mb-2 group-hover:translate-x-1 transition-transform duration-300">{event.name}</h3>
-                  <div className="flex flex-wrap items-center text-gray-400 mb-4 space-x-4">
-                    <div className="flex items-center">
-                      <div className="bg-sadrc-orange/20 p-1.5 rounded-full mr-2 group-hover:animate-pulse-grow">
-                        <FaCalendarAlt className="text-sadrc-orange text-sm" />
-                      </div>
-                      <span className="text-sm">{event.date}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="bg-sadrc-orange/20 p-1.5 rounded-full mr-2 group-hover:animate-pulse-grow">
-                        <FaClock className="text-sadrc-orange text-sm" />
-                      </div>
-                      <span className="text-sm">{event.time}</span>
-                    </div>
-                  </div>
-                  <p className="text-gray-300 mb-6 text-sm">{event.description}</p>
-                  {event.registrationLink ? (
-                    <a
-                      href={event.registrationLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-full bg-sadrc-orange hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 transform group-hover:scale-105"
-                    >
-                      Register Now
-                    </a>
-                  ) : (
-                    <div className="inline-flex items-center justify-center w-full bg-gray-700 text-gray-300 font-medium py-2 px-4 rounded-lg cursor-not-allowed">
-                      Registration Coming Soon
-                    </div>
-                  )}
-                </div>
-              </article>
-            ))}
+            {eventCards}
           </div>
         </div>
       </section>
@@ -389,7 +446,7 @@ export default function Home() {
               <a
                 href="/files/SADRC membership form 2025-26 - Final.pdf"
                 download
-                className="inline-flex items-center justify-center bg-sadrc-orange hover:bg-orange-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto text-center"
+                className="inline-flex items-center justify-center bg-sadrc-orange hover:bg-orange-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 w-full sm:w-auto text-center"
               >
                 <FaFileDownload className="text-xl sm:text-2xl mr-2 sm:mr-3 flex-shrink-0" />
                 <span className="text-base sm:text-lg">Download Membership Form</span>
@@ -398,7 +455,7 @@ export default function Home() {
               <a
                 href="/files/codes-of-conduct-senior-athletes-1.pdf"
                 download
-                className="inline-flex items-center justify-center bg-[#333333] hover:bg-[#444444] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg border border-gray-700 w-full sm:w-auto text-center"
+                className="inline-flex items-center justify-center bg-[#333333] hover:bg-[#444444] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 border border-gray-700 w-full sm:w-auto text-center"
               >
                 <FaFileDownload className="text-xl sm:text-2xl mr-2 sm:mr-3 flex-shrink-0" />
                 <span className="text-base sm:text-lg">Download Code of Conduct</span>

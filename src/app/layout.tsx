@@ -11,7 +11,11 @@ import LoadingState from './components/LoadingState';
 import { initWebVitals } from '@/utils/analytics';
 import Script from 'next/script';
 
-const inter = Inter({ subsets: ['latin'] });
+// Optimize font loading
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',  // Ensures text remains visible during font loading
+});
 
 const siteMetadata = {
   title: 'Skegness and District Running Club | Lincolnshire Running Community',
