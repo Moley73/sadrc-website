@@ -40,4 +40,6 @@ The website uses a modern tech stack with:
 
 ## License
 
-All rights reserved - Skegness and District Running Club
+All rights reserved - Skegness and District Running Club 
+
+## test fix
