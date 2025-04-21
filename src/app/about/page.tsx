@@ -29,48 +29,101 @@ export default function About() {
         </h1>
         
         {/* Club Introduction */}
-        <div className="bg-[#1a1a1a] p-6 rounded-lg mb-8">
-          <h2 className="text-2xl font-bold mb-4 text-sadrc-orange">Our Club</h2>
-          <div className="space-y-4 text-gray-300">
-            <p>
+        <div className="bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] p-8 rounded-lg mb-8 shadow-xl border-l-4 border-sadrc-orange">
+          <h2 className="text-3xl font-bold mb-6 text-sadrc-orange flex items-center">
+            <span className="mr-2">Our Club</span>
+            <div className="w-10 h-1 bg-sadrc-orange ml-2"></div>
+          </h2>
+          
+          <div className="space-y-6 text-gray-300 leading-relaxed">
+            <p className="text-lg border-l-2 border-gray-700 pl-4">
               Welcome to Skegness and District Running Club! We are a friendly community of runners based in Lincolnshire.
             </p>
-            <p>
-              Our club welcomes runners of all abilities, from beginners to experienced athletes. We offer structured training sessions, social runs, and participate in various local and national events.
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+              <div className="bg-[#222222] p-4 rounded-lg">
+                <h3 className="text-xl font-semibold text-sadrc-orange mb-3">All Abilities Welcome</h3>
+                <p className="text-gray-300">
+                  Our club welcomes runners of all abilities, from beginners to experienced athletes. We offer structured training sessions, social runs, and participate in various local and national events.
+                </p>
+              </div>
+              
+              <div className="bg-[#222222] p-4 rounded-lg">
+                <h3 className="text-xl font-semibold text-sadrc-orange mb-3">Multiple Locations</h3>
+                <p className="text-gray-300">
+                  With four locations across Lincolnshire - Skegness, Spilsby, Horncastle, and Boston - we provide accessible running opportunities for everyone in our community.
+                </p>
+              </div>
+            </div>
+            
+            <div className="bg-[#222222] p-5 rounded-lg mb-6">
+              <p className="text-lg italic">
+                "Established in 2015, Skegness & District Running Club is a popular, thriving club with over 150 members across Skegness, Spilsby, Horncastle and Boston."
+              </p>
+            </div>
+            
+            <h3 className="text-2xl font-semibold text-sadrc-orange mb-4">Our Story</h3>
+            
+            <p className="text-lg">
+              Co-founder Andy Shelton, a dedicated runner since 1986 and qualified coach, inspired his wife Helena to join him in running in 2012. Helena quickly developed a passion for the sport and is now also a qualified coach. Together with Glenn Hillaby who at the time was landlord of the Nelson Butt in Spilsby and a keen runner, they founded SADRC in January 2015, running from The Crown Hotel in Skegness, as well as the Nelson Butt. Their shared vision was to make running accessible to athletes of all abilities in the local area.
             </p>
-            <p>
-              With four locations across Lincolnshire - Skegness, Spilsby, Horncastle, and Boston - we provide accessible running opportunities for everyone in our community.
+            
+            <p className="text-lg">
+              The club received affiliation from England Athletics in April 2015. Shortly afterwards, a group was formed in Boston and four years later, a group in Horncastle was established due to increasing demand.
             </p>
+            
+            <div className="flex items-center my-6">
+              <div className="flex-grow h-px bg-gray-700"></div>
+              <div className="mx-4 text-gray-500">2025</div>
+              <div className="flex-grow h-px bg-gray-700"></div>
+            </div>
+            
+            <p className="text-lg">
+              Fast forward to 2025 Skegness club night is run by Andy and Helena now at the Links Hotel and the Spilsby, Boston, and Horncastle groups are led by a group of extremely dedicated Run Leaders. For more information about these groups and their leaders, please look on our website.
+            </p>
+            
+            <h3 className="text-2xl font-semibold text-sadrc-orange mb-4">Club Activities</h3>
+            
+            <p className="text-lg">
+              As qualified coaches, Andy and Helena continue to guide club runners. Andy works with more experienced runners, while Helena supports beginners with programmes like the popular 'Couch to 5k'. She has successfully helped many runners progress through the club. Members regularly participate in 10k runs in Skegness, Grimsby, Cleethorpes, and Woodhall Spa, and in their own event, the Bolingbroke Breaker. The club is also involved in organising the Spilsby Show 10k. They also host a monthly Boating Lake Run in Skegness, a free event marshalled and timed by volunteers for both club members and other locals.
+            </p>
+            
+            <div className="bg-[#222222] p-5 rounded-lg mt-6">
+              <p className="text-lg">
+                The club stands testament to the power of dedication, teamwork, and friendship. The committed Run Leaders and committee continue to inspire and lead the club, promoting physical and mental well-being and fostering a welcoming environment where every runner feels valued and encouraged. The vision and hard work that's been created has a lasting legacy that has positively impacted many in the East Lincolnshire running community.
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Committee Members Section */}
-        <div className="bg-[#1a1a1a] p-6 rounded-lg mb-8">
-          <h2 className="text-2xl font-bold mb-6 text-sadrc-orange">Committee Members</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] p-4 sm:p-6 md:p-8 rounded-lg mb-8 shadow-lg border-l-4 border-sadrc-orange">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 md:mb-6 text-sadrc-orange flex items-center">
+            <span className="mr-2">Committee Members</span>
+            <div className="w-8 md:w-10 h-1 bg-sadrc-orange ml-2"></div>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             {/* Main Committee Positions */}
-            <div>
-              <h3 className="text-xl font-semibold mb-4 text-white">Main Committee</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li><span className="font-semibold text-sadrc-orange">Chair:</span> Shawn Thomas</li>
-                <li><span className="font-semibold text-sadrc-orange">Vice Chair:</span> Mark Sands</li>
-                <li><span className="font-semibold text-sadrc-orange">Secretary:</span> Claire Harness</li>
-                <li><span className="font-semibold text-sadrc-orange">Treasurer:</span> Helena Shelton</li>
-                <li><span className="font-semibold text-sadrc-orange">Membership Secretary:</span> Position Available</li>
-                <li><span className="font-semibold text-sadrc-orange">DBS Verifier:</span> Leanne Rickett</li>
-                <li><span className="font-semibold text-sadrc-orange">Kit Officer:</span> Phillip Weaver</li>
+            <div className="bg-[#222222] p-4 md:p-6 rounded-lg">
+              <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 text-white border-b border-gray-700 pb-2">Main Committee</h3>
+              <ul className="space-y-2 md:space-y-3 text-gray-300 text-sm md:text-base">
+                <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">Chair:</span> Helena Shelton</li>
+                <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">Vice Chair:</span> Mark Sands</li>
+                <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">Club Secretary:</span> Claire Harness</li>
+                <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">Treasurer:</span> Sally Sharp</li>
+                <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">Membership Secretary:</span> Andy Shelton</li>
+                <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">Kit Officer:</span> Darren Fissenden</li>
+                <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">Website Administrator:</span> Brian Darrington</li>
+                <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">DBS Verifier:</span> Leanne Rickett</li>
               </ul>
             </div>
 
             {/* Welfare Officers */}
-            <div>
-              <h3 className="text-xl font-semibold mb-4 text-white">Welfare Officers</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li>Sarah Thomas</li>
-                <li>Sally Sharp</li>
-                <li>Rob Cox</li>
-                <li>Rebecca Grice</li>
-                <li>Mark Sands</li>
+            <div className="bg-[#222222] p-4 md:p-6 rounded-lg">
+              <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 text-white border-b border-gray-700 pb-2">Welfare Officers</h3>
+              <ul className="space-y-2 md:space-y-3 text-gray-300 text-sm md:text-base">
+                <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">Senior/Lead Welfare Officer:</span> Sarah Thomas</li>
+                <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">Welfare Officer:</span> Becca Grice (Becca Louise on Facebook)</li>
               </ul>
             </div>
           </div>

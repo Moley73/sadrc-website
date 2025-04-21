@@ -9,13 +9,18 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import LoadingState from './components/LoadingState';
 import { initWebVitals } from '@/utils/analytics';
+import Script from 'next/script';
 
-const inter = Inter({ subsets: ['latin'] });
+// Optimize font loading
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',  // Ensures text remains visible during font loading
+});
 
 const siteMetadata = {
-  title: 'Skegness and District Running Club',
-  description: 'Join our friendly running community in Lincolnshire. Established in 2015, we offer group runs in Skegness, Spilsby, Horncastle, and Boston. Free membership with optional England Athletics affiliation.',
-  keywords: 'running club, Skegness, Lincolnshire, Spilsby, Horncastle, Boston, athletics, running group, England Athletics',
+  title: 'Skegness and District Running Club | Lincolnshire Running Community',
+  description: 'Join Skegness and District Running Club, a friendly community in Lincolnshire with group runs in Skegness, Spilsby, Horncastle, and Boston. Club membership £10 per year with England Athletics affiliation option. Perfect for runners of all abilities.',
+  keywords: 'running club Lincolnshire, Skegness running, Spilsby running group, Horncastle runners, Boston running club, England Athletics affiliated club, beginner friendly running, Lincolnshire running community, running club membership',
   author: 'Skegness and District Running Club',
   url: 'https://skegnessrunningclub.co.uk',
   locale: 'en_GB',
@@ -103,6 +108,65 @@ export default function RootLayout({
         className={`${inter.className} bg-[#1a1a1a] text-white min-h-screen flex flex-col`}
         style={{ height: 'calc(var(--vh, 1vh) * 100)' }}
       >
+        <Script id="schema-org" type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "SportsClub",
+              "name": "Skegness and District Running Club",
+              "url": "https://skegnessrunningclub.co.uk",
+              "logo": "https://skegnessrunningclub.co.uk/images/locations/Logo.avif",
+              "description": "A friendly running club based in Lincolnshire with group runs in Skegness, Spilsby, Horncastle, and Boston.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "Lincolnshire",
+                "addressCountry": "UK"
+              },
+              "sameAs": [
+                "https://www.facebook.com/groups/sadrc",
+                "https://www.instagram.com/skegnessanddistrictrc"
+              ],
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Monday",
+                  "opens": "18:30",
+                  "closes": "19:30",
+                  "validFrom": "2025-01-01",
+                  "validThrough": "2025-12-31"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Tuesday",
+                  "opens": "18:30",
+                  "closes": "19:30",
+                  "validFrom": "2025-01-01",
+                  "validThrough": "2025-12-31"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Thursday",
+                  "opens": "18:30",
+                  "closes": "19:30",
+                  "validFrom": "2025-01-01",
+                  "validThrough": "2025-12-31"
+                }
+              ],
+              "memberOf": {
+                "@type": "Organization",
+                "name": "England Athletics"
+              },
+              "offers": {
+                "@type": "Offer",
+                "name": "Club Membership",
+                "price": "10",
+                "priceCurrency": "GBP",
+                "validFrom": "2025-04-01",
+                "validThrough": "2026-03-31"
+              }
+            }
+          `}
+        </Script>
         <Suspense fallback={<LoadingState fullScreen size="large" text="Loading SADRC..." />}>
           <div className="flex flex-col flex-grow">
             <Navbar />

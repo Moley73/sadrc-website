@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useState, useCallback } from 'react';
+import { Fragment, useState, useCallback, useMemo } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
@@ -20,10 +20,10 @@ export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
 
-  const isActive = (href: string) => {
+  const isActive = useCallback((href: string) => {
     if (href === '/') return pathname === href;
     return pathname.startsWith(href);
-  };
+  }, [pathname]);
 
   const scrollToSection = useCallback((sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -54,6 +54,70 @@ export default function Navbar() {
     }
   }, [scrollToSection, pathname, router]);
 
+  // Memoize the desktop navigation links to prevent unnecessary re-renders
+  const desktopNavLinks = useMemo(() => (
+    navigation.map((link) => (
+      link.href.startsWith('/#') ? (
+        <a
+          key={link.href}
+          href={link.href}
+          onClick={(e) => handleNavClick(e, link.href)}
+          className={`${
+            isActive(link.href)
+              ? 'text-sadrc-orange relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-sadrc-orange after:rounded-full'
+              : 'text-gray-300 hover:text-sadrc-orange relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-sadrc-orange after:rounded-full after:transition-all after:duration-300 hover:after:w-full'
+          } transition-colors duration-200`}
+        >
+          {link.name}
+        </a>
+      ) : (
+        <Link
+          key={link.href}
+          href={link.href}
+          className={`${
+            isActive(link.href)
+              ? 'text-sadrc-orange relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-sadrc-orange after:rounded-full'
+              : 'text-gray-300 hover:text-sadrc-orange relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-sadrc-orange after:rounded-full after:transition-all after:duration-300 hover:after:w-full'
+          } transition-colors duration-200`}
+        >
+          {link.name}
+        </Link>
+      )
+    ))
+  ), [handleNavClick, isActive]);
+
+  // Memoize the mobile navigation links
+  const mobileNavLinks = useMemo(() => (
+    navigation.map((link) => (
+      link.href.startsWith('/#') ? (
+        <a
+          key={link.href}
+          href={link.href}
+          onClick={(e) => handleNavClick(e, link.href)}
+          className={`${
+            isActive(link.href)
+              ? 'text-sadrc-orange'
+              : 'text-gray-300 hover:text-sadrc-orange'
+          } block px-3 py-2 text-base font-medium transition-colors duration-200`}
+        >
+          {link.name}
+        </a>
+      ) : (
+        <Link
+          key={link.href}
+          href={link.href}
+          className={`${
+            isActive(link.href)
+              ? 'text-sadrc-orange'
+              : 'text-gray-300 hover:text-sadrc-orange'
+          } block px-3 py-2 text-base font-medium transition-colors duration-200`}
+        >
+          {link.name}
+        </Link>
+      )
+    ))
+  ), [handleNavClick, isActive]);
+
   return (
     <nav className="bg-[#121212] fixed w-full z-50 top-0 left-0 border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,6 +140,7 @@ export default function Navbar() {
               type="button"
               className="text-gray-300 hover:text-white p-2"
               onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
             >
               {isOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
             </button>
@@ -83,45 +148,18 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navigation.map((link) => (
-              link.href.startsWith('/#') ? (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  className={`${
-                    isActive(link.href)
-                      ? 'text-sadrc-orange'
-                      : 'text-gray-300 hover:text-sadrc-orange'
-                  } transition-colors duration-200`}
-                >
-                  {link.name}
-                </a>
-              ) : (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`${
-                    isActive(link.href)
-                      ? 'text-sadrc-orange'
-                      : 'text-gray-300 hover:text-sadrc-orange'
-                  } transition-colors duration-200`}
-                >
-                  {link.name}
-                </Link>
-              )
-            ))}
+            {desktopNavLinks}
             <a
               href="https://clubshop.fastraxrunning.com/product-category/skegness_and_district_rc/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-white after:rounded-full after:transition-all after:duration-300 hover:after:w-full"
             >
               Club Shop
             </a>
             <Link
               href="/join"
-              className="bg-sadrc-orange text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-200 font-semibold"
+              className="bg-sadrc-orange text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-200 font-semibold hover:shadow-lg hover:shadow-orange-500/20 hover:scale-105"
             >
               Join Us
             </Link>
@@ -136,34 +174,7 @@ export default function Navbar() {
         } md:hidden bg-[#1a1a1a] border-t border-gray-800`}
       >
         <div className="px-2 pt-2 pb-3 space-y-1">
-          {navigation.map((link) => (
-            link.href.startsWith('/#') ? (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className={`${
-                  isActive(link.href)
-                    ? 'text-sadrc-orange'
-                    : 'text-gray-300 hover:text-sadrc-orange'
-                } block px-3 py-2 text-base font-medium transition-colors duration-200`}
-              >
-                {link.name}
-              </a>
-            ) : (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`${
-                  isActive(link.href)
-                    ? 'text-sadrc-orange'
-                    : 'text-gray-300 hover:text-sadrc-orange'
-                } block px-3 py-2 text-base font-medium transition-colors duration-200`}
-              >
-                {link.name}
-              </Link>
-            )
-          ))}
+          {mobileNavLinks}
           <a
             href="https://clubshop.fastraxrunning.com/product-category/skegness_and_district_rc/"
             target="_blank"
