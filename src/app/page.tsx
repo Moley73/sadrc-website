@@ -15,6 +15,8 @@ interface EventType {
   image: string;
   description: string;
   registrationLink: string | null;
+  resultsLink?: string;
+  isResults?: boolean;
 }
 
 'use client';
@@ -74,20 +76,30 @@ const locations: LocationType[] = [
 // Events data
 const events: EventType[] = [
   {
-    name: 'Spilsby Show 10K',
+    name: 'Spilsby Show 10K - 2025 Results',
     date: 'July 14, 2025',
-    time: '11:00 AM',
+    time: 'Completed',
     image: '/images/events/spilsby-show.jpg',
-    description: 'A fantastic multi-terrain 10K race at the annual Spilsby Show. Perfect for all abilities!',
-    registrationLink: 'https://www.spilsbyshow.co.uk/runners/'
+    description: 'View the full results and timings from the 2025 Spilsby Show 10K race.',
+    registrationLink: null,
+    resultsLink: 'https://www.webscorer.com/race?raceid=397688',
+    isResults: true
   },
   {
-    name: 'Bolingbroke Breaker',
-    date: 'September 2025',
+    name: 'Spilsby Show 10K',
+    date: 'TBC July 2026',
+    time: 'TBC',
+    image: '/images/events/spilsby-show.jpg',
+    description: 'A fantastic multi-terrain 10K race at the annual Spilsby Show. Perfect for all abilities! More details to follow.',
+    registrationLink: null
+  },
+  {
+    name: 'Bolingbroke Breaker 10K Time Trial',
+    date: 'Sunday, 14th September 2025',
     time: '10:00 AM',
     image: '/images/events/Breaker-10.jpg',
-    description: 'The legendary Bolingbroke Breaker returns! A tough but rewarding race through historic Bolingbroke.',
-    registrationLink: null
+    description: 'The legendary Bolingbroke Breaker returns! A tough but rewarding 10K race at Ramsden Village Hall, Keal Hill, Old Bolingbroke, Spilsby, Lincolnshire, PE23 4EY. For enquiries: bolingbrokebreaker@gmail.com',
+    registrationLink: 'https://bookitzone.com/bolingbrokebreaker/zNjFFX?fbclid=IwY2xjawMUQnRleHRuA2FlbQIxMQABHrumySSCkLXVYqJUlGWRvB2mlI7p3a2DVG9Vbuy2gi0lWOnma7lSd-UFuv88_aem_w6KvnHWDh4SVEuUIiCpAFg'
   }
 ];
 
@@ -139,7 +151,7 @@ const LocationCard = ({ location }: { location: LocationType }) => {
 
 // Event Card Component
 const EventCard = ({ event }: { event: EventType }) => {
-  const { name, date, time, image, description, registrationLink } = event;
+  const { name, date, time, image, description, registrationLink, resultsLink, isResults } = event;
   
   return (
     <article className="bg-gradient-to-br from-[#222222] to-[#1a1a1a] rounded-lg overflow-hidden shadow-lg group hover:shadow-xl hover:shadow-black/30 transition-all duration-300 transform hover:-translate-y-2 border border-transparent hover:border-sadrc-orange/20">
@@ -152,6 +164,11 @@ const EventCard = ({ event }: { event: EventType }) => {
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           loading="lazy"
         />
+        {isResults && (
+          <div className="absolute top-3 right-3 bg-sadrc-orange text-white text-xs font-bold px-2 py-1 rounded-full">
+            RESULTS
+          </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
         <div className="absolute bottom-0 left-0 p-4 w-full">
           <h3 className="text-xl font-bold text-white group-hover:text-sadrc-orange transition-colors duration-300">{name}</h3>
@@ -169,7 +186,20 @@ const EventCard = ({ event }: { event: EventType }) => {
       </div>
       <div className="p-4">
         <p className="text-gray-300 text-sm mb-4">{description}</p>
-        {registrationLink ? (
+        
+        {resultsLink ? (
+          <a
+            href={resultsLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-white bg-green-700 hover:bg-green-600 transition-all duration-300 px-3 py-2 rounded-lg text-sm font-medium w-full justify-center mb-2"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            View Results
+          </a>
+        ) : registrationLink ? (
           <a
             href={registrationLink}
             target="_blank"
@@ -177,7 +207,7 @@ const EventCard = ({ event }: { event: EventType }) => {
             className="inline-flex items-center text-sadrc-orange hover:text-white bg-sadrc-orange/10 hover:bg-sadrc-orange transition-all duration-300 px-3 py-2 rounded-lg text-sm font-medium w-full justify-center"
           >
             <FaFileDownload className="mr-2" />
-            Register Now
+            Enter Now
           </a>
         ) : (
           <div className="inline-flex items-center justify-center text-gray-400 bg-gray-800/50 px-3 py-2 rounded-lg text-sm font-medium w-full">

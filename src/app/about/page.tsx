@@ -85,8 +85,28 @@ export default function About() {
             <h3 className="text-2xl font-semibold text-sadrc-orange mb-4">Club Activities</h3>
             
             <p className="text-lg">
-              As qualified coaches, Andy and Helena continue to guide club runners. Andy works with more experienced runners, while Helena supports beginners with programmes like the popular 'Couch to 5k'. She has successfully helped many runners progress through the club. Members regularly participate in 10k runs in Skegness, Grimsby, Cleethorpes, and Woodhall Spa, and in their own event, the Bolingbroke Breaker. The club is also involved in organising the Spilsby Show 10k. They also host a monthly Boating Lake Run in Skegness, a free event marshalled and timed by volunteers for both club members and other locals.
+              As qualified coaches, Andy and Helena continue to guide club runners. Andy works with more experienced runners, while Helena supports beginners with programmes like the popular 'Couch to 5k'. She has successfully helped many runners progress through the club. Members regularly participate in 10k runs in Skegness, Grimsby, Cleethorpes, and Woodhall Spa, and in their own event, <a href="https://bookitzone.com/bolingbrokebreaker/zNjFFX?fbclid=IwY2xjawMUQnRleHRuA2FlbQIxMQABHrumySSCkLXVYqJUlGWRvB2mlI7p3a2DVG9Vbuy2gi0lWOnma7lSd-UFuv88_aem_w6KvnHWDh4SVEuUIiCpAFg" target="_blank" rel="noopener noreferrer" className="text-sadrc-orange hover:underline">the Bolingbroke Breaker</a>. The club is also involved in organising the Spilsby Show 10k. They also host a monthly Boating Lake Run in Skegness, a free event marshalled and timed by volunteers for both club members and other locals.
             </p>
+            
+            <div className="bg-sadrc-blue/10 p-5 rounded-lg my-6 border border-sadrc-orange/30">
+              <h4 className="text-xl font-semibold text-sadrc-orange mb-3">Bolingbroke Breaker 10K Time Trial</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <p className="font-medium mb-1">Date and Time</p>
+                  <p>Sunday, 14th September 2025</p>
+                  <p>10:00 am</p>
+                  <p className="mt-4 font-medium mb-1">Event Enquiries</p>
+                  <p><a href="mailto:bolingbrokebreaker@gmail.com" className="text-sadrc-orange hover:underline">bolingbrokebreaker@gmail.com</a></p>
+                </div>
+                <div>
+                  <p className="font-medium mb-1">Event Location</p>
+                  <p>Ramsden Village Hall</p>
+                  <p>Keal Hill, Old Bolingbroke</p>
+                  <p>Spilsby, Lincolnshire, PE23 4EY</p>
+                  <p className="mt-4"><a href="https://bookitzone.com/bolingbrokebreaker/zNjFFX?fbclid=IwY2xjawMUQnRleHRuA2FlbQIxMQABHrumySSCkLXVYqJUlGWRvB2mlI7p3a2DVG9Vbuy2gi0lWOnma7lSd-UFuv88_aem_w6KvnHWDh4SVEuUIiCpAFg" target="_blank" rel="noopener noreferrer" className="bg-sadrc-orange hover:bg-sadrc-orange/80 text-white px-4 py-2 rounded-md inline-flex items-center transition-colors">Register Now <span className="ml-2">→</span></a></p>
+                </div>
+              </div>
+            </div>
             
             <div className="bg-[#222222] p-5 rounded-lg mt-6">
               <p className="text-lg">
@@ -124,6 +144,10 @@ export default function About() {
               <ul className="space-y-2 md:space-y-3 text-gray-300 text-sm md:text-base">
                 <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">Senior/Lead Welfare Officer:</span> Sarah Thomas</li>
                 <li className="flex flex-col sm:flex-row sm:items-center"><span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">Welfare Officer:</span> Becca Grice (Becca Louise on Facebook)</li>
+                <li className="flex flex-col sm:flex-row sm:items-center mt-4 pt-2 border-t border-gray-700">
+                  <span className="font-semibold text-sadrc-orange sm:w-48 mb-1 sm:mb-0">Welfare Contact:</span>
+                  <a href="mailto:sadrc.welfare@mail.com" className="text-sadrc-orange hover:text-orange-400 hover:underline">sadrc.welfare@mail.com</a>
+                </li>
               </ul>
             </div>
           </div>
