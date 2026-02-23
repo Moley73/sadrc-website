@@ -87,19 +87,19 @@ const events: EventType[] = [
   },
   {
     name: 'Spilsby Show 10K',
-    date: 'TBC July 2026',
-    time: 'TBC',
+    date: 'Saturday, 12th July 2026',
+    time: '10:30 AM',
     image: '/images/events/spilsby-show.jpg',
-    description: 'A fantastic multi-terrain 10K race at the annual Spilsby Show. Perfect for all abilities! More details to follow.',
-    registrationLink: null
+    description: 'The Spilsby Show 10K race is back again this year, in association with the Skegness and District Running Club and sponsored by GPC Industries Ltd. A fantastic multi-terrain race at Spilsby Recreation Ground & Pavilion. Perfect for all abilities!',
+    registrationLink: 'https://entries.sublimetiming.com/race/64?fbclid=IwY2xjawQJiL5leHRuA2FlbQIxMABicmlkETFkRndiYVUzTGp2bUhWZ3JLc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHtDmsilrWPna83OdPTGTpZ3IVXgMA30kLBw1kmE-nN-Ge3wECJypWJcS_hB1_aem_uPtiuMaT25Wjx0ErRZci8g'
   },
   {
     name: 'Bolingbroke Breaker 10K Time Trial',
-    date: 'Sunday, 14th September 2025',
+    date: 'Sunday, 16th August 2026',
     time: '10:00 AM',
     image: '/images/events/Breaker-10.jpg',
     description: 'The legendary Bolingbroke Breaker returns! A tough but rewarding 10K race at Ramsden Village Hall, Keal Hill, Old Bolingbroke, Spilsby, Lincolnshire, PE23 4EY. For enquiries: bolingbrokebreaker@gmail.com',
-    registrationLink: 'https://bookitzone.com/bolingbrokebreaker/zNjFFX?fbclid=IwY2xjawMUQnRleHRuA2FlbQIxMQABHrumySSCkLXVYqJUlGWRvB2mlI7p3a2DVG9Vbuy2gi0lWOnma7lSd-UFuv88_aem_w6KvnHWDh4SVEuUIiCpAFg'
+    registrationLink: 'https://bookitzone.com/bolingbrokebreaker/BXjFFX?eref=mail&fbclid=IwY2xjawQJh8dleHRuA2FlbQIxMQBzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeLilKowMbXWCYFh8ydTfzsIjZvB6-5pjgjlWIJfcXkHsYmWA4b_iZTlgxysM_aem_P1WCBKeeiehjdyM4H_np4A'
   }
 ];
 
@@ -434,20 +434,20 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
                 <div className="bg-black/20 p-6 rounded-lg border border-gray-800">
                   <h3 className="text-xl font-semibold text-sadrc-orange mb-3">Club Membership</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li><span aria-hidden="true">•</span> Club membership is £10 per year</li>
-                    <li><span aria-hidden="true">•</span> Open to anyone aged 15 or over</li>
-                    <li><span aria-hidden="true">•</span> Membership year: April 1st to March 31st</li>
-                    <li><span aria-hidden="true">•</span> Optional England Athletics affiliation: £20</li>
+                  <ul className="space-y-2 text-gray-300 list-disc list-inside">
+                    <li>Club membership is £10 per year</li>
+                    <li>Open to anyone aged 15 or over</li>
+                    <li>Membership year: April 1st to March 31st</li>
+                    <li>Optional England Athletics affiliation: £20</li>
                   </ul>
                 </div>
                 <div className="bg-black/20 p-6 rounded-lg border border-gray-800">
                   <h3 className="text-xl font-semibold text-sadrc-orange mb-3">Member Benefits</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li><span aria-hidden="true">•</span> Enter races under Skegness and District RC name</li>
-                    <li><span aria-hidden="true">•</span> Participate in Lincs League Cross Country</li>
-                    <li><span aria-hidden="true">•</span> Eligible for London Marathon club places draw*</li>
-                    <li><span aria-hidden="true">•</span> Race entry discounts (if EA affiliated)</li>
+                  <ul className="space-y-2 text-gray-300 list-disc list-inside">
+                    <li>Enter races under Skegness and District RC name</li>
+                    <li>Participate in Lincs League Cross Country</li>
+                    <li>Eligible for London Marathon club places draw*</li>
+                    <li>Race entry discounts (if EA affiliated)</li>
                   </ul>
                 </div>
               </div>
