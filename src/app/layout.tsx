@@ -12,22 +12,23 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Skegness and District Running Club | Lincolnshire Running Community',
-  description: 'Join Skegness and District Running Club, a friendly community in Lincolnshire with group runs in Skegness, Spilsby, Horncastle, and Boston. Club membership £10 per year with England Athletics affiliation option. Perfect for runners of all abilities.',
-  keywords: 'running club Lincolnshire, Skegness running, Spilsby running group, Horncastle runners, Boston running club, England Athletics affiliated club, beginner friendly running, Lincolnshire running community, running club membership',
+  title: 'Running Club Skegness, Boston, Spilsby & Horncastle | SADRC',
+  description: 'Join Skegness and District Running Club - your local running club in Skegness, Boston, Spilsby and Horncastle. Weekly group runs, England Athletics affiliated. Running club near me in Lincolnshire. All abilities welcome, £10/year membership.',
+  keywords: 'running club Skegness, running club Boston Lincolnshire, running club Spilsby, running club Horncastle, Skegness runners, Boston runners, Spilsby running group, Horncastle running club, running club near me Lincolnshire, Lincolnshire running club, England Athletics club, SADRC, Skegness and District Running Club, local running club, running groups Lincolnshire, parkrun club',
   authors: [{ name: 'Skegness and District Running Club' }],
   openGraph: {
     type: 'website',
     url: 'https://skegnessrunningclub.co.uk',
-    title: 'Skegness and District Running Club | Lincolnshire Running Community',
-    description: 'Join Skegness and District Running Club, a friendly community in Lincolnshire with group runs in Skegness, Spilsby, Horncastle, and Boston. Club membership £10 per year with England Athletics affiliation option. Perfect for runners of all abilities.',
+    title: 'Running Club Skegness, Boston, Spilsby & Horncastle | SADRC',
+    siteName: 'Skegness and District Running Club',
+    description: 'Join your local running club in Skegness, Boston, Spilsby and Horncastle. Weekly group runs, England Athletics affiliated. All abilities welcome.',
     images: ['/images/hero/running-hero.jpg'],
     locale: 'en_GB',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Skegness and District Running Club | Lincolnshire Running Community',
-    description: 'Join Skegness and District Running Club, a friendly community in Lincolnshire with group runs in Skegness, Spilsby, Horncastle, and Boston. Club membership £10 per year with England Athletics affiliation option. Perfect for runners of all abilities.',
+    title: 'Running Club Skegness, Boston, Spilsby & Horncastle | SADRC',
+    description: 'Join your local running club in Skegness, Boston, Spilsby and Horncastle. Weekly group runs, England Athletics affiliated. All abilities welcome.',
     images: ['/images/hero/running-hero.jpg'],
   },
   themeColor: '#ff6600',
@@ -38,6 +39,9 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   manifest: '/site.webmanifest',
+  alternates: {
+    canonical: 'https://skegnessrunningclub.co.uk',
+  },
 };
 
 export default function RootLayout({
@@ -54,17 +58,100 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "SportsClub",
               "name": "Skegness and District Running Club",
+              "alternateName": "SADRC",
               "url": "https://skegnessrunningclub.co.uk",
               "logo": "https://skegnessrunningclub.co.uk/images/locations/Logo.avif",
-              "description": "A friendly running club based in Lincolnshire with group runs in Skegness, Spilsby, Horncastle, and Boston.",
+              "description": "Running club in Skegness, Boston, Spilsby and Horncastle, Lincolnshire. Weekly group runs for all abilities. England Athletics affiliated.",
+              "sport": "Running",
               "address": {
                 "@type": "PostalAddress",
                 "addressRegion": "Lincolnshire",
-                "addressCountry": "UK"
+                "addressCountry": "GB"
               },
+              "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "Skegness",
+                  "containedInPlace": {
+                    "@type": "AdministrativeArea",
+                    "name": "Lincolnshire"
+                  }
+                },
+                {
+                  "@type": "City",
+                  "name": "Boston",
+                  "containedInPlace": {
+                    "@type": "AdministrativeArea",
+                    "name": "Lincolnshire"
+                  }
+                },
+                {
+                  "@type": "City",
+                  "name": "Spilsby",
+                  "containedInPlace": {
+                    "@type": "AdministrativeArea",
+                    "name": "Lincolnshire"
+                  }
+                },
+                {
+                  "@type": "City",
+                  "name": "Horncastle",
+                  "containedInPlace": {
+                    "@type": "AdministrativeArea",
+                    "name": "Lincolnshire"
+                  }
+                }
+              ],
+              "location": [
+                {
+                  "@type": "Place",
+                  "name": "Skegness Running Location",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Links Hotel",
+                    "addressLocality": "Skegness",
+                    "addressRegion": "Lincolnshire",
+                    "addressCountry": "GB"
+                  }
+                },
+                {
+                  "@type": "Place",
+                  "name": "Boston Running Location",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Fuddy Duck",
+                    "postalCode": "PE21 7TW",
+                    "addressLocality": "Boston",
+                    "addressRegion": "Lincolnshire",
+                    "addressCountry": "GB"
+                  }
+                },
+                {
+                  "@type": "Place",
+                  "name": "Spilsby Running Location",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "New Life Centre",
+                    "addressLocality": "Spilsby",
+                    "addressRegion": "Lincolnshire",
+                    "addressCountry": "GB"
+                  }
+                },
+                {
+                  "@type": "Place",
+                  "name": "Horncastle Running Location",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Cattle Market Car Park",
+                    "addressLocality": "Horncastle",
+                    "addressRegion": "Lincolnshire",
+                    "addressCountry": "GB"
+                  }
+                }
+              ],
               "sameAs": [
-                "https://www.facebook.com/groups/sadrc",
-                "https://www.instagram.com/skegnessanddistrictrc"
+                "https://www.facebook.com/skegnessanddistrictrunningclub",
+                "https://www.instagram.com/sadrc_uk"
               ],
               "openingHoursSpecification": [
                 {
@@ -72,24 +159,24 @@ export default function RootLayout({
                   "dayOfWeek": "Monday",
                   "opens": "18:30",
                   "closes": "19:30",
-                  "validFrom": "2025-01-01",
-                  "validThrough": "2025-12-31"
+                  "validFrom": "2026-01-01",
+                  "validThrough": "2026-12-31"
                 },
                 {
                   "@type": "OpeningHoursSpecification",
                   "dayOfWeek": "Tuesday",
                   "opens": "18:30",
                   "closes": "19:30",
-                  "validFrom": "2025-01-01",
-                  "validThrough": "2025-12-31"
+                  "validFrom": "2026-01-01",
+                  "validThrough": "2026-12-31"
                 },
                 {
                   "@type": "OpeningHoursSpecification",
                   "dayOfWeek": "Thursday",
                   "opens": "18:30",
                   "closes": "19:30",
-                  "validFrom": "2025-01-01",
-                  "validThrough": "2025-12-31"
+                  "validFrom": "2026-01-01",
+                  "validThrough": "2026-12-31"
                 }
               ],
               "memberOf": {
@@ -99,11 +186,15 @@ export default function RootLayout({
               "offers": {
                 "@type": "Offer",
                 "name": "Club Membership",
+                "description": "Annual running club membership for all abilities",
                 "price": "10",
                 "priceCurrency": "GBP",
-                "validFrom": "2025-04-01",
-                "validThrough": "2026-03-31"
-              }
+                "validFrom": "2026-04-01",
+                "validThrough": "2027-03-31",
+                "availability": "https://schema.org/InStock"
+              },
+              "email": "infosadrc@mail.com",
+              "keywords": "running club, Skegness, Boston, Spilsby, Horncastle, Lincolnshire, England Athletics"
             }
           `}
         </Script>

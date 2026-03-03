@@ -295,17 +295,17 @@ export default function Home() {
       <section className="py-12 sm:py-16 bg-[#1a1a1a]">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl sm:text-3xl font-bold text-center text-white mb-6 sm:mb-8">
-            Welcome to <span className="text-sadrc-orange">Skegness and District RC</span>
+            Your Local Running Club in <span className="text-sadrc-orange">Skegness, Boston, Spilsby & Horncastle</span>
           </h2>
           <div className="max-w-3xl mx-auto text-gray-300 space-y-3 sm:space-y-4 px-4 sm:px-6">
             <p className="text-sm sm:text-base">
-              Skegness and District Running Club is more than just a running club - we're a community of passionate runners who support and encourage each other.
+              <strong>Skegness and District Running Club (SADRC)</strong> is your friendly local running club serving <strong>Skegness, Boston, Spilsby, and Horncastle</strong> in Lincolnshire. We're more than just a running club - we're a community of passionate runners who support and encourage each other.
             </p>
             <p className="text-sm sm:text-base">
-              Whether you're taking your first steps into running or you're an experienced marathoner, you'll find a warm welcome and plenty of support here.
+              Looking for a <strong>running club near you</strong> in Lincolnshire? Whether you're in Skegness, Boston, Spilsby, or Horncastle, we have weekly group runs at convenient locations. From beginners taking their first steps to experienced marathoners, you'll find a warm welcome and plenty of support.
             </p>
             <p className="text-sm sm:text-base">
-              We offer structured training sessions, social runs, and preparation for local and national events. Our qualified coaches are here to help you achieve your running goals.
+              As an <strong>England Athletics affiliated club</strong>, we offer structured training sessions, social runs, and preparation for local and national events. Our qualified coaches are here to help you achieve your running goals. Join the best running club in Lincolnshire today!
             </p>
           </div>
         </div>
@@ -315,10 +315,10 @@ export default function Home() {
       <section id="locations" className="py-16 px-4 bg-[#121212] scroll-mt-16">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">
-            Our <span className="text-sadrc-orange">Locations</span>
+            Running Club Locations in <span className="text-sadrc-orange">Skegness, Boston, Spilsby & Horncastle</span>
           </h2>
           <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-            We run from multiple locations across Lincolnshire
+            Weekly group runs across Lincolnshire - Find your nearest running club location
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {locationCards}
