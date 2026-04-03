@@ -13,6 +13,7 @@ const navigation = [
   { name: 'Events', href: '/#events' },
   { name: 'Locations', href: '/#locations' },
   { name: 'Contact', href: '/#footer' },
+  { name: 'Members Portal', href: 'https://sadrcmembers.netlify.app/', external: true },
 ] as const;
 
 export default function Navbar() {
@@ -56,21 +57,40 @@ export default function Navbar() {
 
   // Memoize the desktop navigation links to prevent unnecessary re-renders
   const desktopNavLinks = useMemo(() => (
-    navigation.map((link) => (
-      link.href.startsWith('/#') ? (
-        <a
-          key={link.href}
-          href={link.href}
-          onClick={(e) => handleNavClick(e, link.href)}
-          className={`${
-            isActive(link.href)
-              ? 'text-sadrc-orange relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-sadrc-orange after:rounded-full'
-              : 'text-gray-300 hover:text-sadrc-orange relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-sadrc-orange after:rounded-full after:transition-all after:duration-300 hover:after:w-full'
-          } transition-colors duration-200`}
-        >
-          {link.name}
-        </a>
-      ) : (
+    navigation.map((link) => {
+      // Handle external links
+      if ('external' in link && link.external) {
+        return (
+          <a
+            key={link.href}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-300 hover:text-sadrc-orange relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-sadrc-orange after:rounded-full after:transition-all after:duration-300 hover:after:w-full transition-colors duration-200"
+          >
+            {link.name}
+          </a>
+        );
+      }
+      // Handle anchor links
+      if (link.href.startsWith('/#')) {
+        return (
+          <a
+            key={link.href}
+            href={link.href}
+            onClick={(e) => handleNavClick(e, link.href)}
+            className={`${
+              isActive(link.href)
+                ? 'text-sadrc-orange relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-sadrc-orange after:rounded-full'
+                : 'text-gray-300 hover:text-sadrc-orange relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-sadrc-orange after:rounded-full after:transition-all after:duration-300 hover:after:w-full'
+            } transition-colors duration-200`}
+          >
+            {link.name}
+          </a>
+        );
+      }
+      // Handle internal links
+      return (
         <Link
           key={link.href}
           href={link.href}
@@ -82,27 +102,46 @@ export default function Navbar() {
         >
           {link.name}
         </Link>
-      )
-    ))
+      );
+    })
   ), [handleNavClick, isActive]);
 
   // Memoize the mobile navigation links
   const mobileNavLinks = useMemo(() => (
-    navigation.map((link) => (
-      link.href.startsWith('/#') ? (
-        <a
-          key={link.href}
-          href={link.href}
-          onClick={(e) => handleNavClick(e, link.href)}
-          className={`${
-            isActive(link.href)
-              ? 'text-sadrc-orange'
-              : 'text-gray-300 hover:text-sadrc-orange'
-          } block px-3 py-2 text-base font-medium transition-colors duration-200`}
-        >
-          {link.name}
-        </a>
-      ) : (
+    navigation.map((link) => {
+      // Handle external links
+      if ('external' in link && link.external) {
+        return (
+          <a
+            key={link.href}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-300 hover:text-sadrc-orange block px-3 py-2 text-base font-medium transition-colors duration-200"
+          >
+            {link.name}
+          </a>
+        );
+      }
+      // Handle anchor links
+      if (link.href.startsWith('/#')) {
+        return (
+          <a
+            key={link.href}
+            href={link.href}
+            onClick={(e) => handleNavClick(e, link.href)}
+            className={`${
+              isActive(link.href)
+                ? 'text-sadrc-orange'
+                : 'text-gray-300 hover:text-sadrc-orange'
+            } block px-3 py-2 text-base font-medium transition-colors duration-200`}
+          >
+            {link.name}
+          </a>
+        );
+      }
+      // Handle internal links
+      return (
         <Link
           key={link.href}
           href={link.href}
@@ -114,8 +153,8 @@ export default function Navbar() {
         >
           {link.name}
         </Link>
-      )
-    ))
+      );
+    })
   ), [handleNavClick, isActive]);
 
   return (
