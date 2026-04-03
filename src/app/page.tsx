@@ -463,23 +463,24 @@ export default function Home() {
               <div className="bg-black/20 p-6 rounded-lg border border-gray-800 text-left mt-4">
                 <h3 className="text-xl font-semibold text-sadrc-orange mb-3">How to Join</h3>
                 <ol className="list-decimal list-inside space-y-2 text-gray-300">
-                  <li>Download and complete the membership form</li>
-                  <li>Email your completed form to <a href="mailto:infosadrc@mail.com" className="text-sadrc-orange hover:text-orange-400">infosadrc@mail.com</a></li>
-                  <li>If choosing EA affiliation, bank details will be provided for payment</li>
+                  <li>Visit our Members Portal to request membership</li>
+                  <li>Complete your membership request through the portal</li>
+                  <li>If choosing EA affiliation, payment details will be provided</li>
                 </ol>
                 <p className="text-sm text-gray-400 mt-4">* Subject to terms & conditions, including having been rejected in the ballot</p>
               </div>
             </div>
 
-            {/* Download Buttons */}
+            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mt-6">
               <a
-                href="/files/SADRC membership form 2025-26 - Final.pdf"
-                download
+                href="https://sadrcmembers.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-sadrc-orange hover:bg-orange-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 w-full sm:w-auto text-center"
               >
                 <FaFileDownload className="text-xl sm:text-2xl mr-2 sm:mr-3 flex-shrink-0" />
-                <span className="text-base sm:text-lg">Download Membership Form</span>
+                <span className="text-base sm:text-lg">Go to Members Portal</span>
               </a>
               
               <a

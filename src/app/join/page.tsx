@@ -64,15 +64,16 @@ export default function JoinUs() {
                 <p className="text-sm md:text-base text-gray-300">Come along to any of our sessions for free! We offer three trial runs before you need to become a member.</p>
               </div>
               <div>
-                <h3 className="text-lg md:text-xl font-semibold mb-2 text-white">2. Complete the Application</h3>
-                <p className="text-sm md:text-base text-gray-300">Download and fill out our membership application form and review our code of conduct. Club membership is £10 per year with optional England Athletics affiliation at an additional cost of £20 per year.</p>
+                <h3 className="text-lg md:text-xl font-semibold mb-2 text-white">2. Request Membership Through Our Portal</h3>
+                <p className="text-sm md:text-base text-gray-300">Visit our Members Portal to submit your membership request. Club membership is £10 per year with optional England Athletics affiliation at an additional cost of £20 per year.</p>
                 <div className="flex flex-col sm:flex-row gap-4 mt-4">
                   <a 
-                    href="/files/SADRC membership form 2025-26 - Final.pdf"
+                    href="https://sadrcmembers.netlify.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-block w-full sm:w-auto text-center bg-sadrc-orange hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition duration-200"
-                    download
                   >
-                    Download Membership Form
+                    Go to Members Portal
                   </a>
                   <a 
                     href="/files/codes-of-conduct-senior-athletes-1.pdf"
