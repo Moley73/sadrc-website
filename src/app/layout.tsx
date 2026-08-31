@@ -159,24 +159,24 @@ export default function RootLayout({
                   "dayOfWeek": "Monday",
                   "opens": "18:30",
                   "closes": "19:30",
-                  "validFrom": "2026-01-01",
-                  "validThrough": "2026-12-31"
+                  "validFrom": "2027-01-01",
+                  "validThrough": "2027-12-31"
                 },
                 {
                   "@type": "OpeningHoursSpecification",
                   "dayOfWeek": "Tuesday",
                   "opens": "18:30",
                   "closes": "19:30",
-                  "validFrom": "2026-01-01",
-                  "validThrough": "2026-12-31"
+                  "validFrom": "2027-01-01",
+                  "validThrough": "2027-12-31"
                 },
                 {
                   "@type": "OpeningHoursSpecification",
                   "dayOfWeek": "Thursday",
                   "opens": "18:30",
                   "closes": "19:30",
-                  "validFrom": "2026-01-01",
-                  "validThrough": "2026-12-31"
+                  "validFrom": "2027-01-01",
+                  "validThrough": "2027-12-31"
                 }
               ],
               "memberOf": {
@@ -189,8 +189,8 @@ export default function RootLayout({
                 "description": "Annual running club membership for all abilities",
                 "price": "10",
                 "priceCurrency": "GBP",
-                "validFrom": "2026-04-01",
-                "validThrough": "2027-03-31",
+                "validFrom": "2027-04-01",
+                "validThrough": "2028-03-31",
                 "availability": "https://schema.org/InStock"
               },
               "email": "infosadrc@mail.com",

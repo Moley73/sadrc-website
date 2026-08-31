@@ -76,16 +76,6 @@ const locations: LocationType[] = [
 // Events data
 const events: EventType[] = [
   {
-    name: 'Spilsby Show 10K - 2025 Results',
-    date: 'July 14, 2025',
-    time: 'Completed',
-    image: '/images/events/spilsby-show.jpg',
-    description: 'View the full results and timings from the 2025 Spilsby Show 10K race.',
-    registrationLink: null,
-    resultsLink: 'https://www.webscorer.com/race?raceid=397688',
-    isResults: true
-  },
-  {
     name: 'Spilsby Show 10K - 2026 Results',
     date: 'Saturday, 12th July 2026',
     time: 'Completed',
