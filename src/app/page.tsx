@@ -86,12 +86,14 @@ const events: EventType[] = [
     isResults: true
   },
   {
-    name: 'Spilsby Show 10K',
+    name: 'Spilsby Show 10K - 2026 Results',
     date: 'Saturday, 12th July 2026',
-    time: '10:30 AM',
+    time: 'Completed',
     image: '/images/events/spilsby-show.jpg',
-    description: 'The Spilsby Show 10K race is back again this year, in association with the Skegness and District Running Club and sponsored by GPC Industries Ltd. A fantastic multi-terrain race at Spilsby Recreation Ground & Pavilion. Perfect for all abilities!',
-    registrationLink: 'https://entries.sublimetiming.com/race/64?fbclid=IwY2xjawQJiL5leHRuA2FlbQIxMABicmlkETFkRndiYVUzTGp2bUhWZ3JLc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHtDmsilrWPna83OdPTGTpZ3IVXgMA30kLBw1kmE-nN-Ge3wECJypWJcS_hB1_aem_uPtiuMaT25Wjx0ErRZci8g'
+    description: 'View the full results and timings from the 2026 Spilsby Show 10K race.',
+    registrationLink: null,
+    resultsLink: 'https://www.webscorer.com/racedetails?raceid=439711&did=603855&embed=1',
+    isResults: true
   },
   {
     name: 'Bolingbroke Breaker 10K Time Trial',
