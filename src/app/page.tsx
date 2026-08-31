@@ -96,12 +96,14 @@ const events: EventType[] = [
     isResults: true
   },
   {
-    name: 'Bolingbroke Breaker 10K Time Trial',
+    name: 'Bolingbroke Breaker 10K Time Trial - 2026 Results',
     date: 'Sunday, 16th August 2026',
-    time: '10:00 AM',
+    time: 'Completed',
     image: '/images/events/Breaker-10.jpg',
-    description: 'The legendary Bolingbroke Breaker returns! A tough but rewarding 10K race at Ramsden Village Hall, Keal Hill, Old Bolingbroke, Spilsby, Lincolnshire, PE23 4EY. For enquiries: bolingbrokebreaker@gmail.com',
-    registrationLink: 'https://bookitzone.com/bolingbrokebreaker/BXjFFX?eref=mail&fbclid=IwY2xjawQJh8dleHRuA2FlbQIxMQBzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeLilKowMbXWCYFh8ydTfzsIjZvB6-5pjgjlWIJfcXkHsYmWA4b_iZTlgxysM_aem_P1WCBKeeiehjdyM4H_np4A'
+    description: 'View the results and photos from the 2026 Bolingbroke Breaker 10K Time Trial.',
+    registrationLink: null,
+    resultsLink: 'https://www.facebook.com/groups/784172519567904/',
+    isResults: true
   }
 ];
 
